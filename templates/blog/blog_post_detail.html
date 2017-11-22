@@ -1,0 +1,121 @@
+{% extends "blog/blog_post_list.html" %}
+{% load mezzanine_tags comment_tags keyword_tags staticfiles rating_tags i18n disqus_tags %}
+
+{% block meta_title %}{{ blog_post.meta_title }}{% endblock %}
+
+{% block meta_keywords %}{% metablock %}
+{% keywords_for blog_post as tags %}
+{% for tag in tags %}{% if not forloop.first %}, {% endif %}{{ tag }}{% endfor %}
+{% endmetablock %}{% endblock %}
+
+
+
+{% block main %}
+
+        <!--=== Breadcrumbs ===-->
+        <div class="breadcrumbs">
+            <div class="container">
+               <h1 class="pull-left"><strong>Blog</strong></h1>
+                <ul class="pull-right breadcrumb">
+                    <li><a href="/blog">  <<< Back to Blog <<< </a></li>
+                     <li class="active">
+                        {{ blog_post.title }}
+                     </li>
+                </ul>
+            </div>
+        </div><!--/breadcrumbs-->
+        <!--=== End Breadcrumbs ===-->
+
+        <!--=== blog Posts ===-->
+        <div class="bg-color-light parallax-bg parallaxBg1">
+            <div class="container content-sm">            
+                <!-- News v3 -->
+                <div class="news-v3 bg-color-white margin-bottom-30">
+                 {% if settings.blog_USE_FEATURED_IMAGE and blog_post.featured_image %}
+                    {% block blog_post_list_post_featured_image %}
+                    <div class="col-sm-5 sm-margin-bottom-15">
+                            <img class="img-responsive" src="{{ MEDIA_URL }}{% thumbnail blog_post.featured_image 770 0 %}" alt="">
+                        </a>
+                    </div>
+                    {% endblock %}
+                    {% endif %}        
+                    <div class="news-v3-in">
+                        <ul class="list-inline posted-info">
+                            <li>By  {% with blog_post.user as author %}
+                                <a href="{% url "blog_post_list_author" author %}">{{ author.get_full_name|default:author.username }}</a>
+                                {% endwith %}</li>
+
+                                 {% with blog_post.categories.all as categories %}
+                                    {% if categories %}
+                            </li>
+                                    {% for category in categories %}
+                                    <li>In <a href="{% url "blog_post_list_category" category.slug %}">{{ category }}</a></li>{% if not forloop.last %}, {% endif %}
+                                    {% endfor %}
+                                    {% endif %}
+                                    {% endwith %}
+                            
+                            <li>Posted {% blocktrans with sometime=blog_post.publish_date|timesince %}{{ sometime }} ago{% endblocktrans %}</li>
+
+                            {% block blog_post_list_post_links %}   
+                                    {% keywords_for blog_post as tags %}
+                                    {% if tags %}
+                                    <li>
+                                    <i class="fa fa-tags"></i>       
+                                    {% for tag in tags %}
+                                    <a href='{% url "blog_post_list_tag" tag.slug %}' class="tag">{{ tag }}</a>{% if not forloop.last %}, {% endif %}
+                                    {% endfor %}
+                                    </li>        
+                                    {% endif %} 
+                                {% endblock %}
+
+
+                        </ul>
+                        <h2><strong><a>{{ blog_post.title }}</a></strong></h2>
+                            <div class="tag-box tag-box-v2 box-shadow shadow-effect-1">
+                                <h4>{{ blog_post.content|richtext_filters|safe }}</h4>                             
+                            </div>
+                        
+                        <ul class="post-shares post-shares-lg">                            
+                             <li>
+                                <a>
+                                {% block blog_post_detail_sharebuttons %}
+                                {% set_short_url_for blog_post %}
+                                <a class="btn btn-sm share-twitter tooltips" data-toggle="tooltip"  target="_blank" href="https://twitter.com/intent/tweet?url={{ blog_post.short_url|urlencode }}&amp;text={{ blog_post.title|urlencode }}"data-placement="bottom" title="" data-original-title="Share on Twitter"><i class="rounded-x fa fa-twitter"></i></a>
+                                <a class="btn btn-sm share-facebook tooltips" data-toggle="tooltip" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{ request.build_absolute_uri }}" data-placement="bottom" title="" data-original-title="Share on Facebook"><i class="rounded-x fa fa-facebook"></i></a>
+
+                                {% endblock %}
+                              </a>
+                            </li>                            
+                        </ul>
+                    </div>
+                </div>
+
+                {% block blog_post_previous_next %}
+                <ul class="pager">
+                {% with blog_post.get_previous_by_publish_date as previous %}
+                {% if previous %}
+                <li class="previous">
+                    <a href="{{ previous.get_absolute_url }}">&larr; {{ previous }}</a>
+                </li>
+                {% endif %}
+                {% endwith %}
+                {% with blog_post.get_next_by_publish_date as next %}
+                {% if next %}
+                <li class="next">
+                    <a href="{{ next.get_absolute_url }}">{{ next }} &rarr;</a>
+                </li>
+                {% endif %}
+                {% endwith %}
+                </ul>
+                {% endblock %}
+
+                <hr>
+                <!-- End News v3 -->                            
+            </div><!--/end container-->
+        </div>
+        <!--=== End blog Posts ===-->
+         <!-- End Left Sidebar -->
+
+
+
+{% endblock %}

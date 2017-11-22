@@ -1,0 +1,217 @@
+<!-- BASE TEMPLATE FOR HOME, ABOUT, ETC THAT HAS NO MERGE WITH THE APP -->
+{% load static %}
+<!doctype html>
+<html lang="{{ LANGUAGE_CODE }}"{% if LANGUAGE_BIDI %} dir="rtl"{% endif %}>
+{% load pages_tags mezzanine_tags i18n staticfiles %}
+
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="{% block meta_keywords %}{% endblock %}">
+    <meta name="description" content="{% block meta_description %}{% endblock %}">
+    <title>{% trans "Python Ghana" %}</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="{% static 'favicon.png' %}">
+
+    <!-- Web Fonts -->
+    <link rel='stylesheet' type='text/css' href='//fonts.googleapis.com/css?family=Open+Sans:400,300,600&amp;subset=cyrillic,latin'>
+
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="{% url "blog_post_feed" "rss" %}">
+    <link rel="alternate" type="application/atom+xml" title="Atom" href="{% url "blog_post_feed" "atom" %}">
+
+
+    <!-- CSS Global Compulsory -->
+    <link rel="stylesheet" href="{% static 'assets/plugins/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+
+    <!-- CSS Header and Footer -->
+    <link rel="stylesheet" href="{% static 'assets/css/headers/header-v6.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/footers/footer-v1.css' %}">
+
+    <!-- CSS Implementing Plugins -->
+    <link rel="stylesheet" href="{% static 'assets/plugins/animate.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/plugins/line-icons/line-icons.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/plugins/font-awesome/css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/plugins/brand-buttons/brand-buttons.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/plugins/revolution-slider/rs-plugin/css/settings.css' %}" type="text/css" media="screen">
+    <link rel="stylesheet" href="{% static 'assets/plugins/fancybox/source/jquery.fancybox.css' %}">
+    <!--[if lt IE 9]><link rel="stylesheet" href="{% static 'assets/plugins/revolution-slider/rs-plugin/css/settings-ie8.css' %}" type="text/css" media="screen"><![endif]-->
+
+    <!-- CSS Theme -->
+    <link rel="stylesheet" href="{% static 'assets/css/theme-colors/blue.css' %}" id="style_color">
+    <link rel="stylesheet" href="{% static 'assets/css/theme-skins/blue.css' %}">   
+    <link href="{% static 'pro_css/app/appblog.css' %}" rel="stylesheet">
+
+    <!-- CSS Customization -->
+    <link rel="stylesheet" href="{% static 'assets/css/custom.css' %}">
+
+
+{% block extra_head %}{% endblock %}
+</head>
+	
+
+<body class="header-fixed"> 
+
+
+			
+		
+		<!--=== Slider ===-->
+		<div class="tp-banner-container">
+			<div class="tp-banner">
+				<ul>
+				
+				<!-- SLIDE -->
+<li class="revolution-mch-1" data-transition="fade" data-slotamount="5" data-masterspeed="1000" data-title="Slide 1">
+			<!-- MAIN IMAGE -->
+			<img src="{% static 'assets/img/patterns/5.png' %}" data-bgfit="cover" data-bgposition="center center" data-bgrepeat="no-repeat" class="img-responsive">
+					
+				<!-- LAYER -->
+			<div class="tp-caption re-title-v2 sft"
+				data-kenburns="on"
+				data-duration="3000"
+				data-x="300"
+				data-hoffset="0"
+				data-y="0"
+				data-speed="1900"
+				data-start="1500"
+				data-easing="easeOutBack"
+				data-endspeed="800"
+				data-endeasing="easeInQuad"
+				data-captionhidden="off"
+				style="z-index: 8">
+				<div data-easing="Power4.easeInOut" data-speed="5" data-zoomstart="0.90" data-zoomend="0.85">
+  <a ><img src="{% static 'pro_images/slide_one1.png' %}" alt="" data-lazyload="{% static 'pro_images/pyconghana1.png' %}" ></a>
+  
+ </div>
+			</div>
+
+				<div class="tp-caption re-text-v2 sft start"
+						data-x="20"
+						data-hoffset="0"
+						data-y="220"
+						data-speed="2000"
+						data-start="1000"
+						data-easing="Back.easeInOut"
+						data-endeasing="Power1.easeIn"
+						data-endspeed="300"><h2><strong>
+						We are exicted to say that Ghana would be having it's very First Python Conference in 2018.<br> 
+						Stay Tuned. .</strong></h2>
+						</div>
+
+						<!-- LAYER -->
+						<div class="tp-caption sft"
+						data-x="20"
+						data-hoffset="0"
+						data-y="320"
+						data-speed="1600"
+						data-start="2800"
+						data-easing="Power4.easeOut"
+						data-endspeed="300"
+						data-endeasing="Power1.easeIn"
+						data-captionhidden="off"
+						style="z-index: 6">
+						<a href="/home" class="btn-u btn-u-lg re-btn-brd margin-right-5">PyGhana Homepage</a>
+						<a href="#" class="btn-u btn-u-blue btn-u-lg">Visit Our Work</a>
+						</div>
+
+
+						<!-- LAYER -->
+				<div class="tp-caption sfb"
+				data-x="1100"
+				data-hoffset="0"
+				data-y="440"
+				data-speed="1500"
+				data-start="4600"
+				data-easing="Power4.easeOut"
+				data-endspeed="300"
+				data-endeasing="Power1.easeIn"
+				data-captionhidden="on"
+				style="z-index: 6">
+				<a href="http://twitter.com/pyconghana">
+					<img src="{% static 'assets/img/icons/ts2.png' %}" alt="" class="img-responsive">
+				</a>
+				</div>
+</li>
+<!-- END SLIDE -->
+		
+
+
+</ul>
+<div class="tp-bannertimer tp-bottom"></div>
+</div>
+</div>
+<!--=== End Slider ===-->
+					
+					
+{% block content %}
+	
+	
+	
+	
+{% endblock %}
+
+	
+<!-- JS Global Compulsory -->
+<script type="text/javascript" src="{% static 'assets/plugins/jquery/jquery.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'assets/plugins/jquery/jquery-migrate.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'assets/plugins/bootstrap/js/bootstrap.min.js' %}"></script>
+<!-- JS Implementing Plugins -->
+<script type="text/javascript" src="{% static 'assets/plugins/back-to-top.js' %}"></script>
+<script type="text/javascript" src="{% static 'assets/plugins/smoothScroll.js' %}"></script>
+<script type="text/javascript" src="{% static 'assets/plugins/jquery.parallax.js' %}"></script>
+<script type="text/javascript" src="{% static 'assets/plugins/counter/waypoints.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'assets/plugins/counter/jquery.counterup.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'assets/plugins/revolution-slider/rs-plugin/js/jquery.themepunch.tools.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'assets/plugins/revolution-slider/rs-plugin/js/jquery.themepunch.revolution.min.js' %}"></script>
+<!-- JS Customization -->
+<script type="text/javascript" src="{% static 'assets/js/custom.js' %}"></script>
+<!-- JS Page Level -->
+<script type="text/javascript" src="{% static 'assets/js/app.js' %}"></script>
+<script type="text/javascript" src="{% static 'assets/js/plugins/style-switcher.js' %}"></script>
+<script type="text/javascript" src="{% static 'assets/js/plugins/revolution-slider.js' %}"></script>
+<script type="text/javascript">
+	jQuery(document).ready(function() {
+		App.init();
+		App.initCounter();
+		App.initParallaxBg();
+		StyleSwitcher.initStyleSwitcher();
+		RevolutionSlider.initRSfullScreenOffset();
+	});
+</script>
+	
+		
+  <!-- Inline Script for colors and config objects; used by various external scripts; -->
+  <script>
+    var colors = {
+      "danger-color": "#e74c3c",
+      "success-color": "#81b53e",
+      "warning-color": "#f0ad4e",
+      "inverse-color": "#2c3e50",
+      "info-color": "#2d7cb5",
+      "default-color": "#3498db",
+      "default-light-color": "#cfd9db",
+      "purple-color": "#9D8AC7",
+      "mustard-color": "#d4d171",
+      "lightred-color": "#e15258",
+      "body-bg": "#f6f6f6"
+    };
+    var config = {
+      theme: "html",
+      skins: {
+        "default": {
+          "primary-color": "#3498db"
+        }
+      }
+    };
+  </script>
+
+		
+<!--[if lt IE 9]>
+	<script src="{% static 'assets/plugins/respond.js' %}"></script>
+	<script src="{% static 'assets/plugins/html5shiv.js' %}"></script>
+	<script src="{% static 'assets/plugins/placeholder-IE-fixes.js' %}"></script>
+	<![endif]-->
+
+</body>
+</html>

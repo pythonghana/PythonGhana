@@ -1,0 +1,63 @@
+{% extends "layout.html" %}
+{% load staticfiles %}
+{% load i18n mezzanine_tags blog_tags staticfiles keyword_tags disqus_tags %}
+{% block meta_title %}{% if page %}{{ page.meta_title }}{% else %}{% trans "Gallery" %}{% endif %}{% endblock %}
+
+
+{% block content %}
+
+        <!--=== Breadcrumbs ===-->
+        <div class="breadcrumbs">
+            <div class="container">
+                <h2 class="pull-left"><strong>Gallery</strong></h2>
+                <ul class="pull-right breadcrumb">
+                    <li><a href="/gallery"> <<< Back to Gallery <<<</a></li>
+                    <li class="active">{{ album.title }}</li>
+                </ul>
+            </div>
+        </div><!--/breadcrumbs-->
+        <!--=== End Breadcrumbs ===-->
+
+        <!--=== Content Part ===-->
+        <div class="container content">
+             {% if album.is_visible %}
+            <div class="row">
+                <!-- Begin Content -->
+                <div class="col-md-50">
+                    <div class="shadow-wrapper">
+                        <blockquote class="tag-box tag-box-v1 box-shadow shadow-effect-2">
+                            <h2><strong>{{ album.title }}</strong></h2>
+                            <p><em>{{album.description}}</em></p>
+                        </blockquote>
+                    </div>
+                    
+                    <!-- Thumbnails v3 -->
+                    <div class="row">
+                         {% for item in images %}
+                        
+                        <div style="width:250px; float: left; width: 30%; margin-right: 1%; margin-bottom: 0.5em; margin: 0 auto;" class="col-md-4">
+                            <div class="thumbnails thumbnail-style">
+                                <a class="fancybox" data-rel="fancybox-button" title="{{ album.title }}" href="{{ item.image.url }}">
+                                     <img class="img-responsive"  src="{{ item.thumb.url }}" alt="{{ item.alt }}" />
+                                </a>
+                                <div class="caption">
+                                    
+                                    
+                                </div>
+                            </div>
+                        </div>
+                         {% endfor %}
+
+                    </div><!--/row-->
+                    <!-- End Thumbnails v3 -->
+                </div>
+                <!-- End Content -->
+            </div>
+            {% else %}
+                    <h3>This album is temporarily unavailable.</h3>
+            {% endif %}
+        </div><!--/container-->
+        <!--=== End Content Part ===-->
+
+{% endblock %}
+

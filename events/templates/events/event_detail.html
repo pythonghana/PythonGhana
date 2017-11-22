@@ -1,0 +1,153 @@
+{% extends 'events/middle.html' %}
+{% load staticfiles events_tags i18n %}
+{% load i18n mezzanine_tags blog_tags staticfiles keyword_tags disqus_tags %}
+{% block meta_title %}{% if page %}{{ page.meta_title }}{% else %}{% trans "Events" %}{% endif %}{% endblock %}
+{% block content %}
+
+
+        <!--=== Breadcrumbs ===-->
+        <div class="breadcrumbs">
+            <div class="container">
+                <h1 class="pull-left"><strong>Events</strong></h1>
+                <ul class="pull-right breadcrumb">
+                    <li><a href="/events">Back to Events</a></li>
+                     <li class="active">
+                        {{ event.title }}
+                     </li>
+                </ul>
+            </div>
+        </div><!--/breadcrumbs-->
+        <!--=== End Breadcrumbs ===-->
+
+
+ <div class="bg-color-light parallax-bg parallaxBg1">
+    <div class="container content">
+            <div class="row blog-page">
+                <div class="col-md-8">
+                    <!--Blog Post-->
+                    <div class="blog margin-bottom-40">
+                        <h2><strong><a href="">{{ event.title }}</a></strong></h2>
+                         <div class="blog-post-tags row">
+
+                                <ul class="list-unstyled list-inline blog-info">
+                                    {% if event.start_end_diff %}
+                                        <li><i class="fa fa-calendar"></i> <b>{% blocktrans with event_duration_days=event.start_end_diff %}This is a {{ event_duration_days }} day event.{% endblocktrans %}</b><br></li>
+                                    {% endif %}
+                                    {% if event.categories.all %}
+                                        {% blocktrans count counter=event.categories.all.count %}{% plural %}{% endblocktrans %}
+                                        {% for category in event.categories.all %}
+                                            <li><i class="fa fa-pencil"></i> {{ category.title }}</li>
+                                        {% endfor %}
+                                    {% endif %}
+                                    {% if event.tags.all %}
+                                        {% blocktrans count counter=event.tags.all.count %}{% plural %}{% endblocktrans %}
+                                            {% for tag in event.tags.all %}
+                                             <li>
+                                                <i class="fa fa-tags"></i>
+                                                <a> {{ tag.name }}</a>
+                                            </li>
+                                            {% endfor %}
+                                    {% endif %}
+
+                                </ul>
+
+                        <div class="alert alert-info fade in row">
+                                {% if next_event %}
+                                <b>{% blocktrans with repeat_lower=repeat|lower %}<strong>This event repeats</strong> {{ repeat_lower }}.{% endblocktrans %}</b>
+                                    <p>
+                                       <strong> {{ _("Next event date:") }} </strong>
+                                            {{ next_event|date:"SHORT_DATE_FORMAT" }}
+                                            {{ event.start_date|time }} -
+                                            {{ event.end_date|time }}{% if next_or_prev_cncl %} {{ _("(CANCELLED)") }}{% endif %}
+                                {% elif last_event %}
+                                    <b>{% blocktrans with repeat_lower=repeat|lower %}This was an event that repeated {{ repeat_lower }}.{% endblocktrans %}</b>
+                                    <p>{% blocktrans with last_event_date=last_event|date:"SHORT_DATE_FORMAT" %}The last event was on {{ last_event_date }}{% endblocktrans %}{% if next_or_prev_cncl %} {{ _("(CANCELLED)") }}{% endif %}
+                                {% else %}
+                                    <p><strong>{{ _("When:") }}</strong>
+                                    {% if event_days %}
+                                        <ul>
+                                        {% for e in event_days %}
+                                            <li>
+                                                {% blocktrans with num_day=forloop.counter %}Day {{ num_day }}{% endblocktrans %}: {{ e|date:"SHORT_DATE_FORMAT" }} - {{ event.end_date|time }}
+                                                {% for c in event.cancellations.all %}
+                                                    {% if c.date == e.date %}
+                                                        {{ _("(CANCELLED)") }}
+                                                    {% endif %}
+                                            </li>
+                                            {% endfor %}
+                                        {% endfor %}
+                                        </ul>
+                                    {% else %}
+                                            {{ event.start_date|date:"SHORT_DATE_FORMAT" }} - {{ event.end_date|time }}
+                                            {% if this_cncl %} {{ _("(CANCELLED)") }}{% endif %}
+                                    {% endif %}
+                                {% endif %}
+
+
+
+
+                                ({{ _("today is:") }} {% now "SHORT_DATE_FORMAT" %})
+                                </p>
+                                {% if cncl_days %}
+                                   <strong> <p>{{ _("This event has been cancelled on the following day(s):") }}</p></strong>
+                                    <ul>
+                                    {% for d, reason in cncl_days %}
+                                        <li>{{ d|date:"SHORT_DATE_FORMAT" }} - {% blocktrans %}Reason: {{ reason }}{% endblocktrans %}</li>
+                                    {% endfor %}
+                                    </ul>
+                                {% endif %}
+
+
+
+                                {% if event.location.all %}
+                                <p>{% blocktrans count counter=event.location.all.count %}<strong>Location:</strong>{% plural %}<strong>Locations:</strong>{% endblocktrans %}<br>
+                                {% for l in event.location.all %}
+                                    {{ l.name }}<br>
+                                    {% if l.address_line_1 %}{{ l.address_line_1 }}<br>{% endif %}
+                                    {% if l.address_line_2 %}{{ l.address_line_2 }}<br>{% endif %}
+                                    {% if l.address_line_3 %}{{ l.address_line_3 }}<br>{% endif %}
+                                    {% if l.city %}{{ l.city }},{% endif %}
+                                    {% if l.state %}{{ l.state }}{% endif %}
+                                    {% if l.zipcode %}{{ l.zipcode }}<br>{% endif %}
+                                    {% if l.country %}{{ l.country }}<br>{% endif %}
+                                {% endfor %}
+                                </p>
+                                {% endif %}
+                            </div>
+
+
+                        </div><br><br>
+                         <div class="tag-box tag-box-v2 box-shadow shadow-effect-1">
+                                <h4>{{ event.description }}</h4>   
+                                <br><br>
+                            <a class="btn-u btn-u-red"  id="cal-day-prev" class="cal-day" href="{{ request.path }}?cal_prev={{ prev }}">
+                                {% trans "Prev Day" %}
+                            </a> | 
+                            <a class="btn-u btn-u-sea" id="cal-day-next" class="cal-day" href="{{ request.path }}?cal_next={{ next }}">
+                                {% trans "Next Day" %}
+                            </a>                          
+                        </div>
+                    </div>
+                </div>
+                <!-- End Left Sidebar -->
+
+
+                <!-- Right Sidebar -->
+                <div class="col-md-4 magazine-page">
+                    <!-- UpComing Event -->
+                    <div class="posts margin-bottom-40">
+                        <dl class="dl-horizontal">
+                            {% upcoming_events %}
+                        </dl>
+                    </div>
+                    <!-- End UpComing Event -->
+                </div>
+                <!-- End Right Sidebar -->
+            </div><!--/row-->
+    </div><!--/container-->
+</div>
+        <!--=== End Content Part ===-->
+
+
+
+{% endblock content %}

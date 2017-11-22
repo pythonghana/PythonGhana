@@ -1,0 +1,108 @@
+{% extends 'events/middle.html' %}
+{% load staticfiles events_tags i18n %}
+{% load i18n mezzanine_tags blog_tags staticfiles keyword_tags disqus_tags %}
+{% block meta_title %}{% if page %}{{ page.meta_title }}{% else %}{% trans "Events" %}{% endif %}{% endblock %}
+
+{% block content %}
+
+        <!--=== Breadcrumbs ===-->
+        <div class="breadcrumbs">
+            <div class="container">
+                <h1 class="pull-left"><strong>Events</strong></h1>
+                <ul class="pull-right breadcrumb">
+                    <li><a href="{% url "calendar:list" %}{{ year }}/{{ month_num }}">Back to Events</a></li>
+                     <li class="active">
+                                    <span id="cal-day-mo">{{ month }}</span> 
+                                    <span id="cal-day-day">{{ day }}</span>, 
+                                    <span id="cal-day-year">{{ year }}</span>
+                     </li>
+                </ul>
+            </div>
+        </div><!--/breadcrumbs-->
+        <!--=== End Breadcrumbs ===-->
+    
+
+ <div class="bg-color-light parallax-bg parallaxBg1">
+<div class="container content">
+         <a class="btn-u btn-u-blue"  href="{% url "calendar:list" %}{{ year }}/{{ month_num }}/">
+                &larr; {% trans "Back to calendar" %}
+        </a><br><br>
+            <div class="row blog-page">
+                <div class="col-md-8">
+                    <!--Blog Post-->
+                    <div class="blog margin-bottom-40">
+                    <div class="tag-box tag-box-v2 box-shadow shadow-effect-1">
+                        {% if cal_error %}
+                            {{ cal_error }}
+                        {% endif %}
+                        <div class="row margin-bottom-20">
+                            <div id="event-calendar">
+                                {{ calendar|safe }}
+                            </div>
+                        </div>
+                        <h1>
+                    {% if cal_category and cal_tag %}
+                            {% blocktrans with c=cal_category t=cal_tag %}
+                            in category <span id="cal-day-category">{{ c }}</span>
+                            with tag <span id="cal-day-tag">{{ t }}</span>
+                            {% endblocktrans %}
+                    {% elif cal_category %}
+                            {% blocktrans with c=cal_category t=cal_tag %}
+                            with category <span id="cal-day-category">{{ c }}</span>
+                            {% endblocktrans %}
+                    {% elif cal_tag %}
+                            {% blocktrans with c=cal_category t=cal_tag %}
+                            with tag = <span id="cal-day-tag">{{ t }}</span>
+                            {% endblocktrans %}
+                    {% endif %}
+                    </h1>
+                     <div class="alert alert-info fade in">
+                            <div class="headline">
+                                <h2 class="heading-sm">{% trans "For" %} 
+                                    <span id="cal-day-mo">{{ month }}</span> 
+                                    <span id="cal-day-day">{{ day }}</span>, 
+                                    <span id="cal-day-year">{{ year }}</span>
+                                </h2>
+                            </div>
+                        <ul class="day-event-list">
+                            {% for event in events %}
+                                <li><a href="{{ event.get_absolute_url }}">{{ event.title }}</a></li>
+
+                            {% empty %}
+                               <br>
+                               <h4><p>Sorry! There is currently no Event Listed for today.</p></h4>
+                               <br>
+                        
+                            {% endfor %}
+                        </ul> <br><br>
+                            <a class="btn-u btn-u-red"  id="cal-day-prev" class="cal-day" href="{{ request.path }}?cal_prev={{ prev }}">
+                                {% trans "Prev Day" %}
+                            </a> | 
+                            <a class="btn-u btn-u-sea" id="cal-day-next" class="cal-day" href="{{ request.path }}?cal_next={{ next }}">
+                                {% trans "Next Day" %}
+                            </a>
+                    </div>
+                     </div>
+                     </div>
+                </div>
+                <!-- End Left Sidebar -->
+
+
+                <!-- Right Sidebar -->
+                <div class="col-md-4 magazine-page">
+                    <!-- UpComing Event -->
+                    <div class="posts margin-bottom-40">
+                        <dl class="dl-horizontal">
+                            {% upcoming_events %}
+                        </dl>
+                    </div>
+                    <!-- End UpComing Event -->
+
+                    
+                </div>
+                <!-- End Right Sidebar -->
+            </div><!--/row-->
+        </div><!--/container--></div>
+        <!--=== End Content Part ===-->
+
+{% endblock content %}

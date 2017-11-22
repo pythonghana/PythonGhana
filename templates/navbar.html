@@ -1,0 +1,64 @@
+{% load static %}
+{% load pages_tags mezzanine_tags i18n staticfiles %}
+
+{% block navbar %}
+
+        <!--=== Header v6 ===-->
+    <div class="wrapper">
+        <div class="header-v6 header-white-transparent header-sticky">
+            <!-- Navbar -->
+            <div class="navbar mega-menu" role="navigation">
+                <div class="container">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="menu-container">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+                            <span class="sr-only">{% trans "Toggle Navigation" %}</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+
+                        <!-- Navbar Brand -->
+                        <div class="navbar-brand">
+                            <a href="">
+                                <img class="default-logo" src="{% static 'assets/img/2PiRi logo1.png' %}" alt="Logo">
+                                <img class="shrink-logo" src="{% static 'assets/img/logo-dark.png' %}" alt="Logo">
+                            </a>
+                        </div>
+                        <!-- ENd Navbar Brand -->
+                  
+                        
+                        <!-- Header Inner Right -->
+                        <div class="header-inner-right">
+                            <ul class="menu-icons-list">                                
+                                <li class="menu-icons">
+                                    <i class="menu-icons-style search search-close search-btn fa fa-search"></i>
+                                    <div class="search-open animated fadeIn form-control" >
+                                             {% block navbar_search_form %}{% search_form %}{% endblock %}                                     
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- End Header Inner Right -->
+                    </div>
+
+                                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse navbar-responsive-collapse">
+                        <div class="menu-container">
+                            <ul class="nav navbar-nav">
+                                <!-- Home -->         
+                                {% block navbar_dropdown_menu %}{% page_menu "pages/menus/dropdown.html" %}{% endblock%}                 
+                            
+                                <!-- End Home -->
+                           </ul>   
+                        </div>
+                    </div>  
+                </div>
+            </div>      
+                    <!--/navbar-collapse-->
+        </div>
+    </div>            
+            <!-- End Navbar -->
+        <!--=== End Header v6 ===-->
+
+{% endblock %}

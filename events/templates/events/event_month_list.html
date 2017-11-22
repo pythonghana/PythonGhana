@@ -1,0 +1,98 @@
+{% extends 'events/middle.html' %}
+{% load staticfiles events_tags %}
+{% load i18n mezzanine_tags blog_tags staticfiles keyword_tags disqus_tags %}
+{% block meta_title %}{% if page %}{{ page.meta_title }}{% else %}{% trans "Events" %}{% endif %}{% endblock %}
+
+{% block content %}
+ <!--=== Breadcrumbs ===-->
+        <div class="breadcrumbs">
+            <div class="container">
+                <h1 class="pull-left"><strong>Events</strong></h1>
+            </div>
+        </div><!--/breadcrumbs-->
+        <!--=== End Breadcrumbs ===-->
+
+ <div class="bg-color-light parallax-bg parallaxBg1">
+<div class="container content">
+            <div class="row blog-page">
+                <div class="col-md-8">
+                    <!--Blog Post-->
+                    <div class="blog margin-bottom-40">
+                        {% if cal_error %}
+                            {{ cal_error }}
+                        {% endif %}
+                        <!-- Calendar -->
+                        <div class="row" >
+                            <p>
+                                <a href="https://www.python.org/events/python-events" class="btn btn-lg rounded btn-primary"><i class="fa fa-link"></i> Python Events</a>
+                               <!-- 
+                               <a href="https://www.python.org/events/python-events" class="btn btn-lg rounded btn-primary"><i class="fa fa-link"></i> Python Events Calendar</a>
+                                --> 
+                            </p>
+                        </div>
+                        
+                        <div class="row margin-bottom-20">
+                            <div id="event-calendar">
+                                {{ calendar|safe }}
+                            </div>
+                        </div>
+                        <div class="tag-box tag-box-v2 box-shadow shadow-effect-1">
+                             <h4><p>The Event Page on <a href="/events" target="_blank">Python Ghana</a> is to show current Python Related events happening around Ghana, You are also to register your event with the<a href="https://www.python.org/events/"> Python Event</a> on the main python website, or you can let us know if we are to help you with that.</p>
+                                <p>To have your event listed, Send a mail to <a href="mailto:events@pythonghana.org">events@pythonghana.org</a> using this format:</p>
+                                <p></p>
+                                <pre>Please add the following event:
+                                <span class="anchor" id="line-2"></span>
+                                <span class="anchor" id="line-3"></span> * name of the event: 
+                                <span class="anchor" id="line-4"></span> * type of event: 
+                                <span class="anchor" id="line-5"></span> * focus on Python: 
+                                <span class="anchor" id="line-6"></span> * approximate number of attendees: 
+                                <span class="anchor" id="line-7"></span> * location (incl. region): 
+                                <span class="anchor" id="line-8"></span> * dates/times/recurrence : 
+                                <span class="anchor" id="line-9"></span> * link (in HTML format): 
+                                <span class="anchor" id="line-9"></span>        &lt;a href="http://url/"&gt;name of the event&lt;/a&gt;
+                                </pre>
+                                <p><strong>Note: your events will also be forwarded to <a href="mailto:events@python.org">events@python.org</a></strong></p>
+                                <p><span>For recurring events, please also include the recurrence information, e.g. "monthly, every second Thursday".</span></p>
+                                <p><span></span></p>
+                                <p><span class="anchor" id="line-35"></span><span class="anchor" id="line-36"></span></p></h4>   
+                        </div>   
+                        {% if show_events %}
+                        <h1 id="month-list-events-title">
+                            {% if cal_category and cal_tag %}
+                                Events in category {{ cal_category }}
+                                with tag = {{ cal_tag }}
+                            {% elif cal_category %}
+                                Events in {{ cal_category }}
+                            {% elif cal_tag %}
+                                Events with tag = {{ cal_tag }}
+                            {% else %}
+                                Events
+                            {% endif %}
+                        </h1>
+
+                        <h3>For <span id="month-and-year">{{ month_and_year }}</span></h3>
+                        {% include 'events/partials/event_list.html' %}
+                        {% endif %}
+                     </div>
+                </div>
+                <!-- End Left Sidebar -->
+
+
+                <!-- Right Sidebar -->
+                <div class="col-md-4 magazine-page">
+                    <!-- UpComing Event -->
+                    <div class="posts margin-bottom-40">
+                        <dl class="dl-horizontal">
+                            {% upcoming_events %}
+                        </dl>
+                    </div>
+                    <!-- End UpComing Event -->
+                </div>
+                <!-- End Right Sidebar -->
+            </div><!--/row-->
+        </div><!--/container--></div>
+        <!--=== End Content Part ===-->
+
+{% endblock content %}
+
+

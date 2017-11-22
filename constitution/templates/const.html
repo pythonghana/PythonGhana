@@ -1,0 +1,42 @@
+{% extends "base22.html" %}
+{% load static %}
+{% load i18n mezzanine_tags blog_tags staticfiles keyword_tags disqus_tags %}
+{% block meta_title %}{% if page %}{{ page.meta_title }}{% else %}{% trans "Constitution" %}{% endif %}{% endblock %}
+
+
+{% block content %} 
+
+					
+
+        <!--=== Breadcrumbs ===-->
+        <div class="breadcrumbs">
+            <div class="container">
+               <h1 class="pull-left"><strong>Constitution</strong></h1>
+            </div>
+        </div><!--/breadcrumbs-->
+        <!--=== End Breadcrumbs ===-->
+		
+		<!--=== Parallax About Block ===-->
+		<div class="parallax-bg parallaxBg1">
+			<div class="container content parallax-about">
+				<div class="row">
+					<div>
+						<div class="banner-info dark margin-bottom-10">
+							<i class="rounded-x fa fa-gavel"></i>
+							</div>
+						</div>
+					    <div class="alert alert-info fade in">
+                            <div >
+                            	<h4>The Constitution is still been Processed.</h4>
+                            </div>
+                        </div>
+
+					
+					
+				</div>
+			</div><!--/container-->
+		</div>
+		<!--=== End Parallax About Block ===-->
+						
+
+{% endblock %}

@@ -1,0 +1,206 @@
+{% extends "base22.html" %}
+{% load static %}
+
+{% load i18n mezzanine_tags blog_tags staticfiles keyword_tags disqus_tags %}
+{% block meta_title %}{% if page %}{{ page.meta_title }}{% else %}{% trans "Resource" %}{% endif %}{% endblock %}	
+
+{% block content %}  	
+
+        <!--=== Breadcrumbs ===-->
+        <div class="breadcrumbs">
+            <div class="container">
+               <h1 class="pull-left"><strong>Resources</strong></h1>
+            </div>
+        </div><!--/breadcrumbs-->
+        <!--=== End Breadcrumbs ===-->
+
+
+		<div class="parallax-bg parallaxBg1">
+		<!--=== Content Part ===-->		
+			<!-- Books Block-->
+			
+			<div class="container content">			
+			<div class="row">
+					<div>						
+						<h2><a href="https://wiki.python.org/moin/PythonBooks"><img src="{% static 'pro_images/book1.png' %}"  class="img-responsive hover-effect" alt="" /><strong>Python Books</strong></a></h2>	
+					</div>
+					
+					<br>
+				<div class="col-sm-6 content-boxes-v3 content-boxes-v3-right sm-margin-bottom-30">
+					<div class="margin-bottom-30">
+						<div class="content-boxes-in-v3">
+							<h4><strong><a href="http://shop.oreilly.com/product/0636920045267.do">Think Python</a></strong></h4>
+							<h5>If you have never programmed before, this is the book you need. This book assumes that you have very little knowledge of programming and will provide everything you need to get started with Python.</h5>
+							<a href="https://goo.gl/BQmsjv" class="btn-u btn-brd-hover btn-u-blue">Get this Book</a>
+						</div>
+					</div>
+					<br>
+					<div class="clearfix margin-bottom-30">
+						<div class="content-boxes-in-v3">
+							<h4><strong><a href="http://learning-python.com/about-lp.html">Learning Python</a></strong></h4>
+							<h5>Get a comprehensive, in-depth introduction to the core Python language with this hands-on book. Based on author Mark Lutz’s popular training course, this updated fifth edition will help you quickly write efficient, high-quality code with Python. It’s an ideal way to begin, whether you’re new to programming or a professional developer versed in other languages.</h5>
+							<a href="https://goo.gl/J9kgwW" class="btn-u btn-brd-hover btn-u-blue">Get this Book</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-sm-6 content-boxes-v3">
+					<div class="clearfix margin-bottom-30">
+						<div class="content-boxes-in-v3">
+							<h4><strong><a href="https://learnpythonthehardway.org/">Learn Python the Hard Way</a></strong></h4>
+							<h5>You'll learn Python by working through 52 brilliantly crafted exercises. Watch the programs run. As you do, you'll learn how software works; what good programs look like; how to read, write, and think about code; and . . . . </h5>
+							<a href="https://goo.gl/WA9cHs" class="btn-u btn-brd-hover btn-u-blue">Get this Book</a>
+						</div>
+					</div>
+					<div class="clearfix">
+						<div class="content-boxes-in-v3">
+							<h4><strong><a href="https://automatetheboringstuff.com/">Automate the Boring Stuff with Python</a></strong></h4>
+							<h5>Practical Programming for Total Beginners, In Automate the Boring Stuff with Python, you’ll learn how to use Python to write programs that do in minutes what would take you hours to do by hand—no prior programming experience required. Once you’ve mastered the basics of programming, you’ll create Python programs that effortlessly perform useful and impressive feats of automation . . . .</h5>
+							<a href="https://goo.gl/dHpLst" class="btn-u btn-brd-hover btn-u-blue">Get this Book</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+			<div class="one-page-inner one-default">
+				<div class="container content">
+					<div class="row content-boxes-v2">
+						<div class="col-md-4 md-margin-bottom-30">
+							<h3 class="heading-sm">
+								<i class="icon-custom rounded-x icon-sm icon-bg-blue fa fa-lightbulb-o"></i>
+								<strong><span><a href="https://wiki.python.org/moin/IntroductoryBooks">Introductory Books</a></span></strong>
+							</h3>
+							<h5>The books on this link are all general introductions to the Python language. Most of these books will contain a few chapters on particular applications such as GUI interfaces or Web programming, but won't go into great detail on any one topic. </h5>
+						</div>
+						<div class="col-md-4 md-margin-bottom-30">
+							<h3 class="heading-sm">
+								<i class="icon-custom rounded-x icon-sm icon-bg-blue fa fa-bullhorn"></i>
+								<strong><span><a href="https://wiki.python.org/moin/AdvancedBooks">Advanced Books</a></span></strong>
+							</h3>
+							<h5>The books on this link are all for when you don't want gentle, and want some advance things in Python programming language</h5>
+						</div>
+						<div class="col-md-4">
+							<h3 class="heading-sm">
+								<i class="icon-custom rounded-x icon-sm icon-bg-blue icon-line icon-rocket"></i>
+								<strong><span><a href="https://wiki.python.org/moin/ReferenceBooks">Reference Books</a></span></strong>
+							</h3>
+							<h5> If you want to refer to the Python Books page for lists of application-specific books. Experienced programmers who prefer a brief and condensed introduction should look at the list of Reference Books. </h5>
+						</div>
+					</div>
+				</div>
+			</div>
+<hr class="devider devider-db">
+	<div class="container content">			
+			<div class="row">
+					<div>						
+						<h2><img src="{% static 'pro_images/link-icon.png' %}"  class="img-responsive hover-effect" alt="" /><strong>Links</strong></h2>	
+					</div>
+			
+				<div class="one-page-inner one-default">
+				<div class="container content">
+                    <div class="row content-boxes-v2">
+						<div class="col-md-4 md-margin-bottom-30">
+							<a href="http://www.python.org/" class="btn btn-lg rounded btn-primary"><i class="fa fa-link"></i> Python Home Page</a>
+						</div>
+						<div class="col-md-4 md-margin-bottom-30">
+							<a href="http://pypi.python.org/pypi" class="btn btn-lg rounded btn-primary"><i class="fa fa-link"></i> Python Package Index</a>
+						</div>
+						<div class="col-md-4">
+							<a href="http://www.python.org/psf/" class="btn btn-lg rounded btn-primary"><i class="fa fa-link"></i> The Python Software Foundation</a>
+						</div>
+
+					</div><br>
+
+						<div class="col-md-3 md-margin-bottom-30">
+							<h3 class="heading-sm">
+								<i class="icon-custom rounded-x icon-sm icon-bg-blue fa fa-link"></i>
+								<strong><span><a href="https://www.python.org/about/quotes/">Quotes about Python</a></span></strong>
+							</h3>
+						</div>
+						<div class="col-md-3 md-margin-bottom-30">
+
+							<h3 class="heading-sm">
+								<i class="icon-custom rounded-x icon-sm icon-bg-yellow fa fa-link"></i>
+								<strong><span><a href="http://blog.python.org/">​Python Blog</a></span></strong>
+							</h3>
+						</div>
+						<div class="col-md-3">
+							<h3 class="heading-sm">
+								<i class="icon-custom rounded-x icon-sm icon-bg-blue fa  fa-link"></i>
+								<strong><span><a href="https://www.python.org/blogs/">Python News</a></span></strong>
+							</h3>
+						</div>
+						<div class="col-md-3">
+							<h3 class="heading-sm">
+								<i class="icon-custom rounded-x icon-sm icon-bg-yellow fa  fa-link"></i>
+								<strong><span><a href="https://www.python.org/about/success/">Python Success Stories</a></span></strong>
+							</h3>
+						</div>
+						<div class="col-md-3 md-margin-bottom-30">
+							<h3 class="heading-sm">
+								<i class="icon-custom rounded-x icon-sm icon-bg-blue fa fa-link"></i>
+								<strong><span><a href="https://www.python.org/community/">Python Community</a></span></strong>
+							</h3>
+						</div>
+						<div class="col-md-3 md-margin-bottom-30">
+							<h3 class="heading-sm">
+								<i class="icon-custom rounded-x icon-sm icon-bg-yellow fa fa-link"></i>
+								<strong><span><a href="https://www.python.org/events/">​Python Events</a></span></strong>
+							</h3>
+						</div>
+						<div class="col-md-3">
+							<h3 class="heading-sm">
+								<i class="icon-custom rounded-x icon-sm icon-bg-blue fa  fa-link"></i>
+								<strong><span><a href="http://pyfound.blogspot.com/">ThePSF New</a></span></strong>
+							</h3>
+						</div>
+						<div class="col-md-3">
+							<h3 class="heading-sm">
+								<i class="icon-custom rounded-x icon-sm icon-bg-yellow fa  fa-link"></i>
+								<strong><span><a href="https://pycon.blogspot.com/">PyCon News</a></span></strong>
+							</h3>
+						</div>
+						<div class="col-md-3">
+							<h3 class="heading-sm">
+								<i class="icon-custom rounded-x icon-sm icon-bg-blue fa  fa-link"></i>
+								<strong><span><a href="https://www.python.org/doc/essays/">Python Essays</a></span></strong>
+							</h3>
+						</div>
+						<div class="col-md-3">
+							<h3 class="heading-sm">
+								<i class="icon-custom rounded-x icon-sm icon-bg-yellow fa  fa-link"></i>
+								<strong><span><a href="https://www.python.org/downloads/">Python Downloads</a></span></strong>
+							</h3>
+						</div>
+						<div class="col-md-3">
+							<h3 class="heading-sm">
+								<i class="icon-custom rounded-x icon-sm icon-bg-blue fa  fa-link"></i>
+								<strong><span><a href="http://www.pycon.org/">Python Conferences</a></span></strong>
+							</h3>
+						</div>
+						<div class="col-md-3">
+							<h3 class="heading-sm">
+								<i class="icon-custom rounded-x icon-sm icon-bg-yellow fa  fa-link"></i>
+								<strong><span><a href="http://pyvideo.org/">PyVideo</a></span></strong>
+							</h3>
+						</div>
+
+
+
+
+
+
+
+						
+					</div>
+				</div>
+			</div>
+			</div>
+		</div>
+</div><!--/container-->
+		<!--=== End Content Part ===-->
+
+
+		
+
+{% endblock %}

@@ -1,0 +1,60 @@
+{% extends "base22.html" %}
+{% load static %}
+{% load i18n mezzanine_tags blog_tags staticfiles keyword_tags disqus_tags %}
+{% block meta_title %}{% if page %}{{ page.meta_title }}{% else %}{% trans "About" %}{% endif %}{% endblock %}
+
+
+{% block content %} 
+
+					
+
+        <!--=== Breadcrumbs ===-->
+        <div class="breadcrumbs">
+            <div class="container">
+               <h1 class="pull-left"><strong>Projects</strong></h1>
+            </div>
+        </div><!--/breadcrumbs-->
+        <!--=== End Breadcrumbs ===-->
+		
+		<!--=== Parallax About Block ===-->
+		<div class="parallax-bg parallaxBg1">
+			<div class="container content parallax-about">
+				<div class="row">
+					<div>
+						<div class="banner-info dark margin-bottom-10">
+							<i class="rounded-x fa fa-info"></i>
+							<div class="overflow-h">
+								<h4>Python Ghana (PyGhana) is a body that embraces all friends of the Python programming language in Ghana. We are a community of master programmers, intermediate and even absolute beginners, but one thing we all have in common is the love of Python.
+								It encompasses all friends of the Python programming language in the Ghana.
+								The community is open to everyone at all levels.<br><br> <p>So whether you are resident in Ghana or outside the country, an absolute beginner or a maestro, program in Python or other languages but have some interest in Python, our community will embrace you.
+								We have an active Slack team, where we engage ourselves regularly. You can check out our Github page for blog we have or are working on.</p></h4>
+							</div>
+						</div>
+						<div class="banner-info dark margin-bottom-10">
+							<div class="overflow-h">
+								<h3><strong>Our vision</strong></h3>
+								<h4>PyGhana's mission is to promote the growth of a lively and dynamic community of users of the Python programming language and to promote the use of the latter.</h4>
+
+								<h4>PyGhana also aims to disseminate the local Python knowledge to build a stronger developer community.</h4>
+
+								<h4>PyGhana promotes Free and Open Source Software, favors its adoption within the community, and collaborates with community players to achieve this goal.</h4>
+							</div>
+						</div>
+						<hr class="devider devider-db">
+						<div class="banner-info dark margin-bottom-10">
+							<div class="overflow-h">
+								<h3><strong>We are good at ...</strong></h3>
+								<h4>Nunc ac ligula ut diam rutrum porttitor. Integer et neque at lacus placerat pretium eu ac dui. Class aptent taciti sociosqu ad litora torquent per conubia nostra.</h4>
+							</div>
+						</div>
+						<div class="margin-bottom-20"></div>
+					</div>
+					
+					
+				</div>
+			</div><!--/container-->
+		</div>
+		<!--=== End Parallax About Block ===-->
+						
+
+{% endblock %}

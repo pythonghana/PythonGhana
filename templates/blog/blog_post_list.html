@@ -1,0 +1,100 @@
+{% extends "baseblog.html" %}
+
+{% load i18n mezzanine_tags blog_tags staticfiles keyword_tags disqus_tags %}
+
+{% block meta_title %}{% if page %}{{ page.meta_title }}{% else %}{% trans "blog" %}{% endif %}{% endblock %}
+
+
+
+
+{% block main %}
+
+        <!--=== Breadcrumbs ===-->
+        <div class="breadcrumbs">
+            <div class="container">
+               <h1 class="pull-left"><strong>Blog</strong></h1>
+            </div>
+        </div><!--/breadcrumbs-->
+        <!--=== End Breadcrumbs ===-->
+
+       <!--=== blog Posts ===-->
+       <div class="parallax-bg parallaxBg1">
+        <div class="container content-md">
+        {% for blog_post in blog_posts.object_list %}
+            {% block blog_post_list_post_title %}
+            <!-- News v3 -->
+            <div class="row margin-bottom-30">
+                    {% if settings.blog_USE_FEATURED_IMAGE and blog_post.featured_image %}
+                    {% block blog_post_list_post_featured_image %}
+                    <div class="col-sm-5 sm-margin-bottom-20">
+                        <a href="{{ blog_post.get_absolute_url }}">
+                            <img class="img-responsive" src="{{ MEDIA_URL }}{% thumbnail blog_post.featured_image 770 0 %}" alt="">
+                        </a>
+                    </div>
+                    {% endblock %}
+                    {% endif %}          
+               
+                <div class="col-sm-12">
+                    <div class="news-v3">
+                        <ul class="list-inline posted-info">
+                            <li><i class=" post-meta fa fa-pencil-square-o"></i> Poster by:
+                                    {% with blog_post.user as author %}<a href="{% url "blog_post_list_author" author %}">  {{ author.get_full_name|default:author.username }}</a>
+                                    {% endwith %}
+                                    {% with blog_post.categories.all as categories %}
+                                    {% if categories %}
+                            </li>
+                                    {% for category in categories %}
+                                    <li>In <a href="{% url "blog_post_list_category" category.slug %}">{{ category }}</a></li>{% if not forloop.last %}, {% endif %}
+                                    {% endfor %}
+                                    {% endif %}
+                                    {% endwith %}
+
+                                <li><i class="fa fa-calendar"></i>  {% blocktrans with sometime=blog_post.publish_date|timesince %}{{ sometime }} ago{% endblocktrans %}</li>
+
+                                {% block blog_post_list_post_links %}
+                                    {% keywords_for blog_post as tags %}
+                                    {% if tags %}
+                                    <li>
+                                    <i class="fa fa-tags"></i>
+                                    {% for tag in tags %}
+                                    <a href='{% url "blog_post_list_tag" tag.slug %}' class="tag">{{ tag }}</a>{% if not forloop.last %}, {% endif %}
+                                    {% endfor %}
+                                    </li>
+                                    {% endif %}
+                                {% endblock %}
+                        </ul>                      
+
+                        <h2><strong><a href="{{ blog_post.get_absolute_url }}">{{ blog_post.title }}</a></strong></h2>
+                        <h4>{{ blog_post.description_from_content|safe }}</h4>
+                    </div>
+                </div>
+            </div><!--/end row-->
+            <!-- End News v3 -->
+
+            <div class="clearfix margin-bottom-20"><hr></div>
+{% endblock %}
+{% endfor %}
+
+
+
+                <!-- Pager v3 -->
+                <ul class="pager pager-v3 pager-md no-margin-bottom">
+                    {% pagination_for blog_posts %}
+                </ul>
+                <!-- End Pager v3 -->
+
+                </div>
+        </div><!--/end container-->
+        <!--=== End blog Posts ===-->
+
+{% if settings.COMMENTS_DISQUS_SHORTNAME %}
+{% include "generic/includes/disqus_counts.html" %}
+{% endif %}
+
+{% endblock %}
+
+
+
+{% block right_panel %}
+{% include "blog/includes/filter_panel.html" %}
+{% endblock %}

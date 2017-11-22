@@ -1,0 +1,57 @@
+{% extends "base22.html" %}
+{% load static %}
+{% load i18n mezzanine_tags blog_tags staticfiles keyword_tags disqus_tags %}
+{% block meta_title %}{% if page %}{{ page.meta_title }}{% else %}{% trans "COC" %}{% endif %}{% endblock %}
+
+
+{% block content %} 
+
+        <!--=== Breadcrumbs ===-->
+        <div class="breadcrumbs">
+            <div class="container">
+               <h1 class="pull-left"><strong>Code of Conduct</strong></h1>
+            </div>
+        </div><!--/breadcrumbs-->
+        <!--=== End Breadcrumbs ===-->
+		
+		
+		<!--=== Parallax About Block ===-->
+		<div class="parallax-bg parallaxBg1">
+			<div class="container content parallax-about">
+				<div class="row">
+					<div>
+						<div class="banner-info dark margin-bottom-10">
+							<i class="rounded-x icon-screen-tablet"></i>
+							<div class="overflow-h">
+								<h4>The Python Software Community Ghana (PyGhana) is made up of members from around Ghana with very diverse set of skills, personalities, cultures and experiences. It is through these differences that our community has experienced many successes and continued growth. When you're working with members of the community, we encourage you to follow these guidelines which help steer our interactions and strive to keep Python a positive, successful, and growing community.
+								<br><br>
+									A member of the Ghana Python community is:
+
+									<ul><strong>Open</strong><br>
+
+									Members of the community are open to collaboration. We're receptive to constructive comment and criticism, as the experiences and skill sets of other members contribute to the whole of our efforts. We're accepting of all who wish to take part in our activities, fostering an environment where anyone can participate and everyone can make a difference.
+
+									<br><br><strong>Considerate</strong><br>
+
+									Members of the community are considerate of their peers -- other Python users. We're thoughtful when addressing the efforts of others, keeping in mind that often times the labour was completed simply for the good of the community. We're attentive in our communications, whether in person or online, and we're tactful when approaching differing views.
+
+									<br><br><strong>Respectful</strong><br>
+
+									Members of the community are respectful. We're respectful of others, their positions, their skills, their commitments, and their efforts. We're respectful of the volunteer efforts that permeate the Python community. We're respectful of the processes set forth in the community, and we work within them. When we disagree, we are courteous in raising our issues
+									<br><br>
+									Overall, we're good to each other. We contribute to this community not because we have to, but because we want to. If we remember that, these guidelines will come naturally.
+									<br><br>
+									</h4></ul>
+
+									<h5>
+									For Questions/Comments/Reports? Please write to the board of Committee at <a class="mailto" href="mailto:pyghana@python.org">pyghana@python.org</a>. Note: this email address is to the members of the board of The Python Users Ghana Group.
+									<br><br>
+									<strong>NB:</strong> This code of conduct has been adapted from the Python Software foundation, the Global body for all local Python communities, in which we are a part of. You can find the original code of conduct on their website <a href="https://www.python.org/psf/codeofconduct/">https://www.python.org/psf/codeofconduct/</a></h5>
+							</div>
+						</div>
+						</div>
+					</div>
+				</div>
+			</div><!--/container-->
+		<!--=== End Parallax About Block ===-->
+{% endblock %}

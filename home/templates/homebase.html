@@ -1,0 +1,389 @@
+<!-- BASE TEMPLATE FOR HOME, ABOUT, ETC THAT HAS NO MERGE WITH THE APP -->
+{% load static %}
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
+	
+<head>
+	<title>Python Ghana</title>
+
+	<!-- Meta -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<!-- Favicon -->
+	<link rel="shortcut icon" href="{% static 'favicon.png' %}">
+
+	<!-- Web Fonts -->
+	<link rel='stylesheet' type='text/css' href='//fonts.googleapis.com/css?family=Open+Sans:400,300,600&amp;subset=cyrillic,latin'>
+
+	<!-- CSS Global Compulsory -->
+	<link rel="stylesheet" href="{% static 'assets/plugins/bootstrap/css/bootstrap.min.css' %}">
+	<link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+
+	<!-- CSS Header and Footer -->
+	<link rel="stylesheet" href="{% static 'assets/css/headers/header-v6.css' %}">
+	<link rel="stylesheet" href="{% static 'assets/css/footers/footer-v1.css' %}">
+
+	<!-- CSS Implementing Plugins -->
+	<link rel="stylesheet" href="{% static 'assets/plugins/animate.css' %}">
+	<link rel="stylesheet" href="{% static 'assets/plugins/line-icons/line-icons.css' %}">
+	<link rel="stylesheet" href="{% static 'assets/plugins/font-awesome/css/font-awesome.min.css' %}">
+	<link rel="stylesheet" href="{% static 'assets/plugins/brand-buttons/brand-buttons.css' %}">
+	<link rel="stylesheet" href="{% static 'assets/plugins/revolution-slider/rs-plugin/css/settings.css' %}" type="text/css" media="screen">
+	<link rel="stylesheet" href="{% static 'assets/plugins/fancybox/source/jquery.fancybox.css' %}">
+	<!--[if lt IE 9]><link rel="stylesheet" href="{% static 'assets/plugins/revolution-slider/rs-plugin/css/settings-ie8.css' %}" type="text/css" media="screen"><![endif]-->
+
+	<!-- CSS Theme -->
+	<link rel="stylesheet" href="{% static 'assets/css/theme-colors/blue.css' %}" id="style_color">
+	<link rel="stylesheet" href="{% static 'assets/css/theme-skins/blue.css' %}">	
+	<link href="pro_css/app/appblog.css' %}" rel="stylesheet">
+
+	<!-- CSS Customization -->
+	<link rel="stylesheet" href="{% static 'assets/css/custom.css' %}">
+
+</head>
+	
+
+<body class="header-fixed">
+	<div class="wrapper">
+
+	
+		<!--=== Header v6 ===-->
+		<div class="header-v6 header-white-transparent header-sticky">
+			<!-- Navbar -->
+			<div class="navbar mega-menu" role="navigation">
+				<div class="container">
+					<!-- Brand and toggle get grouped for better mobile display -->
+					<div class="menu-container">
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+
+						<!-- Navbar Brand -->
+						<div class="navbar-brand">
+							<a href="">
+								<img class="default-logo" src="{% static 'assets/img/2PiRi logo1.png' %}" alt="Logo">
+								<img class="shrink-logo" src="{% static 'assets/img/logo-dark.png' %}" alt="Logo">
+							</a>
+						</div>
+						<!-- ENd Navbar Brand -->
+						
+						
+						<!-- Header Inner Right -->
+						<div class="header-inner-right">
+							<ul class="menu-icons-list">								
+								<li class="menu-icons">
+									<i class="menu-icons-style search search-close search-btn fa fa-search"></i>
+									<div class="search-open">
+										<input type="text" class="animated fadeIn form-control" placeholder="Start searching ...">
+									</div>
+								</li>
+							</ul>
+						</div>
+						<!-- End Header Inner Right -->
+					</div>
+
+									<!-- Collect the nav links, forms, and other content for toggling -->
+					<div class="collapse navbar-collapse navbar-responsive-collapse">
+						<div class="menu-container">
+							<ul class="nav navbar-nav">
+								<!-- Home -->								
+								<li class= "nav-item active"><a class="nav-item-child nav-item-hover active" href="">Home</a></li>
+								<!-- End Home -->
+
+								<!-- Products & Services -->								
+								<li class="nav-item"><a class="nav-item-child nav-item-hover active" href=" ">Products & Services</a></li>
+								<!-- End Products & Services -->
+								
+								<!-- ABOUT -->
+								<li class="nav-item"><a class="nav-item-child nav-item-hover active" href="/about">About</a></li>		
+								<!-- End ABOUT-->
+								
+								<!-- FORUMS -->
+								<li class="nav-item"><a class="nav-item-child nav-item-hover active" href="/forums">Forums</a></li>
+								<!-- End FORUMS-->
+								
+								<!-- Contact -->
+								<li class="nav-item "><a class="nav-item-child nav-item-hover active" href="/contact us">Contact Us</a></li>
+								<!-- End Contact -->
+								
+								<!-- Others -->
+								<li class="dropdown">
+									<a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
+										Others<span class="caret"></span>
+									</a>
+									<ul class="dropdown-menu ">
+										
+										
+										<!-- Quotes -->
+										<li><a href="/quotes_page_1">Quotes</a></li>
+										<!-- End Quotes -->										
+										
+										<!-- Clients Page -->
+										<li><a href="/page_clients">Clients Page</a></li>
+										<!-- End Clients Page -->										
+
+										<!-- Privacy Policy -->
+										<li><a href="/page_privacy">Privacy Policy</a></li>
+										<!-- End Privacy Policy -->
+
+										<!-- Terms of Service -->
+										<li><a href="/page_terms">Terms of Service</a></li>
+										<!-- End Terms of Service -->
+
+										<!-- FAQ -->
+										<li><a href="/faq">FAQ</a></li>
+										<!-- End FAQ-->
+
+									</ul>
+								</li>
+								<!-- End Others -->	
+							</ul>	
+						</div>
+				</div>	
+			</div>
+		</div> 		
+					<!--/navbar-collapse-->
+	</div>
+				
+			<!-- End Navbar -->
+		<!--=== End Header v6 ===-->
+
+		
+			
+		
+		<!--=== Slider ===-->
+		<div class="tp-banner-container">
+			<div class="tp-banner">
+				<ul>
+				
+				<!-- SLIDE -->
+<li class="revolution-mch-1" data-transition="fade" data-slotamount="5" data-masterspeed="1000" data-title="Slide">
+			<!-- MAIN IMAGE -->
+			<img src="{% static 'assets/img/sliders/slide_two.jpg' %}" data-bgfit="cover" data-bgposition="center center" data-bgrepeat="no-repeat" class="img-responsive"/>
+					
+				<!-- LAYER -->
+			<div class="tp-caption re-title-v2 sft"
+				data-kenburns="on"
+				data-duration="3000"
+				data-x="center"
+				data-hoffset="0"
+				data-y="-100"
+				data-speed="1900"
+				data-start="1500"
+				data-easing="easeOutBack"
+				data-endspeed="800"
+				data-endeasing="easeInQuad"
+				data-captionhidden="off"
+				style="z-index: 8">
+				<div class="rs-pulse"  data-easing="Power4.easeInOut" data-speed="5" data-zoomstart="0.90" data-zoomend="0.85">
+  <a href="/accounts/signin"><img src="{% static 'pro_images/slide_one1.png' %}" alt="" data-lazyload="{% static 'pro_images/slide_one.png' %}" class="img-responsive"></a>
+  
+ </div>
+			</div>
+
+
+			<!-- LAYER -->
+			<div class="tp-caption sfb"
+			data-x="center"
+			data-hoffset="0"
+			data-y="200"
+			data-speed="1500"
+			data-start="3000"
+			data-easing="Power4.easeOut"
+			data-endspeed="300"
+			data-endeasing="Power1.easeIn"
+			data-captionhidden="off"
+			style="z-index: 6">
+			<img src="{% static 'pro_images/slide_one1w.png' %}" alt="" class="img-responsive">
+			</div>
+
+
+
+
+<!--=== Apps Part ===-->
+
+			<!-- LAYER -->
+				<div class="tp-caption sfb"
+				data-x="105"
+				data-hoffset="0"
+				data-y="460"
+				data-speed="1500"
+				data-start="4000"
+				data-easing="Power4.easeOut"
+				data-endspeed="300"
+				data-endeasing="Power1.easeIn"
+				data-captionhidden="on"
+				style="z-index: 6">
+				<a href="/stdproject">
+					<img src="{% static 'assets/img/icons/desk-icon.png' %}" alt="" class="img-responsive">
+				</a>
+				</div>
+
+				<!-- LAYER -->
+				<div class="tp-caption sfb"
+				data-x="305"
+				data-hoffset="0"
+				data-y="460"
+				data-speed="1500"
+				data-start="4300"
+				data-easing="Power4.easeOut"
+				data-endspeed="300"
+				data-endeasing="Power1.easeIn"
+				data-captionhidden="on"
+				style="z-index: 6">
+				<a href="/stdproject">
+					<img src="{% static 'assets/img/icons/Mail.png' %}" alt="" class="img-responsive">
+				</a>
+				</div>
+
+<!-- LAYER -->
+				<div class="tp-caption sfb"
+				data-x="505"
+				data-hoffset="0"
+				data-y="460"
+				data-speed="1500"
+				data-start="4600"
+				data-easing="Power4.easeOut"
+				data-endspeed="300"
+				data-endeasing="Power1.easeIn"
+				data-captionhidden="on"
+				style="z-index: 6">
+				<a href="/stdproject">
+					<img src="{% static 'assets/img/icons/shell-icon.png' %}" alt="" class="img-responsive">
+				</a>
+				</div>
+
+<!-- LAYER -->
+				<div class="tp-caption sfb"
+				data-x="705"
+				data-hoffset="0"
+				data-y="460"
+				data-speed="1500"
+				data-start="4900"
+				data-easing="Power4.easeOut"
+				data-endspeed="300"
+				data-endeasing="Power1.easeIn"
+				data-captionhidden="on"
+				style="z-index: 6">
+				<a href="/stdproject">
+					<img src="{% static 'assets/img/icons/Mail.png' %}" alt="" class="img-responsive">
+				</a>
+				</div>
+
+<!-- LAYER -->
+				<div class="tp-caption sfb"
+				data-x="905"
+				data-hoffset="0"
+				data-y="460"
+				data-speed="1900"
+				data-start="5500"
+				data-easing="Power4.easeOut"
+				data-endspeed="300"
+				data-endeasing="Power1.easeIn"
+				data-captionhidden="on"
+				style="z-index: 6">
+				<a href="/stdproject">
+					<img src="{% static 'assets/img/icons/microscope-icon2.png' %}" alt="" class="img-responsive">
+				</a>
+				</div>
+
+
+
+
+
+
+
+</li>
+<!-- END SLIDE -->
+				
+		
+		
+
+</ul>
+<div class="tp-bannertimer tp-bottom"></div>
+</div>
+</div>
+<!--=== End Slider ===-->
+					
+					
+{% block content %}
+	
+	
+	
+	
+{% endblock %}
+
+	
+
+	
+<!-- JS Global Compulsory -->
+<script type="text/javascript" src="{% static 'assets/plugins/jquery/jquery.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'assets/plugins/jquery/jquery-migrate.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'assets/plugins/bootstrap/js/bootstrap.min.js' %}"></script>
+<!-- JS Implementing Plugins -->
+<script type="text/javascript" src="{% static 'assets/plugins/back-to-top.js' %}"></script>
+<script type="text/javascript" src="{% static 'assets/plugins/smoothScroll.js' %}"></script>
+<script type="text/javascript" src="{% static 'assets/plugins/jquery.parallax.js' %}"></script>
+<script type="text/javascript" src="{% static 'assets/plugins/counter/waypoints.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'assets/plugins/counter/jquery.counterup.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'assets/plugins/revolution-slider/rs-plugin/js/jquery.themepunch.tools.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'assets/plugins/revolution-slider/rs-plugin/js/jquery.themepunch.revolution.min.js' %}"></script>
+<!-- JS Customization -->
+<script type="text/javascript" src="{% static 'assets/js/custom.js' %}"></script>
+<!-- JS Page Level -->
+<script type="text/javascript" src="{% static 'assets/js/app.js' %}"></script>
+<script type="text/javascript" src="{% static 'assets/js/plugins/style-switcher.js' %}"></script>
+<script type="text/javascript" src="{% static 'assets/js/plugins/revolution-slider.js' %}"></script>
+<script type="text/javascript">
+	jQuery(document).ready(function() {
+		App.init();
+		App.initCounter();
+		App.initParallaxBg();
+		StyleSwitcher.initStyleSwitcher();
+		RevolutionSlider.initRSfullScreenOffset();
+	});
+</script>
+	
+		
+  <!-- Inline Script for colors and config objects; used by various external scripts; -->
+  <script>
+    var colors = {
+      "danger-color": "#e74c3c",
+      "success-color": "#81b53e",
+      "warning-color": "#f0ad4e",
+      "inverse-color": "#2c3e50",
+      "info-color": "#2d7cb5",
+      "default-color": "#3498db",
+      "default-light-color": "#cfd9db",
+      "purple-color": "#9D8AC7",
+      "mustard-color": "#d4d171",
+      "lightred-color": "#e15258",
+      "body-bg": "#f6f6f6"
+    };
+    var config = {
+      theme: "html",
+      skins: {
+        "default": {
+          "primary-color": "#3498db"
+        }
+      }
+    };
+  </script>
+
+		
+<!--[if lt IE 9]>
+	<script src="{% static 'assets/plugins/respond.js' %}"></script>
+	<script src="{% static 'assets/plugins/html5shiv.js' %}"></script>
+	<script src="{% static 'assets/plugins/placeholder-IE-fixes.js' %}"></script>
+	<![endif]-->
+
+</body>
+</html>

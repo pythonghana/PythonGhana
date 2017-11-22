@@ -1,0 +1,37 @@
+{% extends "base22.html" %}
+{% load static %}
+
+{% load i18n mezzanine_tags blog_tags staticfiles keyword_tags disqus_tags %}
+{% block meta_title %}{% if page %}{{ page.meta_title }}{% else %}{% trans "404" %}{% endif %}{% endblock %}	
+
+{% block content %}  	
+
+        <!--=== Breadcrumbs ===-->
+        <div class="breadcrumbs">
+            <div class="container">
+               <h1 class="pull-left"><strong>Error 404</strong></h1>
+            </div>
+        </div><!--/breadcrumbs-->
+        <!--=== End Breadcrumbs ===-->
+
+<!--=== Content Part ===-->
+		<div class="container content">
+			<!--Error Block-->
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2">
+					<div class="error-v1">
+						<span class="error-v1-title">404</span>
+						<span>There was an Error!</span>
+						<p>The requested URL was not found on this server. That’s all we know.</p>
+						<a class="btn-u btn-bordered" href="/home">Back Home</a>
+					</div>
+				</div>
+			</div>
+			<!--End Error Block-->
+		</div>
+		<!--=== End Content Part ===-->
+
+
+		
+
+{% endblock %}

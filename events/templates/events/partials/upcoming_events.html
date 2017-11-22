@@ -1,0 +1,33 @@
+{% load weekday %}
+<div class="headline headline-md"><h3>Upcoming Events</h3></div>
+                                    <ul class="calendar-list">
+                                        {% for d, event in upcoming_events %}
+                                            {% with colors=event.get_colors %}
+                                                            <div class="tab-pane fade in" id="alert-2">
+                                                        <div class="margin-bottom-15"></div>
+                                                        <div class="alert alert-info fade in alert-dismissable month-event" style="background:{{ colors.0 }}; color:{{ colors.1 }};">
+                                                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                                                                <div class="date-widget">
+                                                                   
+                                                                    <button class="btn-u btn-u-xs rounded-4x btn-u-blue" type="button"> {% weekday d.year d.month d.day %}, {{ d|date:"F" }} {{ d.day }}</button>
+                                                                    
+                                                                </div>
+                                                                <div class="month-event-title">
+                                                                    <h5><strong><a href="{{ event.get_absolute_url }}" style="color:{{ colors.1 }};">
+                                                                        {{ event.title }}
+                                                                        {% for c in event.cancellations.all %}
+                                                                            {% if c.date == d.date %}
+                                                                                (CANCELLED)
+                                                                            {% endif %}
+                                                                        {% endfor %}
+                                                                    </a></strong></h5>
+                                                                </div>
+                                                        </div>
+                                                    </div>     
+                                                
+                                            {% endwith %}
+                                        {% empty %}
+                                        <button class="btn btn-lg rounded btn-primary" type="button">No Event Listed currently!</button>
+                                        {% endfor %}
+                                    </ul>
+
