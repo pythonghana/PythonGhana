@@ -2,10 +2,8 @@
 {% load static %}
 {% load i18n mezzanine_tags blog_tags staticfiles keyword_tags disqus_tags %}
 {% block meta_title %}{% if page %}{{ page.meta_title }}{% else %}{% trans "Home" %}{% endif %}{% endblock %}
-	
-	
-{% block content %}  		
 
+{% block content %}
 <div class="parallax-bg parallaxBg1">
 		<!-- Interactive Slider v2 -->
 		<div class="interactive-slider-v2 img-v2">
@@ -16,17 +14,12 @@
 			<br>
 		</div>
 		<!-- End Interactive Slider v2 -->
-
-
 		<div class="container content">
 			<div class="text-center margin-bottom-50">
 				<h2 class="title-v2 title-center"><strong>Welcome to our Site</strong></h2>
 				<h4>Python Ghana (PyGhana) is a body that embraces all friends of the Python programming language in Ghana. We are a Community of master programmers, intermediate and even absolute beginners, but one thing we all have in common is the love of Python.</h4>
 			</div>
 		</div>
-
-
-
 		<div class="bg-grey content-sm">
 			<div class="container">
 				<div class="row">
@@ -44,7 +37,6 @@
 				</div>
 			</div>
 		</div>
-		
   <!--  Initiatives  -->
   <section id="services" class="g-bg-color-pattern g-pt-80 g-pb-100">
     <div class="container">
@@ -57,12 +49,12 @@
         <div class="col-md-6 g-mb-30">
           <div class="services-box-v1 g-bg-color-white">
             <img class="services-box-v1__img img-responsive" src="{% static 'pro_images/webpykids.jpg' %}" alt="alt">
-            <div> 
-					<a href="http://twitter.com/pykidsghana" class="btn rounded btn-twitter fa fa-twitter"> Twitter Handle</a>
+            <div>
+					<a href="http://twitter.com/pythonkidsghana" class="btn rounded btn-twitter fa fa-twitter"> Twitter Handle</a>
 			</div>
             <div class="services-box-v1__content">
               <h4><p class="services-box-v1__text g-mb-0">Pykids is an initiative of Python Ghana to ensure that no one is left behind! The goal of Pykids is to be a catalyst for Ghana’s young generation to be empowered in the world of STEM with specific focus on Python Programming. The community embraces any kid and enthusiastic young person between ages of 7-18 years who is interested in learning this fabulous language.</p></h4>
-                
+
             </div>
           </div>
         </div>
@@ -100,7 +92,7 @@
 					<a href="http://twitter.com/pyclubghana" class="btn rounded btn-twitter fa fa-twitter"> Twitter Handle</a>
 			</div>
             <div class="services-box-v1__content">
-             <h4> <p class="services-box-v1__text g-mb-0">PyClub is an initiative of Python Ghana to have clubs in various institutions spread across the country. It is a place where Pythonistas could meet, discuss and learn about Python’s latest development, to solve their problems as a team, and learn more about best practices in their individual clubs. 
+             <h4> <p class="services-box-v1__text g-mb-0">PyClub is an initiative of Python Ghana to have clubs in various institutions spread across the country. It is a place where Pythonistas could meet, discuss and learn about Python’s latest development, to solve their problems as a team, and learn more about best practices in their individual clubs.
 			 PyClubs hosts periodic hackathons among each club on STEM related projects, amongst other fun challenging events for its members around Ghana. With this institutes will have names such as: PyClub Legon, PyClub KNUST, PyClub UCC, etc...</p> </h4>
             </div>
           </div>
@@ -109,7 +101,6 @@
     </div>
   </section>
   <!-- End Initiatives -->
-
 
 		<hr class="devider devider-db">
 
@@ -121,8 +112,6 @@
 				<a href="https://www.python.org/about/success/" class="btn-u btn-brd-hover btn-u-blue">Python Success Stories</a>
 			</div>
 		</div>
-
-
 				<div class="container content">
 			<div class="row">
 			<!-- Info Blokcs -->
@@ -188,8 +177,6 @@
 			</div>
 			</div>
 			<!-- End Info Blokcs -->
-
-
 </div>
 
 {% endblock %}

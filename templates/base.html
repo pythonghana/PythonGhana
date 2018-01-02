@@ -1,53 +1,39 @@
 <!doctype html>
 <html lang="{{ LANGUAGE_CODE }}"{% if LANGUAGE_BIDI %} dir="rtl"{% endif %}>
-
 {% load i18n pages_tags  mezzanine_tags blog_tags staticfiles keyword_tags disqus_tags events_tags %}
-
 <head>
     <meta http-equiv="Content-type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="keywords" content="{% block meta_keywords %}{% endblock %}">
     <meta name="description" content="{% block meta_description %}{% endblock %}">
     <title>{% block meta_title %}{% endblock %}{% if settings.SITE_TITLE %} | {{ settings.SITE_TITLE }}{% endif %}</title>
-
     <!-- Favicon -->
     <link rel="shortcut icon" href="{% static 'favicon.png' %}">
-
     <!-- Web Fonts -->
     <link rel='stylesheet' type='text/css' href='//fonts.googleapis.com/css?family=Open+Sans:400,300,600&amp;subset=cyrillic,latin'>
-
     <link rel="alternate" type="application/rss+xml" title="RSS" href="{% url "blog_post_feed" "rss" %}">
     <link rel="alternate" type="application/atom+xml" title="Atom" href="{% url "blog_post_feed" "atom" %}">
-
      <link rel="stylesheet" href="{% static 'events/css/calendar.css' %}">
     {% block extra_css %}{% endblock extra_css %}
-
-
     <!-- CSS Global Compulsory -->
     <link rel="stylesheet" href="{% static 'assets/plugins/bootstrap/css/bootstrap.min.css' %}">
     <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
-
     <!-- CSS Header and Footer -->
-
     <link rel="stylesheet" href="{% static 'assets/css/headers/header-v3.css' %}">
     <link rel="stylesheet" href="{% static 'assets/css/footers/footer-v1.css' %}">
-
     <!-- CSS Implementing Plugins -->
-
     <link rel="stylesheet" href="{% static 'assets/plugins/fancybox/source/jquery.fancybox.css' %}">
     <link rel="stylesheet" href="{% static 'assets/plugins/animate.css' %}">
     <link rel="stylesheet" href="{% static 'assets/plugins/line-icons/line-icons.css' %}">
     <link rel="stylesheet" href="{% static 'assets/plugins/font-awesome/css/font-awesome.min.css' %}">
     <link rel="stylesheet" href="{% static 'assets/plugins/brand-buttons/brand-buttons.css' %}">
     <link rel="stylesheet" href="{% static 'assets/plugins/revolution-slider/rs-plugin/css/settings.css' %}" type="text/css" media="screen">
-   
     <!--[if lt IE 9]><link rel="stylesheet" href="{% static 'assets/plugins/revolution-slider/rs-plugin/css/settings-ie8.css' %}" type="text/css" media="screen"><![endif]-->
-    
     <!-- CSS Page Style -->
     <link rel="stylesheet" href="{% static 'assets/css/pages/shortcode_timeline1.css' %}">
     <!-- CSS Theme -->
     <link rel="stylesheet" href="{% static 'assets/css/theme-colors/blue.css' %}" id="style_color">
-    <link rel="stylesheet" href="{% static 'assets/css/theme-skins/blue.css' %}">   
+    <link rel="stylesheet" href="{% static 'assets/css/theme-skins/blue.css' %}">
     <link href="{% static 'pro_css/app/appblog.css' %}" rel="stylesheet">
     <!-- CSS Customization -->
     <link rel="stylesheet" href="{% static 'assets/css/custom.css' %}">
@@ -57,9 +43,7 @@
 <![endif]-->
 {% block extra_head %}{% endblock %}
 </head>
-
-
-<body class="header-fixed"> 
+<body class="header-fixed">
       <!--=== Header ===-->
     <div class="header-v3 header-sticky">
       <!-- Navbar -->
@@ -71,32 +55,30 @@
               <span class="sr-only">Toggle navigation</span>
               <span class="fa fa-bars"></span>
             </button>
-
             <a class="navbar-brand" href="/">
               <img id="logo-header"  src="{% static 'assets/img/PythonGh.png' %}" alt="Logo">
             </a>
           </div>
-
           <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse mega-menu navbar-responsive-collapse">
             <div class="container">
                <ul class="nav navbar-nav">
-                                <!-- Home -->  
-                                <li>       
-                                {% block navbar_dropdown_menu %}{% page_menu "pages/menus/dropdown.html" %}{% endblock%}  
-                                </li>               
-                                <!-- End Home -->
-                                  <!-- Search Block -->
-                                    <li>
-                                      <i class="search fa fa-search search-btn"></i>
-                                      <div class="search-open">
-                                        <div class="input-group animated fadeInDown">
-                                           {% block navbar_search_form %}{% search_form %}{% endblock %} 
-                                        </div>
-                                      </div>
-                                    </li>
-                                    <!-- End Search Block -->
-              </ul>
+                     <!-- Home -->
+                        <li>
+                        {% block navbar_dropdown_menu %}{% page_menu "pages/menus/dropdown.html" %}{% endblock%}
+                        </li>
+                    <!-- End Home -->
+                    <!-- Search Block -->
+                        <li>
+                          <i class="search fa fa-search search-btn"></i>
+                          <div class="search-open">
+                            <div class="input-group animated fadeInDown">
+                               {% block navbar_search_form %}{% search_form %}{% endblock %}
+                            </div>
+                          </div>
+                        </li>
+                    <!-- End Search Block -->
+                </ul>
 
             </div><!--/end container-->
           </div><!--/navbar-collapse-->
@@ -105,25 +87,14 @@
       <!-- End Navbar -->
     </div>
     <!--=== End Header ===-->
-
-
-
     <!--=== Breadcrumbs v3 ===-->
     <div class="breadcrumbs-v3 img-v3 text-center">
       <div class="container">
        <h2 style="color:#ffffff;"><strong>{{ page.meta_title }}</strong></h2>
       </div><!--/end container-->
     </div>
-    <!--=== End Breadcrumbs v3 ===-->     
-      
-    
-    
-
-
-
-
+    <!--=== End Breadcrumbs v3 ===-->
 <div class="container">
-
 {% nevercache %}
 {% if messages %}
 <div class="messages">
@@ -136,8 +107,6 @@
 </div>
 {% endif %}
 {% endnevercache %}
-
-
  <div class="bg-color-light parallax-bg parallaxBg1">
 <div class="container content">
             <div class="row blog-page">
@@ -147,13 +116,11 @@
                         <!-- Calendar -->
                          <h2><strong><a href="">{% block title %}{% endblock %}</a></strong></h2>
                         <div class="tag-box tag-box-v2 box-shadow shadow-effect-1">
-                            <h4>{% block main %}{% endblock %}</h4> 
-                        </div>   
+                            <h4>{% block main %}{% endblock %}</h4>
+                        </div>
                      </div>
                 </div>
                 <!-- End Left Sidebar -->
-
-
                 <!-- Right Sidebar -->
                 <div class="col-md-4 magazine-page">
                     <!-- UpComing Event -->
@@ -180,28 +147,24 @@
     {% endblock %}
     </div>
     </div>
-</div>   
+</div>
             </div><!--/row-->
         </div><!--/container--></div>
         <!--=== End Content Part ===-->
 </div>
-
-
-
-
   <!--=== Footer Version 1 ===-->
   <div class="footer-v1">
     <div class="footer">
       <div class="container ">
-     
+
       <div class="row">
        <div class="col-md-3 md-margin-bottom-40">
             <a href="/home"><img id="logo-footer" class="footer-logo" src="{% static 'pro_images/pyghf.png' %}" alt=""></a>
           </div>
            <!-- Link List -->
           <div class="col-md-4 md-margin-bottom-40">
-            <div class="headline"><h2>JOIN US ON</h2></div>
-                      <div class="row" align="center">
+                <div class="headline"><h2>JOIN US ON</h2></div>
+                    <div class="row" align="center">
                         <a href="https://twitter.com/pyghana" target="_blank">
                             <img src="{% static 'social/social-twitter.png' %}" class="dpg-icon" alt="Python Ghana Twitter"  class="img-responsive hover-effect tooltips" alt="" data-toggle="tooltip" data-placement="right" title="Our Twitter Page" data-original-title="Tooltip on right">
                         </a>
@@ -211,19 +174,18 @@
                         <a href="https://pythonghana.slack.com/" target="_blank">
                             <img src="{% static 'social/slack.png' %}" class="dpg-icon" alt="Python Ghana RSS Feed"  class="img-responsive hover-effect tooltips" alt="" data-toggle="tooltip" data-placement="right" title="Our Slack Page" data-original-title="Tooltip on right">
                         </a>
-                        <a href="https://mail.python.org/mm3/mailman3/lists/pyghana.python.org/" target="_blank">
+                        <a href="https://mail.python.org/mm3/mailman3/lists/pythonghana.python.org/" target="_blank">
                             <img src="{% static 'social/mail.png' %}" class="dpg-icon" alt="Python Ghana Linkedin"  class="img-responsive hover-effect tooltips" alt="" data-toggle="tooltip" data-placement="right" title="Our Mailing List" data-original-title="Tooltip on right">
                         </a>
-                     </div>   
+                    </div>
           </div><!--/col-md-3-->
           <!-- End Link List -->
-   
         <!-- Link List -->
           <div class="col-md-4 md-margin-bottom-40">
             <div class="headline"><h2>Useful Links</h2></div>
-            <ul class="list-unstyled link-list"> 
+            <ul class="list-unstyled link-list">
               <li>{% page_menu "pages/menus/footer.html" %}</li>
-                               
+
             </ul>
           </div><!--/col-md-3-->
           <!-- End Link List -->
@@ -244,22 +206,15 @@
     </div><!--/copyright-->
   </div>
   <!--=== End Footer Version 1 ===-->
-
-
-    <!-- JS Global Compulsory -->
+  <!-- JS Global Compulsory -->
     <script type="text/javascript" src="{% static 'assets/plugins/jquery/jquery.min.js' %}"></script>
     <script type="text/javascript" src="{% static 'assets/plugins/jquery/jquery-migrate.min.js' %}"></script>
     <script type="text/javascript" src="{% static 'assets/plugins/bootstrap/js/bootstrap.min.js' %}"></script>
     <!-- JS Implementing Plugins -->
     <script type="text/javascript" src="{% static 'assets/plugins/back-to-top.js' %}"></script>
     <script type="text/javascript" src="{% static 'assets/plugins/smoothScroll.js' %}"></script>
-
-
-  <script type="text/javascript" src="{% static 'assets/plugins/jquery.parallax.js' %}"></script>
-  <script type="text/javascript" src="{% static 'assets/plugins/counter/waypoints.min.js' %}"></script>
-
-  
-
+    <script type="text/javascript" src="{% static 'assets/plugins/jquery.parallax.js' %}"></script>
+    <script type="text/javascript" src="{% static 'assets/plugins/counter/waypoints.min.js' %}"></script>
     <script type="text/javascript" src="{% static 'assets/plugins/fancybox/source/jquery.fancybox.pack.js' %}"></script>
     <!-- JS Customization -->
     <script type="text/javascript" src="{% static 'assets/js/custom.js' %}"></script>

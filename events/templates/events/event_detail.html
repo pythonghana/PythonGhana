@@ -68,7 +68,7 @@
                                         <ul>
                                         {% for e in event_days %}
                                             <li>
-                                                {% blocktrans with num_day=forloop.counter %}Day {{ num_day }}{% endblocktrans %}: {{ e|date:"SHORT_DATE_FORMAT" }} - {{ event.end_date|time }}
+                                                {% blocktrans with num_day=forloop.counter %} Day {{ num_day }}{% endblocktrans %}: {{ e|date:"SHORT_DATE_FORMAT" }} - {{ event.end_date|time }}
                                                 {% for c in event.cancellations.all %}
                                                     {% if c.date == e.date %}
                                                         {{ _("(CANCELLED)") }}
@@ -78,7 +78,7 @@
                                         {% endfor %}
                                         </ul>
                                     {% else %}
-                                            {{ event.start_date|date:"SHORT_DATE_FORMAT" }} - {{ event.end_date|time }}
+                                            {{ event.start_date|date:"SHORT_DATE_FORMAT" }}, {{ event.start_date|time }} to {{ event.end_date|time }}
                                             {% if this_cncl %} {{ _("(CANCELLED)") }}{% endif %}
                                     {% endif %}
                                 {% endif %}
@@ -86,7 +86,7 @@
 
 
 
-                                ({{ _("today is:") }} {% now "SHORT_DATE_FORMAT" %})
+                                (<strong>{{ _("Today is:") }}</strong> {% now "SHORT_DATE_FORMAT" %})
                                 </p>
                                 {% if cncl_days %}
                                    <strong> <p>{{ _("This event has been cancelled on the following day(s):") }}</p></strong>
@@ -118,14 +118,14 @@
 
                         </div><br><br>
                          <div class="tag-box tag-box-v2 box-shadow shadow-effect-1">
-                                <h4>{{ event.description }}</h4>   
+                                <h4>{{ event.description }}</h4>
                                 <br><br>
                             <a class="btn-u btn-u-red"  id="cal-day-prev" class="cal-day" href="{{ request.path }}?cal_prev={{ prev }}">
                                 {% trans "Prev Day" %}
-                            </a> | 
+                            </a> |
                             <a class="btn-u btn-u-sea" id="cal-day-next" class="cal-day" href="{{ request.path }}?cal_next={{ next }}">
                                 {% trans "Next Day" %}
-                            </a>                          
+                            </a>
                         </div>
                     </div>
                 </div>

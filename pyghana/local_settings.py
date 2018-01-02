@@ -1,7 +1,11 @@
 # This file is exec'd from settings.py, so it has access to and can
 # modify all the variables in settings.py.
 
-DEBUG = True
+DEBUG = False
+
+
+ADMIN_HEADER_TITLE  = 'Python Ghana'
+GRAPPELLI_ADMIN_TITLE = "PYTHON GHANA (PyGhana)"
 
 # Make these unique, and don't share it with anybody.
 SECRET_KEY = "=8l*j8vem-gb0s(v0gf-ce+v27*-&go681&5fs=#b_os&m)9oi"

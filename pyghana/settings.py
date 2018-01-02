@@ -11,13 +11,17 @@ from django.utils.translation import ugettext_lazy as _
 USE_MODELTRANSLATION = False
 
 
+
+ADMIN_HEADER_TITLE  = 'Python Ghana'
+GRAPPELLI_ADMIN_TITLE = 'PYTHON GHANA (PyGhana)'
+
 ########################
 # MAIN DJANGO SETTINGS #
 ########################
 
 # Hosts/domain names that are valid for this site; required if DEBUG is False
 # See https://docs.djangoproject.com/en/dev/ref/settings/#allowed-hosts
-ALLOWED_HOSTS = [u'127.0.0.1']
+ALLOWED_HOSTS = [u'pythonghana.org', 'www.pythonghana.org']
 
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
@@ -200,14 +204,13 @@ INSTALLED_APPS = (
    "constitution",
    "coc",
    "app",
-   'material',
-    'material.admin',
+    'jquery',
     'imagekit',
     "about",
     "home",
     'djangobower',
     "events",
-       
+
 )
 
 # List of middleware classes to use. Order is important; in the request phase,
