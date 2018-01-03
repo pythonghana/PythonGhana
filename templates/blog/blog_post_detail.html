@@ -28,7 +28,7 @@
 
         <!--=== blog Posts ===-->
         <div class="bg-color-light parallax-bg parallaxBg1">
-            <div class="container content-sm">            
+            <div class="container content-sm">
                 <!-- News v3 -->
                 <div class="news-v3 bg-color-white margin-bottom-30">
                  {% if settings.blog_USE_FEATURED_IMAGE and blog_post.featured_image %}
@@ -38,7 +38,7 @@
                         </a>
                     </div>
                     {% endblock %}
-                    {% endif %}        
+                    {% endif %}
                     <div class="news-v3-in">
                         <ul class="list-inline posted-info">
                             <li>By  {% with blog_post.user as author %}
@@ -53,29 +53,29 @@
                                     {% endfor %}
                                     {% endif %}
                                     {% endwith %}
-                            
+
                             <li>Posted {% blocktrans with sometime=blog_post.publish_date|timesince %}{{ sometime }} ago{% endblocktrans %}</li>
 
-                            {% block blog_post_list_post_links %}   
+                            {% block blog_post_list_post_links %}
                                     {% keywords_for blog_post as tags %}
                                     {% if tags %}
                                     <li>
-                                    <i class="fa fa-tags"></i>       
+                                    <i class="fa fa-tags"></i>
                                     {% for tag in tags %}
                                     <a href='{% url "blog_post_list_tag" tag.slug %}' class="tag">{{ tag }}</a>{% if not forloop.last %}, {% endif %}
                                     {% endfor %}
-                                    </li>        
-                                    {% endif %} 
+                                    </li>
+                                    {% endif %}
                                 {% endblock %}
 
 
                         </ul>
                         <h2><strong><a>{{ blog_post.title }}</a></strong></h2>
                             <div class="tag-box tag-box-v2 box-shadow shadow-effect-1">
-                                <h4>{{ blog_post.content|richtext_filters|safe }}</h4>                             
+                                <h5>{{ blog_post.content|richtext_filters|safe }}</h5>
                             </div>
-                        
-                        <ul class="post-shares post-shares-lg">                            
+
+                        <ul class="post-shares post-shares-lg">
                              <li>
                                 <a>
                                 {% block blog_post_detail_sharebuttons %}
@@ -85,7 +85,7 @@
 
                                 {% endblock %}
                               </a>
-                            </li>                            
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -110,7 +110,7 @@
                 {% endblock %}
 
                 <hr>
-                <!-- End News v3 -->                            
+                <!-- End News v3 -->
             </div><!--/end container-->
         </div>
         <!--=== End blog Posts ===-->
