@@ -102,7 +102,6 @@
                                 {% if event.location.all %}
                                 <p>{% blocktrans count counter=event.location.all.count %}<strong>Location:</strong>{% plural %}<strong>Locations:</strong>{% endblocktrans %}<br>
                                 {% for l in event.location.all %}
-                                    {{ l.name }}<br>
                                     {% if l.address_line_1 %}{{ l.address_line_1 }}<br>{% endif %}
                                     {% if l.address_line_2 %}{{ l.address_line_2 }}<br>{% endif %}
                                     {% if l.address_line_3 %}{{ l.address_line_3 }}<br>{% endif %}
@@ -118,7 +117,7 @@
 
                         </div><br><br>
                          <div class="tag-box tag-box-v2 box-shadow shadow-effect-1">
-                                <h4>{{ event.description }}</h4>
+                                <h5>{{ event.description }}</h5>
                                 <br><br>
                             <a class="btn-u btn-u-red"  id="cal-day-prev" class="cal-day" href="{{ request.path }}?cal_prev={{ prev }}">
                                 {% trans "Prev Day" %}
