@@ -32,9 +32,9 @@
 
   (myvenv) $ python manage.py runserver
   ```
-
 * Copy the IP address provided once your server has completed building the site. (It will say something like >> Serving at 127.0.0.1....).
 * Open the address in the browser
+* Don't forget to Change ALLOWED_HOSTS = ['127.0.0.1'] in settings.py
 * `Note`: It is important that when you create your virtualenv, do not create it in the same folder as the code you downloaded.
 
 # Contributing
