@@ -26,6 +26,7 @@ urlpatterns += [
 
     url("^$", direct_to_template, {"template": "index.html"}, name="home"),
     #url('^faq/', include('faq.urls')),
+    url(r'^tinymce/', include('tinymce.urls')),
     url(r'^events/', include('events.urls', namespace='calendar')),
     url(r'^home', direct_to_template, {"template": "home1.html"}, name="home"),
     url(r'^about/', include('about.urls')),

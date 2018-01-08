@@ -28,7 +28,7 @@
                     {% block blog_post_list_post_featured_image %}
                     <div class="col-sm-5 sm-margin-bottom-20">
                         <a href="{{ blog_post.get_absolute_url }}">
-                            <img class="img-responsive" src="{{ MEDIA_URL }}{% thumbnail blog_post.featured_image 770 0 %}" alt="">
+                            <img class="img-responsive" src="{{ MEDIA_URL }}{% thumbnail blog_post.featured_image 770 500 %}" alt="">
                         </a>
                     </div>
                     {% endblock %}

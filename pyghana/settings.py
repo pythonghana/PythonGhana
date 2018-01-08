@@ -171,8 +171,7 @@ if DJANGO_VERSION < (1, 9):
 
 # Setting to turn on featured images for blog posts. Defaults to False.
 #
-BLOG_USE_FEATURED_IMAGE = True
-BLOG_USE_LIKE = True
+
 
 FORMS_USE_HTML5 = True
 ################
@@ -204,6 +203,7 @@ INSTALLED_APPS = (
    "projects",
    "constitution",
    "coc",
+   'tinymce',
    "app",
     'jquery',
     'imagekit',
@@ -258,6 +258,8 @@ BOWER_INSTALLED_APPS = (
     'fullcalendar'
 )
 
+
+BLOG_USE_FEATURED_IMAGE = True
 
 # These will be added to ``INSTALLED_APPS``, only if available.
 OPTIONAL_APPS = (
