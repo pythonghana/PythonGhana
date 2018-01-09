@@ -26,9 +26,9 @@
 
   (myvenv) $ pip install -r requirements.txt
 
-  (myvenv) $ python manage.py migrate
-
   (myvenv) $ python manage.py makemigrations
+
+  (myvenv) $ python manage.py migrate
 
   (myvenv) $ python manage.py runserver
   ```
