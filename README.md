@@ -10,7 +10,7 @@
 * [Django - python web framework](https://www.djangoproject.com/)
 * [Virtualenvwrapper](https://virtualenvwrapper.readthedocs.io)
 
-## Installation
+## Installation on Linux
 
 * [Follow the guide here](https://help.github.com/articles/fork-a-repo) on how to clone or fork a repo
 * [Follow the guide here](http://simononsoftware.com/virtualenv-tutorial/) on how to create virtualenv
