@@ -1,0 +1,172 @@
+{% extends "basecontact.html" %}
+{% load static %}
+
+
+{% block content %}  					
+
+					<!-- Collect the nav links, forms, and other content for toggling -->
+					<div class="collapse navbar-collapse navbar-responsive-collapse">
+						<div class="menu-container">
+							<ul class="nav navbar-nav">								
+								<!-- Home -->								
+								<li class="nav-item "><a class="nav-item-child nav-item-hover active" href="">Home</a></li>
+								<!-- End Home -->
+
+								<!-- Products & Services -->								
+								<li class="nav-item"><a class="nav-item-child nav-item-hover active" href=" ">Products & Services</a></li>
+								<!-- End Products & Services -->
+								
+								<!-- ABOUT -->
+								<li class="nav-item "><a class="nav-item-child nav-item-hover active" href="/about">About</a></li>		
+								<!-- End ABOUT-->
+								
+								<!-- FORUMS -->
+								<li class="nav-item"><a class="nav-item-child nav-item-hover active" href="/forums">Forums</a></li>
+								<!-- End FORUMS-->
+								
+								<!-- Contact -->
+								<li class="nav-item active"><a class="nav-item-child nav-item-hover active" href="/contact_us.html">Contact Us</a></li>
+								<!-- End Contact -->
+								
+								<!-- Others -->
+								<li class="dropdown">
+									<a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
+										Others<span class="caret"></span>
+									</a>
+									<ul class="dropdown-menu ">
+										
+										
+										<!-- Quotes -->
+										<li><a href="/quotes_page_1.html">Quotes</a></li>
+										<!-- End Quotes -->										
+										
+										<!-- Clients Page -->
+										<li><a href="/page_clients.html">Clients Page</a></li>
+										<!-- End Clients Page -->										
+
+										<!-- Privacy Policy -->
+										<li><a href="/page_privacy.html">Privacy Policy</a></li>
+										<!-- End Privacy Policy -->
+
+										<!-- Terms of Service -->
+										<li><a href="/page_terms.html">Terms of Service</a></li>
+										<!-- End Terms of Service -->
+
+										<!-- FAQ -->
+										<li><a href="/faq.html">FAQ</a></li>
+										<!-- End FAQ-->
+
+									</ul>
+								</li>
+								<!-- End Others -->	
+
+							</ul>
+						</div>
+					</div><!--/navbar-collapse-->
+				</div>
+			</div>
+			<!-- End Navbar -->
+		</div>
+		<!--=== End Header v6 ===-->
+		
+		
+		<!--=== Breadcrumbs v3 ===-->
+		<div class="breadcrumbs-v3 img-v3 text-center">
+			<div class="container">
+				<h1></h1>
+			</div><!--/end container-->
+		</div>
+		<!--=== End Breadcrumbs v3 ===-->
+		
+		
+		
+
+		<!--=== Content Part ===-->
+		<div class="shadow-wrapper">
+						<div class="tag-box tag-box-v1 box-shadow shadow-effect-2">
+						<!-- Heading v1 -->
+						<div class="heading heading-v1 margin-bottom-40">
+							<h2>Contact <span class="color-blue">Us</span></h2>
+							<p>We are Happy to hear from you.</p>
+						</div>
+						</div>
+		</div>	
+		
+		<div class="container content">
+			<div class="row margin-bottom-30">
+				<div class="col-md-9 mb-margin-bottom-30">
+					<div class="headline"><h2>Contact Form</h2></div>
+					<p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas feugiat. Et harum quidem rerum facilis est et expedita distinctio lorem ipsum dolor sit amet, consectetur adipiscing elit landitiis.</p><br />
+
+					<form action="" method="post" id="sky-form3" class="sky-form contact-style">{% csrf_token %}
+						<fieldset class="no-padding">
+							<label>Your Name <span class="color-red">*</span></label>
+							<div class="row sky-space-20">
+								<div class="col-md-7 col-md-offset-0">
+									<div>
+										<input type="text" name="name" id="name" class="form-control">
+									</div>
+								</div>
+							</div>
+
+							<label>Your Email Address <span class="color-red">*</span></label>
+							<div class="row sky-space-20">
+								<div class="col-md-7 col-md-offset-0">
+									<div>
+										<input type="text" name="email" id="email" class="form-control">
+									</div>
+								</div>
+							</div>
+
+
+							<label> Message <span class="color-red">*</span></label>
+							<div class="row sky-space-20">
+								<div class="col-md-11 col-md-offset-0">
+									<div>
+										<textarea rows="8" name="body" id="body" class="form-control"></textarea>
+									</div>
+								</div>
+							</div>
+
+							<p><button type="submit" class="btn-u">Send Message</button></p>
+						</fieldset>
+
+						<div class="message">
+							<i class="rounded-x fa fa-check"></i>
+							<p>Your message was successfully sent!</p>
+						</div>
+					</form>
+				</div><!--/col-md-9-->
+
+				<div class="col-md-3">
+					<!-- Contacts -->
+					<div class="headline"><h2>Contacts</h2></div>
+					<ul class="list-unstyled who margin-bottom-30">
+						<li><a href="#"><i class="fa fa-home"></i>04, 2PiRi Street, Suhyen, Ghana </a></li>
+						<li><a href="#"><i class="fa fa-envelope"></i>info@2piri.com</a></li>
+						<li><a href="#"><i class="fa fa-phone"></i>+233 (0)546764466</a></li>
+						<li><a href="#"><i class="fa fa-phone"></i>+233 (0)546998280</a></li>
+						<li><a href="#"><i class="fa fa-globe"></i>http://www.2piri.com</a></li>
+					</ul>
+
+					<!-- Business Hours -->
+					<div class="headline"><h2>Business Hours</h2></div>
+					<ul class="list-unstyled margin-bottom-30">
+						<li><strong>Monday-Friday:</strong> 10am to 8pm</li>
+						<li><strong>Saturday:</strong> 11am to 3pm</li>
+						<li><strong>Sunday:</strong> Closed</li>
+					</ul>
+
+				</div><!--/col-md-3-->
+			</div><!--/row-->
+			</div><!--/container-->
+			
+		<!-- Google Map -->
+		<div id="map" class="map">
+		</div><!---/map-->
+		<!-- End Google Map -->
+			
+			<!--=== End Contacts ===-->
+		
+
+{% endblock %}

@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="{{ LANGUAGE_CODE }}"{% if LANGUAGE_BIDI %} dir="rtl"{% endif %}>
+{% load pages_tags mezzanine_tags i18n staticfiles %}
+
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="{% block meta_keywords %}{% endblock %}">
+    <meta name="description" content="{% block meta_description %}{% endblock %}">
+    <title>{% block meta_title %}{% endblock %}{% if settings.SITE_TITLE %} | {{ settings.SITE_TITLE }}{% endif %}</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="{% static 'favicon.png' %}">
+
+    <!-- Web Fonts -->
+    <link rel='stylesheet' type='text/css' href='//fonts.googleapis.com/css?family=Open+Sans:400,300,600&amp;subset=cyrillic,latin'>
+
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="{% url "blog_post_feed" "rss" %}">
+    <link rel="alternate" type="application/atom+xml" title="Atom" href="{% url "blog_post_feed" "atom" %}">
+
+
+    <!-- CSS Global Compulsory -->
+    <link rel="stylesheet" href="{% static 'assets/plugins/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+
+    <!-- CSS Header and Footer -->
+    <link rel="stylesheet" href="{% static 'assets/css/headers/header-v3.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/footers/footer-v1.css' %}">
+
+    <!-- CSS Implementing Plugins -->
+    <link rel="stylesheet" href="{% static 'assets/plugins/animate.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/plugins/line-icons/line-icons.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/plugins/font-awesome/css/font-awesome.min.css' %}">
+     <!--[if lt IE 9]><link rel="stylesheet" href="{% static 'assets/plugins/revolution-slider/rs-plugin/css/settings-ie8.css' %}" type="text/css" media="screen"><![endif]-->
+
+    
+    <!-- CSS Page Style -->
+    <link rel="stylesheet" href="{% static 'assets/css/pages/blog_masonry_3col.css' %}">
+
+
+    <!-- CSS Theme -->
+    <link rel="stylesheet" href="{% static 'assets/css/theme-colors/blue.css' %}" id="style_color">
+    <link rel="stylesheet" href="{% static 'assets/css/theme-skins/blue.css' %}">   
+ 
+
+    <!-- CSS Customization -->
+    <link rel="stylesheet" href="{% static 'assets/css/custom.css' %}">
+<!--[if lt IE 9]>
+<script src="{% static "js/html5shiv.js" %}"></script>
+<script src="{% static "js/respond.min.js" %}"></script>
+<![endif]-->
+
+</head>
+
+
+
+<body class="header-fixed"> 
+
+       <!--=== Header  ===-->
+    <div class="header-v3 header-sticky">
+      <!-- Navbar -->
+      <div class="navbar navbar-default mega-menu" role="navigation">
+        <div class="container">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="fa fa-bars"></span>
+            </button>
+
+            <a class="navbar-brand" href="/">
+              <img id="logo-header"  src="{% static 'assets/img/PythonGh.png' %}" alt="Logo">
+            </a>
+          </div>
+
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse mega-menu navbar-responsive-collapse">
+            <div class="container">
+               <ul class="nav navbar-nav">
+                     <!-- Home -->  
+                      <li>       
+                        {% block navbar_dropdown_menu %}{% page_menu "pages/menus/dropdown.html" %}{% endblock%}  
+                      </li>           
+                      <!-- End Home -->
+                       <!-- Search Block -->
+                      <li>
+                        <i class="search fa fa-search search-btn"></i>
+                          <div class="search-open">
+                            <div class="input-group animated fadeInDown">
+                              {% block navbar_search_form %}{% search_form %}{% endblock %} 
+                            </div>
+                          </div>
+                      </li>
+                      <!-- End Search Block -->
+                </ul>
+            </div><!--/end container-->
+          </div><!--/navbar-collapse-->
+        </div>
+      </div>
+      <!-- End Navbar -->
+    </div>
+    <!--=== End Header ===-->
+
+
+    <!--=== Breadcrumbs v3 ===-->
+    <div class="breadcrumbs-v3 img-v3 text-center">
+      <div class="container">
+        <h1></h1>     
+      </div><!--/end container-->
+    </div>
+    <!--=== End Breadcrumbs v3 ===-->     
+
+{% block main %}
+
+{% endblock %}
+
+  <!--=== Footer Version 1 ===-->
+  <div class="footer-v1">
+    <div class="footer">
+      <div class="container">
+        <div class="row">
+        
+          <div class="col-md-3 md-margin-bottom-40">
+            <a href="home.html"><img id="logo-footer" class="footer-logo" src="{% static 'assets/img/footer.png' %}" alt=""></a>
+          </div><!--/col-md-3-->       
+
+          <div class="col-md-3 md-margin-bottom-40">
+            <ul class="list-unstyled link-list">    
+            </ul>
+          </div><!--/col-md-3-->
+
+          <!-- Link List -->
+          <div class="col-md-3 md-margin-bottom-40">
+            <div class="headline"><h2>Useful Links</h2></div>
+            <ul class="list-unstyled link-list"> 
+              <li>{% page_menu "pages/menus/footer.html" %}</li>
+                               
+            </ul>
+          </div><!--/col-md-3-->
+          <!-- End Link List -->
+
+         
+        </div>
+      </div>
+    </div><!--/footer-->
+
+    <div class="copyright">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <p>
+              2017 &copy; All Rights Reserved.
+              <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+            </p>
+          </div>
+          
+          
+              <!-- Social Links -->
+              <div class="col-md-6">
+                <ul class="social-icons">
+                
+                <li><a href="https://web.facebook.com/2piRinstitute/" data-original-title="Facebook" class="rounded social_facebook"></a></li>
+                <li><a href="#" data-original-title="Google Plus" class=".rounded social_googleplus"></a></li>
+                <li><a href="#" data-original-title="Linkedin" class="rounded social_linkedin"></a></li>
+                <li><a href="#" data-original-title="Feed" class=".rounded social_rss"></a></li>
+                <li><a href="#" data-original-title="Skype" class="rounded social_skype"></a></li>
+                <li><a href="#" data-original-title="Tumblr" class=".rounded social_tumblr"></a></li>
+                <li><a href="https://twitter.com/2piRinstitute" data-original-title="Twitter" class="rounded social_twitter"></a></li>
+                <li><a href="#" data-original-title="Youtube" class=".rounded social_youtube"></a></li>
+                <li><a href="#" data-original-title="Instagram" class="rounded social_instagram"></a></li>
+                
+              </ul>
+              </div>
+              <!-- End Social Links -->
+          {% ifinstalled mezzanine.mobile %}
+    <span class="separator">|</span>
+    <a href="{% url "set_device" "mobile" %}?next={{ request.path }}">{% trans "View Mobile Site" %}</a>
+    {% endifinstalled %}          
+
+          
+        </div>
+      </div>
+    </div><!--/copyright-->
+  </div>
+  <!--=== End Footer Version 1 ===-->
+
+
+
+  <!-- JS Global Compulsory -->
+  <script type="text/javascript" src="{% static 'assets/plugins/jquery/jquery.min.js' %}"></script>
+  <script type="text/javascript" src="{% static 'assets/plugins/jquery/jquery-migrate.min.js' %}"></script>
+  <script type="text/javascript" src="{% static 'assets/plugins/bootstrap/js/bootstrap.min.js' %}"></script>
+  <!-- JS Implementing Plugins -->
+  <script type="text/javascript" src="{% static 'assets/plugins/back-to-top.js' %}"></script>
+  <script type="text/javascript" src="{% static 'assets/plugins/smoothScroll.js' %}"></script>
+  <script type="text/javascript" src="{% static 'assets/plugins/masonry/jquery.masonry.min.js' %}"></script>
+  <!-- JS Customization -->
+  <script type="text/javascript" src="{% static 'assets/js/custom.js' %}"></script>
+  <!-- JS Page Level -->
+  <script type="text/javascript" src="{% static 'assets/js/app.js' %}"></script>
+  <script type="text/javascript" src="{% static 'assets/js/pages/blog-masonry.js' %}"></script>
+  <script type="text/javascript" src="{% static 'assets/js/plugins/style-switcher.js' %}"></script>
+  <script type="text/javascript">
+    jQuery(document).ready(function() {
+      App.init();
+      StyleSwitcher.initStyleSwitcher();
+    });
+  </script>
+  <!--[if lt IE 9]>
+    <script src="assets/plugins/respond.js"></script>
+    <script src="assets/plugins/html5shiv.js"></script>
+    <script src="assets/plugins/placeholder-IE-fixes.js"></script>
+  <![endif]-->
+</body>
+</html>

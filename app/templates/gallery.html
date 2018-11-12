@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+{% load staticfiles %}
+{% load i18n mezzanine_tags blog_tags staticfiles keyword_tags disqus_tags %}
+{% block meta_title %}{% if page %}{{ page.meta_title }}{% else %}{% trans "Gallery" %}{% endif %}{% endblock %}
+
+{% block content %}
+
+        <!--=== Breadcrumbs ===-->
+        <div class="breadcrumbs">
+            <div class="container">
+                <h1 class="pull-left"><strong>Gallery</strong></h1>
+            </div>
+        </div><!--/breadcrumbs-->
+        <!--=== End Breadcrumbs ===-->
+
+
+<div class="container content">
+    <div class="shadow-wrapper">
+                        <blockquote class="tag-box tag-box-v1 box-shadow shadow-effect-2">
+                            <p><em>The Gallery consists of Photos from different Python Related Events from around Ghana</em></p>
+                        </blockquote>
+                    </div>
+    <div class="row">
+        {% for album in albums %}
+
+                        <div style="width:250px; float: left;" class="col-md-4">
+                            <div class="thumbnails thumbnail-style">
+                                <a class="fancybox" data-rel="fancybox-button" title="{{ album.title }}" href="{% url 'album' album.slug %}">
+                                    <img class="img-responsive" src="{{ album.thumb.url }}" alt="{{ album.title }}">
+                                </a>
+                                <div class="caption">
+                                    <h3><strong><a class="hover-effect" href="{% url 'album' album.slug %}">{{ album.title }}</a></strong></h3>
+                                    <p>{{ album.description|truncatechars:120 }}</p>
+                                </div>
+                            </div>
+                        </div>
+
+        {% endfor %}
+
+    </div>
+</div>
+
+<div class="pagination center">
+    <span class="step-links">
+        {% if albums.has_previous %}
+        <a href="?page={{ albums.previous_page_number }}" class="waves-effect waves-light btn btn-large">Previous</a>
+        {% endif %}
+
+        {% if albums.has_next %}
+        <a href="?page={{ albums.next_page_number }}" class="waves-effect waves-light btn btn-large">Next</a>
+        {% endif %}
+    </span>
+</div>
+
+{% endblock %}

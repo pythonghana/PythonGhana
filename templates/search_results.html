@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+
+{% load i18n mezzanine_tags %}
+
+{% block meta_title %}{% trans "Search Results" %}{% endblock %}
+{% block title %}{% trans "Search Results" %}{% endblock %}
+{% block extra_head %}
+<meta name="robots" content="noindex">
+{% endblock %}
+
+
+
+{% block breadcrumb_menu %}
+<li>
+    <a href="{% url "home" %}">{% trans "Home" %}</a>
+</li>
+<li class="active">{% trans "Search Results" %}</li>
+{% endblock %}
+
+
+{% block main %}
+<div class="input-group">
+    <strong> {% block navbar_search_form %}{% search_form %}{% endblock %} </strong>
+</div>
+
+<h5>
+{% if results.paginator.count == 0 %}
+{% blocktrans %}
+No results were found in {{ search_type }} matching your query: {{ query }}
+{% endblocktrans %}
+{% else %}
+{% blocktrans with start=results.start_index end=results.end_index total=results.paginator.count %}
+Showing {{ start }} to {{ end }} of {{ total }} results in {{ search_type }} matching your query: {{ query }}
+{% endblocktrans %}
+{% endif %}
+</h5>
+
+
+
+
+<div id="search-results">
+{% for result in results.object_list %}
+{% with result.get_absolute_url as result_url %}
+    <h3>
+        {{ forloop.counter0|add:results.start_index }})
+        {% if result_url %}
+            <a href="{{ result_url }}">{{ result }}</a>
+        {% else %}
+            {{ result }}
+            <hr>
+        {% endif %}
+    </h3>
+    <h5>
+    {% if result.description != result|stringformat:"s" %}
+        <p>{{ result.description|truncatewords_html:20|safe }}</p>
+    {% endif %}
+    {% if result_url %}
+        <a href="{{ result_url }}">{% trans "read more" %}</a>
+        <hr>
+    {% endif %}</h5>
+{% endwith %}
+{% endfor %}
+</div>
+
+{% pagination_for results %}
+
+{% endblock %}

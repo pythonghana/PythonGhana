@@ -1,0 +1,12 @@
+template.txt
+
+
+Contact Name:
+{{ name }}
+
+Email:
+{{ email }}
+
+Content:
+{{ body|safe|striptags }}
+

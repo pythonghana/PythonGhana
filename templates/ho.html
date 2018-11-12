@@ -1,0 +1,4 @@
+{% extends 'base_ug.html' %}
+{% load staticfiles events_tags %}
+{% load i18n mezzanine_tags blog_tags staticfiles keyword_tags disqus_tags %}
+{% block meta_title %}{% if page %}{{ page.meta_title }}{% else %}{% trans "Python Ho" %}{% endif %}{% endblock %}
