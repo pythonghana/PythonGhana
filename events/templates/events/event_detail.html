@@ -119,29 +119,31 @@
                          <div class="tag-box tag-box-v2 box-shadow shadow-effect-1">
                                 <h5>{{ event.description }}</h5><br>
                                 <ul class="social-icons social-icons-color">
-                                {% if event.url %}
-                                        <p><b>Event Website: </b><a href="{{ event.url }}">Click Here</a></p>
-                                {% else %}
-                                        <p></p>
-                                {% endif %}
-
-                                {% if event.register_url %}
-                                    <p><b>Registration Link: </b><a href="{{ event.register_url }}">Click Here</a></p>
-                                {% else %}
-                                        <p></p>
-                                {% endif %}
-                                <br>
-                                {% if event.facebook_url %}
-                                        <li><a href="{{ event.facebook_url }}" data-original-title="Facebook" class="rounded social_facebook"></a></li>
+                                    <br>
+                                    {% if event.facebook_url %}
+                                        <li><a href="{{ event.facebook_url }}" data-original-title="Facebook" class="rounded social_facebook" target="/"></a></li>
                                 {% else %}
                                         <p></p>
                                 {% endif %}
 
                                 {% if event.twitter_url %}
-                                        <li><a href="{{ event.twitter_url }}" data-original-title="Twitter" class="rounded social_twitter"></a></li>
+                                        <li><a href="{{ event.twitter_url }}" data-original-title="Twitter" class="rounded social_twitter" target="/"></a></li>
+                                {% else %}
+                                        <p></p>
+                                {% endif %}<br>
+                                {% if event.url %}
+                                        <p><b>Event Website: </b><a href="{{ event.url }}" target="/"><button class="btn-u btn-brd rounded-2x btn-u-blue btn-u-xs" type="button"><i class="fa fa-link"></i> Click here</button></a></p>
                                 {% else %}
                                         <p></p>
                                 {% endif %}
+                                <br>
+                                {% if event.register_url %}
+                                    <p><b>Registration Link: </b><a href="{{ event.register_url }}" target="/"><button class="btn-u btn-brd rounded-2x btn-u-yellow btn-u-xs" type="button"><i class="fa fa-link"></i> Click here</button></a></p>
+                                {% else %}
+                                        <p></p>
+                                {% endif %}
+                                <br>
+                                
                                 </ul>
                                 <br><br>
                             <a class="btn-u btn-u-red"  id="cal-day-prev" class="cal-day" href="{{ request.path }}?cal_prev={{ prev }}">
@@ -165,6 +167,17 @@
                         </dl>
                     </div>
                     <!-- End UpComing Event -->
+                     <!-- tweets -->
+                    <div class="posts margin-bottom-40">
+                        <dl class="dl-horizontal">
+                        <div class="blog-twitter margin-bottom-40">
+                                    <div class="blog-twitter-inner">
+                                                <a class="twitter-timeline" data-width="420" data-height="500" href="https://twitter.com/PyGhana?ref_src=twsrc%5Etfw">Tweets by PyGhana</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                                    </div>
+                        </div>
+                        </dl>
+                    </div>
+                    <!-- End tweets -->
                 </div>
                 <!-- End Right Sidebar -->
             </div><!--/row-->

@@ -35,11 +35,12 @@ urlpatterns += [
     url(r'^constitution/', include('constitution.urls')),
    #url(r'projects/', include('projects.urls')),
 
-
+  #INIATIATIVES
     url(r'^resources', direct_to_template, {"template": "resources.html"}, name="resources"),
     url(r'^pykidsghana', direct_to_template, {"template": "pykidsghana.html"}, name="pykidsghana"),
     url(r'^pyclubghana', direct_to_template, {"template": "pyclubghana.html"}, name="pyclubghana"),
     url(r'^pydataghana', direct_to_template, {"template": "pydataghana.html"}, name="pydataghana"),
+    url(r'^pyconghana', direct_to_template, {"template": "pyconghana.html"}, name="pyconghana"),
  
 
 

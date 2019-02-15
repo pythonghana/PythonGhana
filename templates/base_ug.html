@@ -1,0 +1,181 @@
+{% load i18n pages_tags  mezzanine_tags blog_tags staticfiles keyword_tags disqus_tags events_tags %}
+<!DOCTYPE html>
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
+<head>
+  <title>Travel | Unify - Responsive Website Template</title>
+
+  <!-- Meta -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="../favicon.ico">
+
+  <!-- Web Fonts -->
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:400,300,700&amp;subset=cyrillic,latin">
+
+  <!-- CSS Global Compulsory -->
+  <link rel="stylesheet" href="{% static 'assets/plugins/bootstrap/css/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/css/app.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/css/blocks.css' %}">
+
+  <!-- CSS Implementing Plugins -->
+  <link rel="stylesheet" href="{% static 'assets/plugins/animate.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/plugins/line-icons/line-icons.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/plugins/font-awesome/css/font-awesome.min.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/plugins/sky-forms-pro/skyforms/css/sky-forms.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/plugins/owl-carousel2/assets/owl.carousel.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/plugins/cube-portfolio/cubeportfolio/css/cubeportfolio.min.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/plugins/master-slider/masterslider/style/masterslider.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/plugins/master-slider/u-styles/testimonials-1.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/plugins/master-slider/u-styles/promo-1.css' %}">
+
+  <!-- CSS Theme -->
+  <link rel="stylesheet" href="{% static 'usergroups/accra/assets/css/travel.style.css' %}">
+
+  <!-- CSS Customization -->
+  <link rel="stylesheet" href="{% static 'usergroups/accra/assets/css/custom.css' %}">
+</head>
+<!--
+  The data-spy and data-target are part of the built-in Bootstrap scrollspy function.
+-->
+<body id="body" data-spy="scroll" data-target=".one-page-header" class="demo-lightbox-gallery">
+<main class="wrapper">
+  <!--=== Header ===-->
+  <nav class="one-page-header navbar navbar-default navbar-fixed-top one-page-nav-scrolling one-page-nav__fixed" data-role="navigation">
+    <div class="container">
+      <div class="menu-container page-scroll">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#body">
+          <img src="{% static 'usergroups/accra/assets/img/logo-light.png' %}" alt="ALT">
+        </a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse navbar-ex1-collapse">
+        <div class="menu-container">
+          <ul class="nav navbar-nav">
+            <li class="page-scroll">
+              <a href="#Our-Tours"><span data-hover="Our Tours">Our Tours</span></a>
+            </li>
+            <li class="page-scroll">
+              <a href="#Popular-Tours"><span data-hover="Popular Tours">Popular Tours</span></a>
+            </li>
+            <li class="page-scroll">
+              <a href="#Subscribe"><span data-hover="Subscribe">Subscribe</span></a>
+            </li>
+            <li class="page-scroll">
+              <a href="#Purposes"><span data-hover="Purposes">Purposes</span></a>
+            </li>
+            <li class="page-scroll">
+              <a href="#Services"><span data-hover="Services">Services</span></a>
+            </li>
+            <li class="page-scroll">
+              <a href="#Gallery"><span data-hover="Gallery">Gallery</span></a>
+            </li>
+            <li class="page-scroll">
+              <a href="#Testimonials"><span data-hover="Testimonials">Testimonials</span></a>
+            </li>
+            <li class="page-scroll">
+              <a href="#Contact"><span data-hover="Contact">Contact</span></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+  </nav>
+  <!--=== End Header ===-->
+
+  <!-- Promo Section -->
+  <div class="promo-section master-slider ms-promo-1" id="masterslider-promo">
+
+    <!-- Slide 1 -->
+    <div class="ms-slide">
+      <img src="{% static 'usergroups/accra/assets/plugins/master-slider/masterslider/style/blank.gif' %}" data-src="{% static 'usergroups/accra/assets/img-temp/promo/picjumbo.com_vranov-czech-republic.jpg' %}" alt="ALT">
+      <div class="ms-layer ms-promo-travel-price hidden-xs" style="left: 15px; top: 182px; opacity: 1;" data-type="text" data-delay="10" data-effect="skewleft(50,340)" data-ease="easeOutExpo" data-duration="2200">
+        Only From <strong>$150.00</strong>
+      </div>
+      <h3 class="ms-layer ms-promo-travel-place hidden-3xs" style="left: 11px; top: 256px;" data-type="text" data-delay="10" data-effect="skewright(50,340)" data-ease="easeOutExpo" data-duration="2200">
+        Karlovy Vary, Czech
+      </h3>
+      <div class="ms-layer ms-promo-travel-description" style="left: 15px; top: 324px;" data-type="text" data-delay="30" data-effect="rotate3dbottom(100,0,0,70)" data-ease="easeOutExpo" data-duration="2300">
+        <p class="g-mb-20 hidden-sm hidden-xs">Donec erat urna, tincidunt at leo non, blandit finibus ante. Nunc venenatis risus in finibus dapibus. Ut ac massa sodales, mattis enim id, efficitur tortor.</p>
+        <p><a href="#" class="btn-u btn-u-lg btn-u-red btn-u-upper">Take a tour<span class="visible-3xs"> to Karlovy Vary, Czech</span></a></p>
+      </div>
+      <img class="ms-thumb" src="{% static 'usergroups/accra/assets/img-temp/promo/thumbs/picjumbo.com_vranov-czech-republic.jpg' %}" alt="ALT">
+    </div>
+    <!-- End Slide 1 -->
+
+
+
+  </div>
+  <!-- End Promo Section -->
+
+<!--=== End Header ===-->
+      {% block main %} {% endblock %}
+  <!--=== Footer Version 1 ===-->
+
+
+  <!-- Footer Section -->
+  <div class="footer g-pt-40 g-pb-40">
+    <div class="container">
+      <div class="g-display-table">
+        <div class="g-display-td g-text-middle page-scroll"><a href="#body" class="footer-logo"><img src="{% static 'usergroups/accra/assets/img/logo-dark.png' %}" alt="ALT"></a></div>
+        <div class="g-display-td g-text-middle text-right g-pt-10">&copy; 2016 All right reserved. Deelopment by <a href="http://htmlstream.com">HTML Stream</a></div>
+      </div>
+    </div>
+  </div>
+  <!-- End Footer Section -->
+</main>
+
+<!-- JS Global Compulsory -->
+<script src="{% static 'assets/plugins/jquery/jquery.min.js' %}"></script>
+<script src="{% static 'assets/plugins/jquery/jquery-migrate.min.js' %}"></script>
+<script src="{% static 'assets/plugins/bootstrap/js/bootstrap.min.js' %}"></script>
+
+<!-- JS Implementing Plugins -->
+<script src="{% static 'assets/plugins/smoothScroll.js' %}"></script>
+<script src="{% static 'assets/plugins/jquery.easing.min.js' %}"></script>
+<script src="{% static 'assets/plugins/owl-carousel2/owl.carousel.min.js' %}"></script>
+<script src="{% static 'assets/plugins/sky-forms-pro/skyforms/js/jquery.form.min.js' %}"></script>
+<script src="{% static 'assets/plugins/sky-forms-pro/skyforms/js/jquery.maskedinput.min.js' %}"></script>
+<script src="{% static 'assets/plugins/sky-forms-pro/skyforms/js/jquery-ui.min.js' %}"></script>
+<script src="{% static 'assets/plugins/sky-forms-pro/skyforms/js/jquery.validate.min.js' %}"></script>
+<script src="{% static 'assets/plugins/cube-portfolio/cubeportfolio/js/jquery.cubeportfolio.min.js' %}"></script>
+<script src="https://maps.googleapis.com/maps/api/js?signed_in=true&amp;callback=initMap" async defer></script><script src="{% static 'usergroups/accra/assets/js/plugins/gmaps-ini.js' %}"></script>
+<script src="{% static 'assets/plugins/master-slider/masterslider/masterslider.min.js' %}"></script>
+
+<!-- JS Page Level -->
+<script src="{% static 'assets/js/one.app.js' %}"></script>
+<script src="{% static 'usergroups/accra/assets/js/plugins/owl-carousel2.js' %}"></script>
+<script src="{% static 'usergroups/accra/assets/js/plugins/datepicker.js' %}"></script>
+<script src="{% static 'usergroups/accra/assets/js/plugins/promo.js' %}"></script>
+<script src="{% static 'usergroups/accra/assets/js/plugins/testimonials.js' %}"></script>
+<script src="{% static 'usergroups/accra/assets/js/plugins/gallery.js' %}"></script>
+<script src="{% static 'usergroups/accra/assets/js/forms/contact.js' %}"></script>
+
+<script>
+$(function() {
+  App.init();
+  OwlCarousel.initOwlCarousel();
+  Datepicker.initDatepicker();
+  ContactForm.initContactForm();
+});
+</script>
+
+<!--[if lt IE 10]>
+  <script src="{% static 'assets/plugins/sky-forms-pro/skyforms/js/jquery.placeholder.min.js' %}"></script>
+<![endif]-->
+</body>
+</html>

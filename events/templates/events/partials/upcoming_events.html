@@ -7,11 +7,9 @@
                                                         <div class="margin-bottom-15"></div>
                                                         <div class="alert alert-info fade in alert-dismissable month-event" style="background:{{ colors.0 }}; color:{{ colors.1 }};">
                                                             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                                                                <div class="date-widget">
                                                                    
-                                                                    <button class="btn-u btn-u-xs rounded-4x btn-u-blue" type="button"> {% weekday d.year d.month d.day %}, {{ d|date:"F" }} {{ d.day }}</button>
+                                                                   <a href="{{ event.get_absolute_url }}"> <button class="btn-u btn-u-xs rounded-4x btn-u-blue" type="button"> {% weekday d.year d.month d.day %}, {{ d|date:"F" }} {{ d.day }}</button></a>
                                                                     
-                                                                </div>
                                                                 <div class="month-event-title">
                                                                     <h5><strong><a href="{{ event.get_absolute_url }}" style="color:{{ colors.1 }};">
                                                                         {{ event.title }}

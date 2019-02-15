@@ -55,8 +55,8 @@
               <span class="sr-only">Toggle navigation</span>
               <span class="fa fa-bars"></span>
             </button>
-            <a class="navbar-brand" href="/">
-              <img id="logo-header"  src="{% static 'assets/img/PythonGh.png' %}" alt="Logo">
+            <a class="navbar-brand" href="/home">
+              <img id="logo-header"  src="{% static 'assets/img/navbar.png' %}" alt="Logo">
             </a>
           </div>
           <!-- Collect the nav links, forms, and other content for toggling -->
@@ -107,6 +107,9 @@
           <div class="col-md-4 md-margin-bottom-40">
             <div class="headline"><h2>JOIN US ON</h2></div>
                       <div class="row" align="center">
+                        <a href="http://bit.ly/PyGhTelegram" target="_blank">
+                            <img src="{% static 'social/telegram.png' %}" class="dpg-icon" alt="Python Ghana Telegram"  class="img-responsive hover-effect tooltips" alt="" data-toggle="tooltip" data-placement="right" title="Our Telegram Group" data-original-title="Tooltip on right">
+                        </a>
                         <a href="https://twitter.com/pyghana" target="_blank">
                             <img src="{% static 'social/social-twitter.png' %}" class="dpg-icon" alt="Python Ghana Twitter"  class="img-responsive hover-effect tooltips" alt="" data-toggle="tooltip" data-placement="right" title="Our Twitter Page" data-original-title="Tooltip on right">
                         </a>
@@ -114,7 +117,7 @@
                             <img src="{% static 'social/social-github1.png' %}" class="dpg-icon" alt="Python Ghana Github"  class="img-responsive hover-effect tooltips" alt="" data-toggle="tooltip" data-placement="right" title="Our GitHub Repository" data-original-title="Tooltip on right">
                         </a>
                         <a href="https://pythonghana.slack.com/" target="_blank">
-                            <img src="{% static 'social/slack.png' %}" class="dpg-icon" alt="Python Ghana RSS Feed"  class="img-responsive hover-effect tooltips" alt="" data-toggle="tooltip" data-placement="right" title="Our Slack Page" data-original-title="Tooltip on right">
+                            <img src="{% static 'social/slack-logo.png' %}" class="dpg-icon" alt="Python Ghana Slack"  class="img-responsive hover-effect tooltips" alt="" data-toggle="tooltip" data-placement="right" title="Our Slack Page" data-original-title="Tooltip on right">
                         </a>
                         <a href="https://mail.python.org/mm3/mailman3/lists/pythonghana.python.org/" target="_blank">
                             <img src="{% static 'social/mail.png' %}" class="dpg-icon" alt="Python Ghana Linkedin"  class="img-responsive hover-effect tooltips" alt="" data-toggle="tooltip" data-placement="right" title="Our Mailing List" data-original-title="Tooltip on right">
@@ -133,12 +136,12 @@
       </div>
       </div>
     </div><!--/footer-->
-    <div class="copyright">
+   <div class="copyright">
       <div class="container">
         <div class="row">
           <div class="col-md-6">
             <p>
-               2017 &copy; All Rights Reserved Python Ghana. <br> Powered by <a href="https://www.djangoproject.com/" target="/">DJANGO</a>
+                Python/Django web hosting for Python Ghana is generously donated by <a href="https://www.pythonanywhere.com/?affiliate_id=002cb45d" target="/"><img src="{% static 'pro_images/pythonanywhereS.jpg' %}" alt=""></a> <br><br> {% now "Y" %} &copy; All Rights Reserved Python Ghana. 
              </p>
           </div>
         </div>

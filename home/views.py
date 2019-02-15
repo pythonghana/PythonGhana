@@ -38,6 +38,11 @@ def pydataghana(request):
 	template = "pydataghana.html"
 	return render(request, template, context)
 
+def pyconghana(request):
+	context = {}
+	template = "pyconghana.html"
+	return render(request, template, context)
+
 def accra(request):
 	context = {}
 	template = "accra.html"
