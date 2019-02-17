@@ -28,6 +28,12 @@ def pykidsghana(request):
 	template = "pykidsghana.html"
 	return render(request, template, context)
 
+def pyscholarsghana(request):
+	context = {}
+	template = "pyscholarsghana.html"
+	return render(request, template, context)
+
+
 def pyclubghana(request):
 	context = {}
 	template = "pyclubghana.html"

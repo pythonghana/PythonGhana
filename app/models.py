@@ -8,9 +8,10 @@ from imagekit.processors import ResizeToFit
 class Album(models.Model):
     title = models.CharField(max_length=70)
     description = models.TextField(max_length=1024)
-    url = models.URLField(default='', help_text='Link to Photo Ablum', blank=True,)
-    facebook_url = models.URLField(default='', help_text='Link to Facebook Photo Ablum', blank=True,)
+    twitter_url = models.URLField(default='', help_text='Link to Twitter Account', blank=True,)
+    facebook_url = models.URLField(default='', help_text='Link to Facebook Account', blank=True,)
     flickr_url = models.URLField(default='', help_text='Link to Flick Photo Ablum', blank=True,)
+    album_link = models.URLField(help_text='Link to Photo Ablum', blank=False,)
     googlephotos_url = models.URLField(default='', help_text='Link to Google Photo Ablum', blank=True,)
     thumb = ProcessedImageField(upload_to='albums', processors=[ResizeToFit(300)], format='JPEG', options={'quality': 90})
     tags = models.CharField(max_length=250)

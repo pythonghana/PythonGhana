@@ -31,14 +31,14 @@
                             <ul class="social-icons social-icons-color">
                                 
                                
-                            {% if album.url %}
-                            <li><a href="{{ album.url }}" data-original-title="Twitter" class="rounded social_twitter"></a></li>
+                            {% if album.twitter_url %}
+                            <li><a href="{{ album.twitter_url }}" target="/" data-original-title="Twitter" class="rounded social_twitter"></a></li>
                             {% else %}
                             <p></p>
                             {% endif %}
 
                             {% if album.facebook_url %}
-                             <li><a href="{{ album.facebook_url }}" data-original-title="Facebook" class="rounded social_facebook"></a></li>
+                             <li><a href="{{ album.facebook_url }}" target="/" data-original-title="Facebook" class="rounded social_facebook"></a></li>
                             {% else %}
                             <p></p>
                             {% endif %}
@@ -53,7 +53,7 @@
                                  
                             {% if album.flickr_url %}
                                  <p>Click here to view more pictures on this event</p>
-                                 <a href="{{ album.flickr_url }}">
+                                 <a href="{{ album.flickr_url }}" target="/">
                                     <img src="{% static 'assets/icons/flickr.png' %}" alt="" class="img-responsive">
                                 </a>
                             {% else %}
@@ -79,7 +79,17 @@
                             </div>
                         </div>
                          {% endfor %}
-
+                          <div style="width:250px; float: left; width: 30%; margin-right: 1%; margin-bottom: 0.5em; margin: 0 auto;" class="col-md-4">
+                            <div class="thumbnails thumbnail-style">
+                                <a class="fancybox" data-rel="fancybox-button" title="{{ album.title }}" href="{{ album.album_link }}" target="/">
+                                     <img class="img-responsive"  src="{% static 'media/fullalbum.jpg' %}" alt="{{ item.alt }}" />
+                                </a>
+                                <div class="caption">
+                                    
+                                    
+                                </div>
+                            </div>
+                        </div>
                     </div><!--/row-->
                     <!-- End Thumbnails v3 -->
                 </div>
