@@ -6,17 +6,85 @@ from django import VERSION as DJANGO_VERSION
 from django.utils.translation import ugettext_lazy as _
 from .secrets import *
 
+######################
+# MEZZANINE SETTINGS #
+######################
+
+# The following settings are already defined with default values in
+# the ``defaults.py`` module within each of Mezzanine's apps, but are
+# common enough to be put here, commented out, for conveniently
+# overriding. Please consult the settings documentation for a full list
+# of settings Mezzanine implements:
+# http://mezzanine.jupo.org/docs/configuration.html#default-settings
+
+# Controls the ordering and grouping of the admin menu.
+#
+# ADMIN_MENU_ORDER = (
+#     ("Content", ("pages.Page", "blog.BlogPost",
+#        "generic.ThreadedComment", (_("Media Library"), "media-library"),)),
+#     ("Site", ("sites.Site", "redirects.Redirect", "conf.Setting")),
+#     ("Users", ("auth.User", "auth.Group",)),
+# )
+
+# A three item sequence, each containing a sequence of template tags
+# used to render the admin dashboard.
+#
+# DASHBOARD_TAGS = (
+#     ("blog_tags.quick_blog", "mezzanine_tags.app_list"),
+#     ("comment_tags.recent_comments",),
+#     ("mezzanine_tags.recent_actions",),
+# )
+
+# A sequence of templates used by the ``page_menu`` template tag. Each
+# item in the sequence is a three item sequence, containing a unique ID
+# for the template, a label for the template, and the template path.
+# These templates are then available for selection when editing which
+# menus a page should appear in. Note that if a menu template is used
+# that doesn't appear in this setting, all pages will appear in it.
+
+# PAGE_MENU_TEMPLATES = (
+#     (1, _("Top navigation bar"), "pages/menus/dropdown.html"),
+#     (2, _("Left-hand tree"), "pages/menus/tree.html"),
+#     (3, _("Footer"), "pages/menus/footer.html"),
+# )
+
+# A sequence of fields that will be injected into Mezzanine's (or any
+# library's) models. Each item in the sequence is a four item sequence.
+# The first two items are the dotted path to the model and its field
+# name to be added, and the dotted path to the field class to use for
+# the field. The third and fourth items are a sequence of positional
+# args and a dictionary of keyword args, to use when creating the
+# field instance. When specifying the field class, the path
+# ``django.models.db.`` can be omitted for regular Django model fields.
+#
+# EXTRA_MODEL_FIELDS = (
+#     (
+#         # Dotted path to field.
+#         "mezzanine.blog.models.BlogPost.image",
+#         # Dotted path to field class.
+#         "somelib.fields.ImageField",
+#         # Positional args for field class.
+#         (_("Image"),),
+#         # Keyword args for field class.
+#         {"blank": True, "upload_to": "blog"},
+#     ),
+#     # Example of adding a field to *all* of Mezzanine's content types:
+#     (
+#         "mezzanine.pages.models.Page.another_field",
+#         "IntegerField", # 'django.db.models.' is implied if path is omitted.
+#         (_("Another name"),),
+#         {"blank": True, "default": 1},
+#     ),
+# )
+
+# Setting to turn on featured images for blog posts. Defaults to False.
+#
+# BLOG_USE_FEATURED_IMAGE = True
 
 # If True, the django-modeltranslation will be added to the
 # INSTALLED_APPS setting.
 USE_MODELTRANSLATION = False
 
-BLOG_USE_FEATURED_IMAGE = True
-BLOG_USE_LIKE = True
-
-
-ADMIN_HEADER_TITLE  = 'Python Ghana'
-GRAPPELLI_ADMIN_TITLE = 'PYTHON GHANA (PyGhana)'
 
 ########################
 # MAIN DJANGO SETTINGS #
@@ -24,7 +92,7 @@ GRAPPELLI_ADMIN_TITLE = 'PYTHON GHANA (PyGhana)'
 
 # Hosts/domain names that are valid for this site; required if DEBUG is False
 # See https://docs.djangoproject.com/en/dev/ref/settings/#allowed-hosts
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ["*"]
 
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
@@ -33,7 +101,7 @@ ALLOWED_HOSTS = ['*']
 # timezone as the operating system.
 # If running in a Windows environment this must be set to the same as your
 # system time zone.
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Africa/Accra'
 
 # If you set this to True, Django will use timezone-aware datetimes.
 USE_TZ = True
@@ -50,15 +118,12 @@ LANGUAGES = (
 # A boolean that turns on/off debug mode. When set to ``True``, stack traces
 # are displayed for error pages. Should always be set to ``False`` in
 # production. Best set to ``True`` in local_settings.py
-DEBUG = True
+DEBUG = False
 
 # Whether a user's session cookie expires when the Web browser is closed.
 SESSION_EXPIRE_AT_BROWSER_CLOSE = True
 
 SITE_ID = 1
-
-
-ANONYMOUS_USER_ID = -1
 
 # If you set this to False, Django will make some optimizations so as not
 # to load the internationalization machinery.
@@ -71,20 +136,26 @@ AUTHENTICATION_BACKENDS = ("mezzanine.core.auth_backends.MezzanineBackend",)
 FILE_UPLOAD_PERMISSIONS = 0o644
 
 
-
-
-
-
-####################################################################################################################################
 #############
 # DATABASES #
 #############
-                #DON'T FORGET TO REMOVE THE # SIGNS BELOW TO ACTIVATE THE DATABASE   <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
-#        check local_settings.py
-
-###################################################################################################################################
-
+DATABASES = {
+    "default": {
+        # Add "postgresql_psycopg2", "mysql", "sqlite3" or "oracle".
+        "ENGINE": "django.db.backends.",
+        # DB name or path to database file if using sqlite3.
+        "NAME": "",
+        # Not used with sqlite3.
+        "USER": "",
+        # Not used with sqlite3.
+        "PASSWORD": "",
+        # Set to empty string for localhost. Not used with sqlite3.
+        "HOST": "",
+        # Set to empty string for default. Not used with sqlite3.
+        "PORT": "",
+    }
+}
 
 
 #########
@@ -111,16 +182,6 @@ STATIC_URL = "/static/"
 # Example: "/home/media/media.lawrence.com/static/"
 STATIC_ROOT = os.path.join(PROJECT_ROOT, STATIC_URL.strip("/"))
 
-
-# List of finder classes that know how to find static files in
-# various locations.
-STATICFILES_FINDERS = (
-    'django.contrib.staticfiles.finders.FileSystemFinder',
-    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-    'djangobower.finders.BowerFinder',
-)
-
-
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
 # Examples: "http://media.lawrence.com/media/", "http://example.com/media/"
@@ -139,7 +200,6 @@ TEMPLATES = [
         "DIRS": [
             os.path.join(PROJECT_ROOT, "templates")
         ],
-        "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
                 "django.contrib.auth.context_processors.auth",
@@ -156,6 +216,11 @@ TEMPLATES = [
             "builtins": [
                 "mezzanine.template.loader_tags",
             ],
+            "loaders": [
+                "mezzanine.template.loaders.host_themes.Loader",
+                "django.template.loaders.filesystem.Loader",
+                "django.template.loaders.app_directories.Loader",
+            ]
         },
     },
 ]
@@ -164,18 +229,12 @@ if DJANGO_VERSION < (1, 9):
     del TEMPLATES[0]["OPTIONS"]["builtins"]
 
 
-
-# Setting to turn on featured images for blog posts. Defaults to False.
-#
-
-
-FORMS_USE_HTML5 = True
 ################
 # APPLICATIONS #
 ################
 
 INSTALLED_APPS = (
-    'django.contrib.messages',
+   'django.contrib.messages',
     'django.contrib.humanize',
     "django.contrib.admin",
     "django.contrib.auth",
@@ -208,13 +267,12 @@ INSTALLED_APPS = (
     "home",
     'djangobower',
     "events",
-
 )
 
 # List of middleware classes to use. Order is important; in the request phase,
 # these middleware classes will be applied in the order given, and in the
 # response phase the middleware will be applied in reverse order.
-MIDDLEWARE_CLASSES = (
+MIDDLEWARE = (
     "mezzanine.core.middleware.UpdateCacheMiddleware",
 
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -229,13 +287,16 @@ MIDDLEWARE_CLASSES = (
 
     "mezzanine.core.request.CurrentRequestMiddleware",
     "mezzanine.core.middleware.RedirectFallbackMiddleware",
-    "mezzanine.core.middleware.TemplateForDeviceMiddleware",
-    "mezzanine.core.middleware.TemplateForHostMiddleware",
     "mezzanine.core.middleware.AdminLoginInterfaceSelectorMiddleware",
     "mezzanine.core.middleware.SitePermissionMiddleware",
     "mezzanine.pages.middleware.PageMiddleware",
     "mezzanine.core.middleware.FetchFromCacheMiddleware",
 )
+
+if DJANGO_VERSION < (1, 10):
+    MIDDLEWARE_CLASSES = MIDDLEWARE
+    del MIDDLEWARE
+
 
 # Store these package names here as they may change in the future since
 # at the moment we are using custom forks of them.
@@ -246,6 +307,16 @@ PACKAGE_NAME_GRAPPELLI = "grappelli_safe"
 # OPTIONAL APPLICATIONS #
 #########################
 
+# These will be added to ``INSTALLED_APPS``, only if available.
+OPTIONAL_APPS = (
+    "debug_toolbar",
+    "django_extensions",
+    "compressor",
+    PACKAGE_NAME_FILEBROWSER,
+    PACKAGE_NAME_GRAPPELLI,
+)
+
+
 BOWER_COMPONENTS_ROOT = '/PROJECT_ROOT/components/'
 
 BOWER_INSTALLED_APPS = (
@@ -254,16 +325,6 @@ BOWER_INSTALLED_APPS = (
     'bootstrap',
     'fullcalendar'
 )
-
-
-# These will be added to ``INSTALLED_APPS``, only if available.
-OPTIONAL_APPS = (
-    "django_extensions",
-    "compressor",
-    PACKAGE_NAME_FILEBROWSER,
-    PACKAGE_NAME_GRAPPELLI,
-)
-
 ##################
 # LOCAL SETTINGS #
 ##################
@@ -285,11 +346,6 @@ if os.path.exists(f):
     module.__file__ = f
     sys.modules[module_name] = module
     exec(open(f, "rb").read())
-
-
-
-
-
 
 
 ####################
