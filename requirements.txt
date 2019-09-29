@@ -4,7 +4,7 @@ certifi==2018.11.29
 chardet==3.0.4
 coverage==4.5.2
 coveralls==1.5.1
-Django==1.11.20
+Django==1.11.23
 django-annoying==0.10.4
 django-appconf==1.0.2
 django-bower==5.2.0
