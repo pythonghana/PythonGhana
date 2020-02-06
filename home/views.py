@@ -18,6 +18,7 @@ def home(request):
 	template = "home1.html"
 	return render(request, template, context)
 
+
 def resources(request):
 	context = {}
 	template = "resources.html"
@@ -100,3 +101,14 @@ def bad_request(request):
     response.status_code = 400
 
     return response
+
+
+
+
+
+
+##############New UPDATE
+def newhome(request):
+	context = {}
+	template = "newHome.html"
+	return render(request, template, context)

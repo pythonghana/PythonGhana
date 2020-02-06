@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="{{ LANGUAGE_CODE }}"{% if LANGUAGE_BIDI %} dir="rtl"{% endif %}>
+{% load i18n pages_tags  mezzanine_tags blog_tags staticfiles keyword_tags disqus_tags events_tags %}
+<head>
+  <!-- Title -->
+  <title>{% block meta_title %}{% endblock %}{% if settings.SITE_TITLE %} | {{ settings.SITE_TITLE }}{% endif %}</title>
+   
+  <!-- Required Meta Tags Always Come First -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="{% static 'favicon.png' %}">
+  <!-- Google Fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800">
+  <!-- CSS Global Compulsory -->
+  <link rel="stylesheet" href="{% static 'assets20/vendor/bootstrap/bootstrap.min.css' %}">
+  
+  <!-- CSS Global Icons -->
+  <link rel="stylesheet" href="{% static 'assets20/vendor/icon-awesome/css/font-awesome.min.css' %}">
+  <link rel="stylesheet" href="{% static 'assets20/vendor/icon-line/css/simple-line-icons.css' %}">
+  <link rel="stylesheet" href="{% static 'assets20/vendor/icon-etlinefont/style.css' %}">
+  <link rel="stylesheet" href="{% static 'assets20/vendor/icon-line-pro/style.css' %}">
+  <link rel="stylesheet" href="{% static 'assets20/vendor/icon-hs/style.css' %}">
+  <link rel="stylesheet" href="{% static 'assets20/vendor/animate.css' %}">
+  <link rel="stylesheet" href="{% static 'assets20/vendor/dzsparallaxer/dzsparallaxer.css' %}">
+  <link rel="stylesheet" href="{% static 'assets20/vendor/dzsparallaxer/dzsscroller/scroller.css' %}">
+  <link rel="stylesheet" href="{% static 'assets20/vendor/dzsparallaxer/advancedscroller/plugin.css' %}">
+  <link rel="stylesheet" href="{% static 'assets20/vendor/slick-carousel/slick/slick.css' %}">
+  <link rel="stylesheet" href="{% static 'assets20/vendor/fancybox/jquery.fancybox.css' %}">
+  <link rel="stylesheet" href="{% static 'assets20/vendor/hs-bg-video/hs-bg-video.css' %}">
+  <link rel="stylesheet" href="{% static 'assets20/vendor/hs-megamenu/src/hs.megamenu.css' %}">
+  <link rel="stylesheet" href="{% static 'assets20/vendor/hamburgers/hamburgers.min.css' %}">
+
+    <!-- CSS Header and Footer -->
+  <link rel="stylesheet" href="{% static 'assets/css/footers/footer-v1.css' %}">
+  <!-- CSS Unify -->
+  <link rel="stylesheet" href="{% static 'assets20/css/unify-core.css' %}">
+  <link rel="stylesheet" href="{% static 'assets20/css/unify-components.css' %}">
+  <link rel="stylesheet" href="{% static 'assets20/css/unify-globals.css' %}">
+  {% block extra_css %}{% endblock extra_css %}
+  <!-- CSS Customization -->
+  <link rel="stylesheet" href="{% static 'assets20/css/custom.css' %}">
+</head>
+{% block extra_head %}{% endblock %}
+
+<body>
+
+  <main>
+
+    <!-- Header -->
+    <header id="js-header" class="u-header u-header--static">
+      <div class="u-header__section u-header__section--light g-bg-white g-transition-0_3 g-py-10">
+        <nav class="js-mega-menu navbar navbar-expand-lg hs-menu-initialized hs-menu-horizontal">
+          <div class="container">
+            <!-- Responsive Toggle Button -->
+            <button class="navbar-toggler navbar-toggler-right btn g-line-height-1 g-brd-none g-pa-0 g-pos-abs g-top-minus-3 g-right-0" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navBar" data-toggle="collapse" data-target="#navBar">
+              <span class="hamburger hamburger--slider">
+            <span class="hamburger-box">
+              <span class="hamburger-inner"></span>
+              </span>
+              </span>
+            </button>
+            <!-- End Responsive Toggle Button -->
+
+            <!-- Logo -->
+            <a href="/" class="navbar-brand d-flex">
+                <img class="shrink-logo" src="{% static 'assets20/img/navbar.png' %}" alt="Logo">
+            </a>
+            <!-- End Logo -->
+
+            <!-- Navigation -->
+            <div class="collapse navbar-collapse align-items-center flex-sm-row g-pt-10 g-pt-5--lg g-mr-40--lg" id="navBar">
+              <ul class="navbar-nav text-uppercase g-pos-rel g-font-weight-600 ml-auto">
+                <!-- Home -->
+                <li class="nav-item  g-mx-10--lg g-mx-15--xl">
+                  <a href="/home" class="nav-link g-py-7 g-px-0">Home</a>
+                </li>
+                <!-- End Home -->
+
+                <!-- Blog -->
+                <li class="nav-item  g-mx-10--lg g-mx-15--xl">
+                  <a href="https://pythonghana.blogspot.com/" class="nav-link g-py-7 g-px-0">Blog</a>
+                </li>
+                <!-- End Blog -->
+
+                <!-- Events -->
+                <li class="nav-item  g-mx-10--lg g-mx-15--xl">
+                  <a href="/events" class="nav-link g-py-7 g-px-0">Events</a>
+                </li>
+                <!-- End Events -->
+
+                 <!-- Code of Conduct -->
+                 <li class="nav-item  g-mx-10--lg g-mx-15--xl">
+                  <a href="/coc" class="nav-link g-py-7 g-px-0">COC</a>
+                </li>
+                <!-- End Intro -->
+
+                 <!-- Gallery -->
+                 <li class="nav-item  g-mx-10--lg g-mx-15--xl">
+                  <a href="/gallery" class="nav-link g-py-7 g-px-0">Gallery</a>
+                </li>
+                <!-- End Gallery -->
+
+                 <!-- Resources -->
+                 <li class="nav-item  g-mx-10--lg g-mx-15--xl">
+                  <a href="/resources" class="nav-link g-py-7 g-px-0">Resources</a>
+                </li>
+                <!-- End Resources -->
+
+                <!-- About -->
+                <li class="nav-item  g-mx-10--lg g-mx-15--xl">
+                  <a href="/about" class="nav-link g-py-7 g-px-0">About</a>
+                </li>
+                <!-- End About -->
+
+              </ul>
+            </div>
+            <!-- End Navigation -->
+          </div>
+        </nav>
+      </div>
+    </header>
+    <!-- End Header -->
+
+
+
+
+    {% block content %}
+    {% endblock %}
+
+
+ <!--=== Footer Version 1 ===-->
+ <div class="footer-v1">
+  <div class="footer">
+    <div class="container ">
+    <div class="row">
+     <div class="col-md-3 md-margin-bottom-40">
+          <a href="/home"><img id="logo-footer" class="footer-logo" src="{% static 'pro_images/pythonfooter.png' %}" alt=""></a>
+        </div>
+          <!-- Link List -->
+        <div class="col-md-4 md-margin-bottom-40">
+          <div class="headline"><h2>JOIN US ON</h2></div>
+                    <div class="row" align="center">
+                      <a href="http://bit.ly/PyGhTelegram" target="_blank">
+                          <img src="{% static 'social/telegram.png' %}" class="dpg-icon" alt="Python Ghana Telegram"  class="img-responsive hover-effect tooltips" alt="" data-toggle="tooltip" data-placement="right" title="Our Telegram Group" data-original-title="Tooltip on right">
+                      </a>
+                      <a href="https://twitter.com/pyghana" target="_blank">
+                          <img src="{% static 'social/social-twitter.png' %}" class="dpg-icon" alt="Python Ghana Twitter"  class="img-responsive hover-effect tooltips" alt="" data-toggle="tooltip" data-placement="right" title="Our Twitter Page" data-original-title="Tooltip on right">
+                      </a>
+                      <a href="https://github.com/pythonghana" target="_blank">
+                          <img src="{% static 'social/social-github1.png' %}" class="dpg-icon" alt="Python Ghana Github"  class="img-responsive hover-effect tooltips" alt="" data-toggle="tooltip" data-placement="right" title="Our GitHub Repository" data-original-title="Tooltip on right">
+                      </a>
+                      <a href="https://pythonghana.slack.com/" target="_blank">
+                          <img src="{% static 'social/slack-logo.png' %}" class="dpg-icon" alt="Python Ghana Slack"  class="img-responsive hover-effect tooltips" alt="" data-toggle="tooltip" data-placement="right" title="Our Slack Page" data-original-title="Tooltip on right">
+                      </a>
+                      <a href="https://mail.python.org/mm3/mailman3/lists/pythonghana.python.org/" target="_blank">
+                          <img src="{% static 'social/mail.png' %}" class="dpg-icon" alt="Python Ghana Linkedin"  class="img-responsive hover-effect tooltips" alt="" data-toggle="tooltip" data-placement="right" title="Our Mailing List" data-original-title="Tooltip on right">
+                      </a>
+                   </div>
+        </div><!--/col-md-3-->
+        <!-- End Link List -->
+      <!-- Link List -->
+        <div class="col-md-4 md-margin-bottom-40">
+          <div class="headline"><h2>Useful Links</h2></div>
+          <ul class="list-unstyled link-list">
+            <li>{% page_menu "pages/menus/footer.html" %}</li>
+          </ul>
+        </div><!--/col-md-3-->
+        <!-- End Link List -->
+    </div>
+    </div>
+  </div><!--/footer-->
+ <div class="copyright">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <p>
+              Python/Django web hosting for Python Ghana is generously donated by <a href="https://www.pythonanywhere.com/?affiliate_id=002cb45d" target="/"><img src="{% static 'pro_images/pythonanywhereS.jpg' %}" alt=""></a> <br><br> {% now "Y" %} &copy; All Rights Reserved Python Ghana. 
+           </p>
+        </div>
+      </div>
+    </div>
+  </div><!--/copyright-->
+</div>
+    
+    <a class="js-go-to u-go-to-v1" href="#" data-type="fixed" data-position='{
+     "bottom": 15,
+     "right": 15
+   }' data-offset-top="400" data-compensation="#js-header" data-show-effect="zoomIn">
+      <i class="hs-icon hs-icon-arrow-top"></i>
+    </a>
+  </main>
+
+  <div class="u-outer-spaces-helper"></div>
+
+
+  <!-- JS Global Compulsory -->
+  <script src="{% static 'assets20/vendor/jquery/jquery.min.js' %}"></script>
+  <script src="{% static 'assets20/vendor/jquery-migrate/jquery-migrate.min.js' %}"></script>
+  <script src="{% static 'assets20/vendor/popper.js/popper.min.js' %}"></script>
+  <script src="{% static 'assets20/vendor/bootstrap/bootstrap.min.js' %}"></script>
+
+
+  <!-- JS Implementing Plugins -->
+  <script src="{% static 'assets20/vendor/appear.js' %}"></script>
+  <script src="{% static 'assets20/vendor/slick-carousel/slick/slick.js' %}"></script>
+  <script src="{% static 'assets20/vendor/hs-megamenu/src/hs.megamenu.js' %}"></script>
+  <script src="{% static 'assets20/vendor/dzsparallaxer/dzsparallaxer.js' %}"></script>
+  <script src="{% static 'assets20/vendor/dzsparallaxer/dzsscroller/scroller.js' %}"></script>
+  <script src="{% static 'assets20/vendor/dzsparallaxer/advancedscroller/plugin.js' %}"></script>
+  <script src="{% static 'assets20/vendor/hs-bg-video/hs-bg-video.js' %}"></script>
+  <script src="{% static 'assets20/vendor/hs-bg-video/vendor/player.min.js' %}"></script>
+  <script src="{% static 'assets20/vendor/fancybox/jquery.fancybox.js' %}"></script>
+
+
+  <script src="{% static 'assets/plugins/owl-carousel/owl-carousel/owl.carousel.js' %}"></script>
+    
+  <!-- JS Unify -->
+  <script src="{% static 'assets20/js/hs.core.js' %}"></script>
+  <script src="{% static 'assets20/js/components/hs.header.js' %}"></script>
+  <script src="{% static 'assets20/js/helpers/hs.hamburgers.js' %}"></script>
+  <script src="{% static 'assets20/js/components/hs.tabs.js' %}"></script>
+  <script src="{% static 'assets20/js/helpers/hs.height-calc.js' %}"></script>
+  <script src="{% static 'assets20/js/components/hs.onscroll-animation.js' %}"></script>
+  <script src="{% static 'assets20/js/helpers/hs.bg-video.js' %}"></script>
+  <script src="{% static 'assets20/js/components/hs.popup.js' %}"></script>
+  <script src="{% static 'assets20/js/components/hs.carousel.js' %}"></script>
+  <script src="{% static 'assets20/js/components/hs.go-to.js' %}"></script>
+
+  <!-- JS Customization -->
+  <script src="{% static 'assets20/js/custom.js' %}"></script>
+
+  <!-- JS Plugins Init. -->
+  <script>
+    $(document).on('ready', function () {
+        // initialization of carousel
+        $.HSCore.components.HSCarousel.init('.js-carousel');
+
+        // initialization of tabs
+        $.HSCore.components.HSTabs.init('[role="tablist"]');
+
+        // initialization of header's height equal offset
+        $.HSCore.helpers.HSHeightCalc.init();
+
+        // initialization of scroll animation
+        $.HSCore.components.HSOnScrollAnimation.init('[data-animation]');
+
+        // initialization of video on background
+        $.HSCore.helpers.HSBgVideo.init('.js-bg-video');
+
+        // initialization of popups with media
+        $.HSCore.components.HSPopup.init('.js-fancybox-media', {
+          helpers: {
+            media: {},
+            overlay: {
+              css: {
+                'background': 'rgba(0, 0, 0, .8)'
+              }
+            }
+          }
+        });
+
+        // initialization of go to
+        $.HSCore.components.HSGoTo.init('.js-go-to');
+      });
+
+      $(window).on('load', function () {
+        // initialization of header
+        $.HSCore.components.HSHeader.init($('#js-header'));
+        $.HSCore.helpers.HSHamburgers.init('.hamburger');
+
+        // initialization of HSMegaMenu component
+        $('.js-mega-menu').HSMegaMenu({
+          event: 'hover',
+          pageContainer: $('.container'),
+          breakpoint: 991
+        });
+      });
+
+      $(window).on('resize', function () {
+        setTimeout(function () {
+          $.HSCore.components.HSTabs.init('[role="tablist"]');
+        }, 200);
+      });
+  </script>
+
+
+
+</body>
+
+</html>

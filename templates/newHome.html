@@ -1,0 +1,606 @@
+{% extends "baseNH.html" %}
+{% load static  events_tags twitter_tags i18n %}
+
+{% tweets_default as tweets %}
+{% load i18n mezzanine_tags blog_tags staticfiles keyword_tags disqus_tags %}
+{% block meta_title %}{% if page %}{{ page.meta_title }}{% else %}{% trans "Home" %}{% endif %}{% endblock %}
+
+{% block content %}
+
+
+
+
+    <!-- Promo Block -->
+    <section class="g-flex-centered g-bg-pos-center g-bg-img-hero g-py-150" style="background-image: url({% static 'assets20/img/bg/14.jpg' %});" data-calc-target="#js-header">
+        <div class="container text-center g-z-index-1">
+  
+          
+         
+          
+          <h3 style="text-shadow: 2px 2px 3px #282a2d" class="g-color-black g-font-weight-700 g-font-size-40 g-font-size-55--md text-uppercase g-mb-40" data-animation="fadeInUp" data-animation-delay="800" data-animation-duration="1500">
+            <p><strong>Welcome to Python Ghana</strong></p>
+          </h3>
+          <div data-animation="fadeInUp" data-animation-delay="1100" data-animation-duration="1500">
+            <h4 class="g-color-black"><strong>Where we learn and grow together.</strong></h4>
+          </div>
+          
+        </div>
+      </section>
+      <!-- End Promo Block -->
+  
+  
+  
+      <!-- Our Environment -->
+      <section class="g-py-100">
+        <div class="container">
+          <div class="row">
+            <!-- Carousel -->
+            <div class="col-lg-6 g-mb-50 g-mb-0--lg">
+              <div id="carouselCus1" class="js-carousel text-center g-mb-20" data-infinite="true" data-lazy-load="progressive" data-arrows-classes="u-arrow-v1 g-absolute-centered--y g-width-50 g-height-50 g-font-size-20 g-bg-white g-color-gray-dark-v5 g-color-primary--hover g-mt-minus-10"
+              data-arrow-left-classes="fa fa-angle-left g-left-0 rounded-right" data-arrow-right-classes="fa fa-angle-right g-right-0 rounded-left" data-nav-for="#carouselCus2">
+  
+                <div class="js-slide">
+                  <a class="js-fancybox d-block g-pos-rel" data-rel="lightbox-gallery--08-1" href="{% static 'assets20/img/comm/slide1.jpg' %}" title="" data-open-effect="bounceInDown" data-close-effect="bounceOutDown" data-open-speed="1000" data-close-speed="1000"
+                  data-blur-bg="true">
+                    <img class="img-fluid w-100 rounded" data-lazy="{% static 'assets20/img/comm/slide1.jpg' %}" alt="Image description">
+                  </a>
+                </div>
+  
+                <div class="js-slide">
+                  <a class="js-fancybox d-block g-pos-rel" data-rel="lightbox-gallery--08-1" href="{% static 'assets20/img/comm/slide2.jpg' %}" title="" data-open-effect="bounceInDown" data-close-effect="bounceOutDown" data-open-speed="1000" data-close-speed="1000"
+                  data-blur-bg="true">
+                    <img class="img-fluid w-100 rounded" data-lazy="{% static 'assets20/img/comm/slide2.jpg' %}" alt="Image description">
+                  </a>
+                </div>
+  
+                <div class="js-slide">
+                  <a class="js-fancybox d-block g-pos-rel" data-rel="lightbox-gallery--08-1" href="{% static 'assets20/img/comm/slide1.jpg' %}" title="" data-open-effect="bounceInDown" data-close-effect="bounceOutDown" data-open-speed="1000" data-close-speed="1000"
+                  data-blur-bg="true">
+                    <img class="img-fluid w-100 rounded" data-lazy="{% static 'assets20/img/comm/slide3.jpg' %}" alt="Image description">
+                  </a>
+                </div>
+  
+                <div class="js-slide">
+                  <a class="js-fancybox d-block g-pos-rel" data-rel="lightbox-gallery--08-1" href="{% static 'assets20/img/comm/slide1.jpg' %}" title="" data-open-effect="bounceInDown" data-close-effect="bounceOutDown" data-open-speed="1000" data-close-speed="1000"
+                  data-blur-bg="true">
+                    <img class="img-fluid w-100 rounded" data-lazy="{% static 'assets20/img/comm/slide4.jpg' %}" alt="Image description">
+                  </a>
+                </div>
+  
+                <div class="js-slide">
+                  <a class="js-fancybox d-block g-pos-rel" data-rel="lightbox-gallery--08-1" href="{% static 'assets20/img/comm/slide1.jpg' %}" title="" data-open-effect="bounceInDown" data-close-effect="bounceOutDown" data-open-speed="1000" data-close-speed="1000"
+                  data-blur-bg="true">
+                    <img class="img-fluid w-100 rounded" data-lazy="{% static 'assets20/img/comm/slide5.jpg' %}" alt="Image description">
+                  </a>
+                </div>
+  
+                <div class="js-slide">
+                  <a class="js-fancybox d-block g-pos-rel" data-rel="lightbox-gallery--08-1" href="{% static 'assets20/img/comm/slide1.jpg' %}" title="" data-open-effect="bounceInDown" data-close-effect="bounceOutDown" data-open-speed="1000" data-close-speed="1000"
+                  data-blur-bg="true">
+                    <img class="img-fluid w-100 rounded" data-lazy="{% static 'assets20/img/comm/slide6.jpg' %}" alt="Image description">
+                  </a>
+                </div>
+  
+              </div>
+  
+              <div id="carouselCus2" class="js-carousel text-center u-carousel-v3 g-mx-minus-10" data-infinite="true" data-center-mode="true" data-lazy-load="progressive" data-slides-show="4" data-is-thumbs="true" data-nav-for="#carouselCus1">
+                <div class="js-slide g-px-10">
+                  <img class="img-fluid g-cursor-pointer rounded" data-lazy="{% static 'assets20/img/comm/slide1.jpg' %}" alt="Image description">
+                </div>
+  
+                <div class="js-slide g-px-10">
+                  <img class="img-fluid g-cursor-pointer rounded" data-lazy="{% static 'assets20/img/comm/slide2.jpg' %}" alt="Image description">
+                </div>
+  
+                <div class="js-slide g-px-10">
+                  <img class="img-fluid g-cursor-pointer rounded" data-lazy="{% static 'assets20/img/comm/slide3.jpg' %}" alt="Image description">
+                </div>
+  
+                <div class="js-slide g-px-10">
+                  <img class="img-fluid g-cursor-pointer rounded" data-lazy="{% static 'assets20/img/comm/slide4.jpg' %}" alt="Image description">
+                </div>
+  
+                <div class="js-slide g-px-10">
+                  <img class="img-fluid g-cursor-pointer rounded" data-lazy="{% static 'assets20/img/comm/slide5.jpg' %}" alt="Image description">
+                </div>
+  
+                <div class="js-slide g-px-10">
+                  <img class="img-fluid g-cursor-pointer rounded" data-lazy="{% static 'assets20/img/comm/slide6.jpg' %}" alt="Image description">
+                </div>
+              </div>
+            </div>
+            <!-- End Carousel -->
+  
+            <!-- Section Content -->
+            <div class="col-lg-6 align-self-center g-pl-30--lg">
+              <header class="g-mb-30">
+                <div class="u-heading-v2-3--bottom g-brd-primary g-mb-30">
+                  <h2 class="h4 u-heading-v2__title g-color-gray-dark-v2 g-font-weight-600 text-uppercase">Welcome to our Community</h2>
+                </div>
+                <p class="g-font-size-16">The Python Software Community Ghana (Python Ghana) is a body that embraces all 
+                  friends of the Python programming language in Ghana. We are a community of master programmers, intermediate 
+                  and even absolute beginners, but one thing we all have in common is the love of Python. It encompasses all friends of 
+                  the Python programming language in the Ghana.</p>
+              </header>
+  
+              <div class="g-mb-30">
+                <p>With the aim to make a difference in our society we kicked off difference initiatives 
+                  to address and have impact on different areas in the society such as PyLadies Ghana to 
+                  empower more ladies and introduce them to Tech using the Python Programming language,
+                  PyData Ghana for educating individuals in Data science and Artificial intelligence,
+                  PyScholars for the Senior high level and PyClubs where students meet and learn in the Tertiary level. </p>
+                </div>
+              <a class="btn btn-xl u-btn-primary text-uppercase g-font-weight-600 g-font-size-12 rounded g-mr-15 g-mb-10 g-mb-0--sm" href="#">About Us and the Team</a>
+              </div>
+            <!-- End Section Content -->
+          </div>
+        </div>
+      </section>
+      <!-- End Our Environment -->
+  
+  
+  
+  
+      <!-- About -->
+      <section class="g-pt-100 g-pb-100">
+        <div class="container">
+          <!-- Image, Text Block -->
+          <div class="row d-flex align-items-lg-center flex-wrap g-mb-60 g-mb-0--lg">
+            <div class="col-md-6 col-lg-8">
+              <img class="img-fluid rounded" src="{% static 'assets20/img/pyladies.png' %}" alt="Image Description">
+            </div>
+            <div class="col-md-6 col-lg-4">
+              <div class="g-mt-minus-30 g-mt-0--md g-ml-minus-100--lg">
+                <div class="g-mb-20">
+                  <h2 class="g-color-black g-font-weight-600 g-font-size-25 g-font-size-35--lg g-line-height-1_2 mb-4"><br>
+                    </h2>
+                  <p class="g-font-size-16 g-color-black" >PyLadies Ghana is a Mentor-ship group in Ghana focused on helping more women become active participants 
+                    and leaders in the Python open-source Community. It's an initiative to cultivate a more female-friendly environment in Python Software Community Ghana. We are open to everyone, not just women.</p>
+                </div>
+                <a class="btn u-btn-primary g-brd-2 g-brd-white g-font-size-13 g-rounded-50 g-pl-20 g-pr-15 g-py-9" href="ghana.pyladies.com" target="/">
+                  More on PyLadies. . .
+                    <span class="align-middle u-icon-v3 g-width-16 g-height-16 g-color-black g-bg-white g-font-size-11 rounded-circle ml-3">
+                      <i class="fa fa-angle-right"></i>
+                    </span>
+                  </a>
+  
+                  <a class="btn u-btn-primary g-brd-2 g-brd-white g-font-size-13 g-rounded-50 g-pl-20 g-pr-15 g-py-9" href="http://twitter.com/pyladiesghana" target="/">
+                    <b>Twitter Handle</b>
+                      <span class="align-middle u-icon-v3 g-width-16 g-height-16 g-color-primary g-bg-white g-font-size-11 rounded-circle ml-3">
+                        <i class="fa fa-twitter"></i>
+                      </span>
+                    </a>
+              </div>
+            </div>
+          </div>
+          <!-- End Image, Text Block -->
+        </div>
+  
+        <div class="container">
+          <!-- Image, Text Block -->
+          <div class="row d-flex justify-content-between align-items-lg-center flex-wrap g-mt-minus-50--lg">
+            <div class="col-md-6 order-md-2">
+              <div class="g-brd-around--md g-brd-10 g-brd-white rounded">
+                <img class="img-fluid w-100 rounded" src="{% static 'assets20/img/pydata.png' %}" alt="Image Description">
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-4 ml-auto order-md-1">
+              <div class="g-mt-minus-30 g-mt-0--md g-ml-minus-100--lg">
+                <div class="g-mb-20">
+                  <h2 class="g-color-black g-font-weight-600 g-font-size-25 g-font-size-35--lg g-line-height-1_2 mb-4"><br>
+                    </h2>
+                  <p class="g-font-size-16 g-color-black">PyData Ghana brings together data loving #Pythonistas and Data Scientists, where we share ideas and learn from each other. 
+                    PyData Ghana aims to promotes discussion of best practices, new approaches, and emerging technologies for data management, processing, analytics, and visualization. We approach data science using many languages, including (but not limited to) Python, Julia, and R. We aim to be an accessible, community-driven conference, with novice to advanced level presentations. PyData tutorials and talks bring attendees the latest project features along with cutting-edge use cases.</p>
+                </div>
+                <a class="btn u-btn-primary g-brd-2 g-brd-white g-font-size-13 g-rounded-50 g-pl-20 g-pr-15 g-py-9" href="/pydata" target="/">
+                  More on PyData. . .
+                    <span class="align-middle u-icon-v3 g-width-16 g-height-16 g-color-black g-bg-white g-font-size-11 rounded-circle ml-3">
+                      <i class="fa fa-angle-right"></i>
+                    </span>
+                  </a>
+  
+                  <a class="btn u-btn-primary g-brd-2 g-brd-white g-font-size-13 g-rounded-50 g-pl-20 g-pr-15 g-py-9" href="http://twitter.com/pydataghana" target="/">
+                    <b>Twitter Handle</b>
+                      <span class="align-middle u-icon-v3 g-width-16 g-height-16 g-color-primary g-bg-white g-font-size-11 rounded-circle ml-3">
+                        <i class="fa fa-twitter"></i>
+                      </span>
+                    </a>
+              </div>
+            </div>
+          </div>
+          <!-- End Image, Text Block -->
+        </div>
+        <br><br>
+        <div class="container">
+          <!-- Image, Text Block -->
+          <div class="row d-flex align-items-lg-center flex-wrap g-mb-60 g-mb-0--lg">
+            <div class="col-md-6 col-lg-8">
+              <img class="img-fluid rounded" src="{% static 'assets20/img/pyscholars.png' %}" alt="Image Description">
+            </div>
+            <div class="col-md-6 col-lg-4">
+              <div class="g-mt-minus-30 g-mt-0--md g-ml-minus-100--lg">
+                <div class="g-mb-20">
+                  <h2 class="g-color-black g-font-weight-600 g-font-size-25 g-font-size-35--lg g-line-height-1_2 mb-4"><br>
+                    </h2>
+                  <p class="g-font-size-16 g-color-black" >The aim of this initiative is focused on students in the senior high level
+                    where students would be introduced to Python programming in a relaxed
+                    and fun environment. The idea seeks to inspire students to learn the basic
+                    understanding of what programming is, and give them the ability to do
+                    some simple (application level) programming where they could build their
+                    own games, websites etc. as a team or individually.</p>
+                </div>
+                <a class="btn u-btn-primary g-brd-2 g-brd-white g-font-size-13 g-rounded-50 g-pl-20 g-pr-15 g-py-9" href="www.pyscholars.org" target="/">
+                    More on PyScholars. . .
+                    <span class="align-middle u-icon-v3 g-width-16 g-height-16 g-color-black g-bg-white g-font-size-11 rounded-circle ml-3">
+                      <i class="fa fa-angle-right"></i>
+                    </span>
+                  </a>
+                  <a class="btn u-btn-primary g-brd-2 g-brd-white g-font-size-13 g-rounded-50 g-pl-20 g-pr-15 g-py-9" href="http://twitter.com/pythonscholars" target="/">
+                    <b>Twitter Handle</b>
+                      <span class="align-middle u-icon-v3 g-width-16 g-height-16 g-color-primary g-bg-white g-font-size-11 rounded-circle ml-3">
+                        <i class="fa fa-twitter"></i>
+                      </span>
+                    </a>
+              </div>
+            </div>
+          </div>
+          <!-- End Image, Text Block -->
+        </div>
+  
+        <div class="container">
+          <!-- Image, Text Block -->
+          <div class="row d-flex justify-content-between align-items-lg-center flex-wrap g-mt-minus-50--lg">
+            <div class="col-md-6 order-md-2">
+              <div class="g-brd-around--md g-brd-10 g-brd-white rounded">
+                <img class="img-fluid w-100 rounded" src="{% static 'assets20/img/pyclub.png' %}" alt="Image Description">
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-4 ml-auto order-md-1">
+              <div class="g-mt-minus-30 g-mt-0--md g-ml-minus-100--lg">
+                <div class="g-mb-20">
+                  <h2 class="g-color-black g-font-weight-600 g-font-size-25 g-font-size-35--lg g-line-height-1_2 mb-4"><br>
+                    </h2>
+                  <p class="g-font-size-16 g-color-black">In this initiative, we would setup registered clubs on campuses,
+                    which would be headed by a Club lead who is also a student at the
+                    local institution, and a patron who is a faculty member of the
+                    University. However, Python Ghana would occasionally send community
+                    representatives to the clubs to assist when possible.</p>
+                </div>
+                <a class="btn u-btn-primary g-brd-2 g-brd-white g-font-size-13 g-rounded-50 g-pl-20 g-pr-15 g-py-9" href="www.pyclubs.org" target="/">
+                    More on PyClubs. . .
+                    <span class="align-middle u-icon-v3 g-width-16 g-height-16 g-color-black g-bg-white g-font-size-11 rounded-circle ml-3">
+                      <i class="fa fa-angle-right"></i>
+                    </span>
+                  </a>
+                  <a class="btn u-btn-primary g-brd-2 g-brd-white g-font-size-13 g-rounded-50 g-pl-20 g-pr-15 g-py-9" href="http://twitter.com/pyclubs" target="/">
+                    <b>Twitter Handle</b>
+                      <span class="align-middle u-icon-v3 g-width-16 g-height-16 g-color-primary g-bg-white g-font-size-11 rounded-circle ml-3">
+                        <i class="fa fa-twitter"></i>
+                      </span>
+                    </a>
+              </div>
+            </div>
+          </div>
+          <!-- End Image, Text Block -->
+        </div>
+      </section>
+      <!-- End About -->
+  
+      <hr class="g-brd-gray-light-v4 my-0">
+  
+      <!-- Icon Blocks -->
+      <section class="g-bg-secondary">
+        <div class="container g-pt-100 g-pb-130">
+          <!-- Icon Blocks -->
+          <div class="row no-gutters">
+            <div class="col-sm-6 col-lg-3">
+              <div class="g-pr-40 g-mt-20">
+                <div class="g-mb-30">
+                  <h3 class="h2 g-color-black g-font-weight-600 g-line-height-1_2 mb-4">Local User<br>Groups in Ghana</h3>
+                  <p class="g-color-black g-font-weight-300 g-font-size-16">Python User Group Meetups around Ghana, is where both developers and enthusiast of the Python programming language would meet periodically to share how they use 
+                    the language, learn new tricks, socialize with other Python programming enthusiasts, check out presentations on Pythonic topics, maybe participate in code sprint or two, possibly work on projects and provide mutual technical support.</p>
+                </div>
+              </div>
+            </div>
+  
+            <div class="col-lg-9">
+              <div class="js-carousel" data-infinite="true" data-slides-show="3" data-slides-scroll="3" data-center-mode="true" data-center-padding="1px" data-pagi-classes="u-carousel-indicators-v1 g-absolute-centered--x g-bottom-minus-30" data-responsive='[{
+                       "breakpoint": 992,
+                       "settings": {
+                         "slidesToShow": 2
+                       }
+                     }, {
+                       "breakpoint": 576,
+                       "settings": {
+                         "slidesToShow": 1
+                       }
+                     }]'>
+                <div class="js-slide">
+                  <!-- Icon Blocks -->
+                  <div class="u-shadow-v21--hover g-brd-around g-brd-gray-light-v3 g-brd-left-none g-brd-transparent--hover g-bg-white--hover g-transition-0_3 g-cursor-pointer g-px-30 g-pt-30 g-pb-50 g-ml-minus-1">
+                    <div class="mb-4">
+                      <div class="g-brd-around--md g-brd-10 g-brd-white rounded">
+                        <img class="img-fluid w-100 rounded" src="{% static 'assets20/img/Py-Accra.jpg' %}" alt="Image Description">
+                      </div>
+                      <h3 class="h5 g-color-black g-font-weight-600 mb-3">Python Accra</h3>
+                      <p>The Python User Group in Accra</p>
+                    </div>
+  
+                    <a class="u-icon-v1 g-color-twitter g-color-twitter--hover g-mr-15 g-mb-20" href="https://twitter.com/pythonaccra" target="/">
+                      <i class="fa fa-twitter"></i>
+                    </a>
+                    <a class="u-icon-v1 g-color-facebook g-color-facebook--hover g-mr-15 g-mb-20" href="https://web.facebook.com/PyGhana/" target="/">
+                      <i class="fa fa-facebook"></i>
+                    </a>
+                    
+                    <a class="u-icon-v1 g-color-linkedin g-color-linkedin--hover g-mr-15 g-mb-20" href="https://www.linkedin.com/company/pythonghana/" target="/">
+                      <i class="fa fa-linkedin"></i>
+                    </a>
+                    
+                  
+                  </div>
+                  <!-- End Icon Blocks -->
+                </div>
+  
+                <div class="js-slide">
+                  <!-- Icon Blocks -->
+                  <div class="u-shadow-v21--hover g-brd-around g-brd-gray-light-v3 g-brd-left-none g-brd-transparent--hover g-bg-white--hover g-transition-0_3 g-cursor-pointer g-px-30 g-pt-30 g-pb-50 g-ml-minus-1">
+                    <div class="mb-4">
+                      <div class="g-brd-around--md g-brd-10 g-brd-white rounded">
+                        <img class="img-fluid w-100 rounded" src="{% static 'assets20/img/Py-Kumasi.jpg' %}" alt="Image Description">
+                      </div>
+                      <h3 class="h5 g-color-black g-font-weight-600 mb-3">Python Kumasi</h3>
+                      <p>The Python User Group in Kumasi</p>
+                    </div>
+  
+                    <a class="u-icon-v1 g-color-twitter g-color-twitter--hover g-mr-15 g-mb-20" href="https://twitter.com/pythonkumasi" target="/">
+                      <i class="fa fa-twitter"></i>
+                    </a>
+                    <a class="u-icon-v1 g-color-facebook g-color-facebook--hover g-mr-15 g-mb-20" href="https://web.facebook.com/PyGhana/" target="/">
+                      <i class="fa fa-facebook"></i>
+                    </a>
+                    
+                    <a class="u-icon-v1 g-color-linkedin g-color-linkedin--hover g-mr-15 g-mb-20" href="https://www.linkedin.com/company/pythonghana/" target="/">
+                      <i class="fa fa-linkedin"></i>
+                    </a>
+                    
+                  
+                  </div>
+                  <!-- End Icon Blocks -->
+                </div>
+  
+                <div class="js-slide">
+                  <!-- Icon Blocks -->
+                  <div class="u-shadow-v21--hover g-brd-around g-brd-gray-light-v3 g-brd-left-none g-brd-transparent--hover g-bg-white--hover g-transition-0_3 g-cursor-pointer g-px-30 g-pt-30 g-pb-50 g-ml-minus-1">
+                    <div class="mb-4">
+                      <div class="g-brd-around--md g-brd-10 g-brd-white rounded">
+                        <img class="img-fluid w-100 rounded" src="{% static 'assets20/img/Py-HO.jpg' %}" alt="Image Description">
+                      </div>
+                      <h3 class="h5 g-color-black g-font-weight-600 mb-3">Python Ho</h3>
+                      <p>The Python User Group in Ho</p>
+                    </div>
+  
+                    <a class="u-icon-v1 g-color-twitter g-color-twitter--hover g-mr-15 g-mb-20" href="https://twitter.com/pythonho" target="/">
+                      <i class="fa fa-twitter"></i>
+                    </a>
+                    <a class="u-icon-v1 g-color-facebook g-color-facebook--hover g-mr-15 g-mb-20" href="https://web.facebook.com/PyGhana/" target="/">
+                      <i class="fa fa-facebook"></i>
+                    </a>
+                    
+                    <a class="u-icon-v1 g-color-linkedin g-color-linkedin--hover g-mr-15 g-mb-20" href="https://www.linkedin.com/company/pythonghana/" target="/">
+                      <i class="fa fa-linkedin"></i>
+                    </a>
+                    
+                  
+                  </div>
+                  <!-- End Icon Blocks -->
+                </div>
+  
+                <div class="js-slide">
+                  <!-- Icon Blocks -->
+                  <div class="u-shadow-v21--hover g-brd-around g-brd-gray-light-v3 g-brd-left-none g-brd-transparent--hover g-bg-white--hover g-transition-0_3 g-cursor-pointer g-px-30 g-pt-30 g-pb-50 g-ml-minus-1">
+                    <div class="mb-4">
+                      <div class="g-brd-around--md g-brd-10 g-brd-white rounded">
+                        <img class="img-fluid w-100 rounded" src="{% static 'assets20/img/Py-CC.jpg' %}" alt="Image Description">
+                      </div>
+                      <h3 class="h5 g-color-black g-font-weight-600 mb-3">Python Cape Coast</h3>
+                      <p>The Python User Group in Cape Coast</p>
+                    </div>
+  
+                    <a class="u-icon-v1 g-color-twitter g-color-twitter--hover g-mr-15 g-mb-20" href="https://twitter.com/pythoncapecoast" target="/">
+                      <i class="fa fa-twitter"></i>
+                    </a>
+                    <a class="u-icon-v1 g-color-facebook g-color-facebook--hover g-mr-15 g-mb-20" href="https://web.facebook.com/PyGhana/" target="/">
+                      <i class="fa fa-facebook"></i>
+                    </a>
+                    
+                    <a class="u-icon-v1 g-color-linkedin g-color-linkedin--hover g-mr-15 g-mb-20" href="https://www.linkedin.com/company/pythonghana/" target="/">
+                      <i class="fa fa-linkedin"></i>
+                    </a>
+                    
+                  
+                  </div>
+                  <!-- End Icon Blocks -->
+                </div>
+  
+                <div class="js-slide">
+                  <!-- Icon Blocks -->
+                  <div class="u-shadow-v21--hover g-brd-around g-brd-gray-light-v3 g-brd-left-none g-brd-transparent--hover g-bg-white--hover g-transition-0_3 g-cursor-pointer g-px-30 g-pt-30 g-pb-50 g-ml-minus-1">
+                    <div class="mb-4">
+                      <div class="g-brd-around--md g-brd-10 g-brd-white rounded">
+                        <img class="img-fluid w-100 rounded" src="{% static 'assets20/img/py-ss.png' %}" alt="Image Description">
+                      </div>
+                      <h3 class="h5 g-color-black g-font-weight-600 mb-3">Python Sunyani</h3>
+                      <p>The Python User Group in Sunyani</p>
+                    </div>
+  
+                    <a class="u-icon-v1 g-color-twitter g-color-twitter--hover g-mr-15 g-mb-20" href="https://twitter.com/pythonsunyani" target="/">
+                      <i class="fa fa-twitter"></i>
+                    </a>
+                    <a class="u-icon-v1 g-color-facebook g-color-facebook--hover g-mr-15 g-mb-20" href="https://web.facebook.com/PyGhana/" target="/">
+                      <i class="fa fa-facebook"></i>
+                    </a>
+                    
+                    <a class="u-icon-v1 g-color-linkedin g-color-linkedin--hover g-mr-15 g-mb-20" href="https://www.linkedin.com/company/pythonghana/" target="/">
+                      <i class="fa fa-linkedin"></i>
+                    </a>
+                    
+                  
+                  </div>
+                  <!-- End Icon Blocks -->
+                </div>
+  
+                <div class="js-slide">
+                  <!-- Icon Blocks -->
+                  <div class="u-shadow-v21--hover g-brd-around g-brd-gray-light-v3 g-brd-left-none g-brd-transparent--hover g-bg-white--hover g-transition-0_3 g-cursor-pointer g-px-30 g-pt-30 g-pb-50 g-ml-minus-1">
+                    <div class="mb-4">
+                      <div class="g-brd-around--md g-brd-10 g-brd-white rounded">
+                        <img class="img-fluid w-100 rounded" src="{% static 'assets20/img/py-wa.png' %}" alt="Image Description">
+                      </div>
+                      <h3 class="h5 g-color-black g-font-weight-600 mb-3">Python Wa</h3>
+                      <p>The Python User Group in Wa</p>
+                    </div>
+  
+                    <a class="u-icon-v1 g-color-twitter g-color-twitter--hover g-mr-15 g-mb-20" href="https://twitter.com/pythonwa" target="/">
+                      <i class="fa fa-twitter"></i>
+                    </a>
+                    <a class="u-icon-v1 g-color-facebook g-color-facebook--hover g-mr-15 g-mb-20" href="https://web.facebook.com/PyGhana/" target="/">
+                      <i class="fa fa-facebook"></i>
+                    </a>
+                    
+                    <a class="u-icon-v1 g-color-linkedin g-color-linkedin--hover g-mr-15 g-mb-20" href="https://www.linkedin.com/company/pythonghana/" target="/">
+                      <i class="fa fa-linkedin"></i>
+                    </a>
+                    
+                  
+                  </div>
+                  <!-- End Icon Blocks -->
+                </div>
+                
+  
+  
+  
+  
+              </div>
+            </div>
+          </div>
+          <!-- End Icon Blocks -->
+        </div>
+      </section>
+      <!-- End Icon Blocks -->
+  
+      <hr class="g-brd-gray-light-v4 my-0">
+  
+      <!-- News -->
+      <section class="container g-pt-100 g-pb-90">
+        
+  
+        <div class="row g-mx-minus-10">
+          <div class="col-sm-6 col-lg-4 g-px-10 g-mb-10">
+            <!-- Events Overlay Blocks -->
+            <article class="u-block-hover">
+              <div class=" g-bg-bluegray-gradient-opacity-v1--after">
+                          <!-- tweets -->
+                          <div class="">
+                            {% upcoming_events %}
+                          </div>
+                      <!-- End tweets -->
+              </div>
+            </article>
+            <!-- End Event Background Overlay Blocks -->
+          </div>
+  
+          <div class="col-sm-6 col-lg-4 g-px-10 g-mb-10">
+            <!-- Blog Gallery Overlay Blocks -->
+            <article class="u-block-hover">
+              <div class=" g-bg-bluegray-gradient-opacity-v1--after">
+                <div class="headline headline-md"><h3>Gallery</h3></div>
+                          <!-- tweets -->
+                          <div class="">
+                                      
+                          </div>
+                      <!-- End tweets -->
+              </div>
+            </article>
+            <!-- End Blog Background Overlay Blocks -->
+          </div>
+  
+          <div class="col-sm-6 col-lg-4 g-px-10 g-mb-10">
+            <!-- Blog Background Overlay Blocks -->
+            <article class="u-block-hover">
+              <div class=" g-bg-bluegray-gradient-opacity-v1--after">
+                <div class="headline headline-md"><h3>Latest Tweets</h3></div>
+                          <!-- tweets -->
+                          <div class="">
+                                      <div class="">
+                                                  <a class="twitter-timeline" data-width="420" data-height="400" href="https://twitter.com/PyGhana?ref_src=twsrc%5Etfw">Tweets by Python Ghana(PyGhana)</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                                      </div>
+                          </div>
+                      <!-- End tweets -->
+              </div>
+            </article>
+            <!-- End Blog Background Overlay Blocks -->
+          </div>
+  
+        </div>
+      </section>
+  
+      <hr class="g-brd-gray-light-v4 my-0">
+  
+      <!-- Partners -->
+      <section class="container g-py-100">
+        <div class="u-heading-v6-2 text-center g-mb-60">
+          <span class="d-block g-color-gray-dark-v4 g-font-weight-600 g-font-size-13 text-uppercase">Our valuable</span>
+          <h2 class="h1 u-heading-v6__title g-brd-black g-color-black g-font-weight-600 mb-0">Partners</h2>
+          <p>We appreciate these organizations that are helping support us in one way or the other
+  
+          </p>
+        </div>
+  
+        <div class="row no-gutters">
+          <div class="col-sm-6 col-lg-3">
+            <!-- Partners -->
+            <div class="g-brd-around g-brd-gray-light-v5 g-bg-white text-center">
+              <a class="d-block u-block-hover g-opacity-0_3 g-opacity-1--hover g-color-black g-transition-0_3 g-px-30 g-py-70" href="https://www.python.org/psf-landing/" target="/">
+                <img class="u-block-hover__main--zoom-v1 u-block-hover__main--grayscale g-width-100" src="{% static 'assets20/img/ThePSF.png' %}" alt="Image Description">
+                <span class="d-block u-block-hover__additional--partially-slide-up py-2">
+                    <span class="d-block h5 g-color-gray-dark-v5 mb-4">Python Software Foundation</span>
+                </span>
+              </a>
+            </div>
+            <!-- End Partners -->
+          </div>
+  
+          <div class="col-sm-6 col-lg-3">
+            <!-- Partners -->
+            <div class="g-brd-around g-brd-gray-light-v5 g-bg-white text-center">
+              <a class="d-block u-block-hover g-opacity-0_3 g-opacity-1--hover g-color-black g-transition-0_3 g-px-30 g-py-70" href="https://www.pythonanywhere.com/?affiliate_id=002cb45d" target="/">
+                <img class="u-block-hover__main--zoom-v1 u-block-hover__main--grayscale g-width-100" src="{% static 'assets20/img/partPA.jpg' %}" alt="Image Description">
+                <span class="d-block u-block-hover__additional--partially-slide-up py-2">
+                    <span class="d-block h5 g-color-gray-dark-v5 mb-4">Python Anywhere</span>
+                </span>
+              </a>
+            </div>
+            <!-- End Partners -->
+          </div>
+  
+          <div class="col-sm-6 col-lg-3">
+            <!-- Partners -->
+            <div class="g-brd-around g-brd-gray-light-v5 g-bg-white text-center">
+              <a class="d-block u-block-hover g-opacity-0_3 g-opacity-1--hover g-color-black g-transition-0_3 g-px-30 g-py-70" href="http://honode.org/" target="/">
+                <img class="u-block-hover__main--zoom-v1 u-block-hover__main--grayscale g-width-100" src="{% static 'assets20/img/parthonodehub.jpg' %}" alt="Image Description">
+                <span class="d-block u-block-hover__additional--partially-slide-up py-2">
+                    <span class="d-block h5 g-color-gray-dark-v5 mb-4">Ho Node</span>
+                </span>
+              </a>
+            </div>
+            <!-- End Partners -->
+          </div>
+  
+        </div>
+  
+      </section>
+      <!-- End Partners -->
+  
+
+{% endblock %}

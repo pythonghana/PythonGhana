@@ -23,5 +23,6 @@ from . import views
 urlpatterns = [			
 	url(r'^$', views.homepage, name='homepage'),
 	url(r'^home', views.home, name='home'),
+    url(r'^newhome', views.newhome, name='newhome'),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
