@@ -1,0 +1,33 @@
+{% extends "base22.html" %}
+{% load static %}
+{% load i18n mezzanine_tags blog_tags staticfiles keyword_tags disqus_tags %}
+{% block meta_title %}{% if page %}{{ page.meta_title }}{% else %}{% trans "Form" %}{% endif %}{% endblock %}
+
+
+{% block content %}
+
+        <!--=== Breadcrumbs ===-->
+        <div class="breadcrumbs">
+            <div class="container">
+               <h1 class="pull-left"><strong>Python Ghana Community</strong></h1>
+            </div>
+        </div><!--/breadcrumbs-->
+        <!--=== End Breadcrumbs ===-->
+
+
+		<!--=== Parallax About Block ===-->
+		<div class="parallax-bg parallaxBg1">
+			<div class="container content parallax-about">
+				<div class="row" align="center" >
+					<div>
+						<div class="banner-info dark margin-bottom-10">
+							<img src="https://img.icons8.com/color/96/000000/group-background-selected.png">
+							<div class="overflow-h">
+							    </div>
+						</div>
+						</div>
+					</div>
+				</div>
+			</div><!--/container-->
+		<!--=== End Parallax About Block ===-->
+{% endblock %}

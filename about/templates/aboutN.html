@@ -1,0 +1,310 @@
+{% extends "baseN.html" %}
+{% load static %}
+{% load i18n mezzanine_tags blog_tags staticfiles keyword_tags disqus_tags %}
+{% block meta_title %}{% if page %}{{ page.meta_title }}{% else %}{% trans "About" %}{% endif %}{% endblock %}
+
+
+{% block content %}
+
+
+
+    <!-- Header -->
+    <header id="js-header" class="u-header u-header--static">
+      <div class="u-header__section u-header__section--light g-bg-white g-transition-0_3 g-py-10">
+        <nav class="js-mega-menu navbar navbar-expand-lg hs-menu-initialized hs-menu-horizontal">
+          <div class="container">
+            <!-- Responsive Toggle Button -->
+            <button class="navbar-toggler navbar-toggler-right btn g-line-height-1 g-brd-none g-pa-0 g-pos-abs g-top-minus-3 g-right-0" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navBar" data-toggle="collapse" data-target="#navBar">
+              <span class="hamburger hamburger--slider">
+            <span class="hamburger-box">
+              <span class="hamburger-inner"></span>
+              </span>
+              </span>
+            </button>
+            <!-- End Responsive Toggle Button -->
+
+            <!-- Logo -->
+            <a href="/" class="navbar-brand d-flex">
+                <img class="shrink-logo" src="{% static 'assets20/img/navbar.png' %}" alt="Logo">
+            </a>
+            <!-- End Logo -->
+
+            <!-- Navigation -->
+            <div class="collapse navbar-collapse align-items-center flex-sm-row g-pt-10 g-pt-5--lg g-mr-40--lg" id="navBar">
+              <ul class="navbar-nav text-uppercase g-pos-rel g-font-weight-600 ml-auto">
+                <!-- Home -->
+                <li class="nav-item  g-mx-10--lg g-mx-15--xl">
+                  <a href="/home" class="nav-link g-py-7 g-px-0">Home</a>
+                </li>
+                <!-- End Home -->
+
+                <!-- Blog -->
+                <li class="nav-item  g-mx-10--lg g-mx-15--xl">
+                  <a href="https://pythonghana.blogspot.com/" class="nav-link g-py-7 g-px-0">Blog</a>
+                </li>
+                <!-- End Blog -->
+
+                <!-- Events -->
+                <li class="nav-item  g-mx-10--lg g-mx-15--xl">
+                  <a href="/events" class="nav-link g-py-7 g-px-0">Events</a>
+                </li>
+                <!-- End Events -->
+
+                 <!-- Code of Conduct -->
+                 <li class="nav-item  g-mx-10--lg g-mx-15--xl">
+                  <a href="/coc" class="nav-link g-py-7 g-px-0">COC</a>
+                </li>
+                <!-- End Intro -->
+
+                 <!-- Gallery -->
+                 <li class="nav-item  g-mx-10--lg g-mx-15--xl">
+                  <a href="/gallery" class="nav-link g-py-7 g-px-0">Gallery</a>
+                </li>
+                <!-- End Gallery -->
+
+                 <!-- Resources -->
+                 <li class="nav-item  g-mx-10--lg g-mx-15--xl">
+                  <a href="/resources" class="nav-link g-py-7 g-px-0">Resources</a>
+                </li>
+                <!-- End Resources -->
+
+                <!-- About -->
+                <li class="nav-item  g-mx-10--lg g-mx-15--xl">
+                  <a href="/about" class="nav-link g-py-7 g-px-0">About</a>
+                </li>
+                <!-- End About -->
+
+              </ul>
+            </div>
+            <!-- End Navigation -->
+          </div>
+        </nav>
+      </div>
+    </header>
+    <!-- End Header -->
+
+    <!-- Promo Block -->
+    <section class="dzsparallaxer auto-init height-is-based-on-content use-loading mode-scroll loaded dzsprx-readyall " data-options='{direction: "fromtop", animation_duration: 25, direction: "reverse"}'>
+      <!-- Parallax Image -->
+      <div class="divimage dzsparallaxer--target w-100 u-bg-overlay g-bg-black-opacity-0_3--after" style="height: 140%; background-image: url({% static 'assets20/img/breadcrumbs/img1.jpg' %});"></div>
+      <!-- End Parallax Image -->
+
+      <!-- Promo Block Content -->
+      <div class="container g-color-white text-center g-py-120">
+        <h3 class="h1 g-font-weight-600 text-uppercase mb-2">About us</h3>
+      </div>
+      <!-- Promo Block Content -->
+    </section>
+    <!-- End Promo Block -->
+   
+   
+
+      <section class="g-py-50">
+        <div class="container">
+          <!-- Heading -->
+          <header class="g-mb-80">
+          <div class="u-shadow-v19 g-bg-white g-pa-30">
+            <div class="media g-mb-15">
+              <div class="d-flex mr-4">
+                <span class="g-color-gray-dark-v4 g-font-size-26">
+                  <i class="icon-communication-040 u-line-icon-pro u-line-icon-pro"></i>
+                </span>
+              </div>
+              <div class="media-body">
+                <h3 class="h5 g-color-black mb-20"><strong>About Python Ghana</strong></h3>
+                <div class="g-width-30 g-brd-bottom g-brd-gray-dark-v5 g-my-15"></div>
+
+                <h5>The Python Ghana Community (PyGhana) is a body that embraces all friends of the Python programming language in Ghana. We are a community of master programmers, intermediate and even absolute beginners, but one thing we all have in common is the love of Python.
+                  It encompasses all friends of the Python programming language in the Ghana.
+                  The community is open to everyone at all levels.<br><br> <p>So whether you are resident in Ghana or outside the country, an absolute beginner or a maestro, program in Python or other languages but have some interest in Python, our community will embrace you.
+                  We have an active Slack team, where we engage ourselves regularly. You can check out our Github page for blog we have or are working on.</p></h5>
+                  <div class="overflow-h"><br><br>
+                    <h3 class="h5 g-color-black mb-20"><strong>Our vision</strong></h3>
+                    <ul>
+                      <li><h5>
+                        To promote the use of the Python programming language across industries, communities, schools, learning centers, regardless of age, ethnicity, gender, ability, and recognizing the value of diversity.
+                      </h5></li>
+                      <li><h5>
+                        To be a representative of the Python Software Foundation in Ghana, and to be a facilitator of the global vision of the foundation.
+                      </h5></li>
+                      <li><h5>
+                        To involve IT professionals who use the Python programming language with the local community, to impart knowledge.
+                      </h5></li>
+                      <li><h5>
+                        To foster unity among community members and promote the individual development of community members.
+                      </h5></li>
+                      <li><h5>
+                        To ensure collaboration between the local community and the wider international Python community.
+                      </h5></li>
+                      <li><h5>
+                        To educate, encourage, support and if necessary, help facilitate projects of members of the community.
+                      </h5></li>
+                      <li><h5>
+                        To monitor all community projects and ensure a safe and friendly environment, and conformity to the code of conduct as stipulated by the Python Software Foundation.
+                      </h5></li>
+                      
+                    </ul>
+                  </div>
+              </div>
+            </div>
+          </div>
+          </header>
+          <!-- End Heading -->
+
+    <!-- Team Blocks -->
+    <section class="container g-pt-100 g-pb-70">
+      <div class="row justify-content-center g-mb-60">
+        <div class="col-lg-7">
+          <!-- Heading -->
+          <div class="text-center">
+            <h2 class="h3 g-color-black text-uppercase mb-2">Meet our team</h2>
+            <div class="d-inline-block g-width-35 g-height-2 g-bg-primary mb-2"></div>
+            <p class="lead mb-0">The Success of Python Ghana won't be achieved without the sacrifice and commitment of our executives & great Leads below.</p>
+          </div>
+          <!-- End Heading -->
+        </div>
+      </div>
+
+      <!-- Nav tabs -->
+<ul class="nav text-center nav-justified u-nav-v1-2 g-mb-20" role="tablist" data-target="nav-1-2-default-hor-left-big-icons" data-tabs-mobile-type="slide-up-down" data-btn-classes="btn btn-md btn-block rounded-0 u-btn-outline-lightgray g-mb-20">
+  <li class="nav-item">
+    <a class="nav-link active" data-toggle="tab" href="#nav-1-2-default-hor-left-big-icons--1" role="tab">
+      <i class="icon-education-073 u-line-icon-pro d-block g-font-size-25 u-tab-line-icon-pro"></i>
+      Current Leads
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" data-toggle="tab" href="#nav-1-2-default-hor-left-big-icons--2" role="tab">
+      <i class="icon-education-041 u-line-icon-pro d-block g-font-size-25 u-tab-line-icon-pro"></i>
+      Past Leads
+    </a>
+  </li>
+</ul>
+<!-- End Nav tabs -->
+
+<!-- Tab panes -->
+<div id="nav-1-2-default-hor-left-big-icons" class="tab-content">
+  <div class="tab-pane fade show active" id="nav-1-2-default-hor-left-big-icons--1" role="tabpanel">
+    
+    <div class="row">
+     
+
+      
+      <div class="col-lg-3 col-sm-6 g-mb-30">
+        {% for about in about %}
+        <!-- Team Block -->
+        <figure class="u-block-hover">
+          <!-- Figure Image -->
+          <img class="w-100" src="{{ about.profile_image.url }}" alt="Image description">
+          <!-- End Figure Image-->
+
+          <!-- Figure Info -->
+          <figcaption class="u-block-hover__additional--partially-slide-up g-mx-15">
+            <div class="text-center g-bg-white g-pb-20">
+              <!-- Figure Info -->
+              <div class="u-block-hover__visible g-pt-20 g-pb-15 g-y-20">
+                <h4 class="h5 g-color-black g-mb-5">{{ about.full_name }}</h4>
+                <em class="d-block g-font-style-normal g-font-size-11 text-uppercase g-color-primary">{{ about.position_held }}</em>
+              </div>
+              <!-- End Info -->
+
+              <!-- Figure Social Icons -->
+              <ul class="list-inline mb-0">
+                {% if about.twitter %}
+                <li class="list-inline-item">
+                  <a href="https://twitter.com/{{ about.twitter_handle }}" class="u-icon-v1 u-icon-size--sm g-color-gray-light-v1 g-color-twitter--hover g-bg-transparent">
+                    <i class="fa fa-twitter"></i>
+                  </a>
+                </li>
+                {% else %}
+                  <p></p>
+                {% endif %}
+
+                {% if about.linkedin %}
+                <li class="list-inline-item">
+                  <a href="https://www.linkedin.com/{{ about.linkedin }}" class="u-icon-v1 u-icon-size--sm g-color-gray-light-v1 g-color-dribbble--hover g-bg-transparent">
+                    <i class="fa fa-linkedin"></i>
+                  </a>
+                </li>
+                {% else %}
+                   <p></p>
+                {% endif %}
+
+                
+              </ul>
+              <!-- Figure Social Icons -->
+            </div>
+          </figcaption>
+          <!-- End Figure Info-->
+        </figure>
+        <!-- End Team Block -->
+      {% endfor %}
+    </div>
+
+
+      
+
+
+
+    </div>  
+  </div>
+
+  <div class="tab-pane fade" id="nav-1-2-default-hor-left-big-icons--2" role="tabpanel">
+  
+    <div class="row">
+      <div class="col-lg-3 col-sm-6 g-mb-30">
+        <!-- Team Block -->
+        <figure class="u-block-hover">
+          <!-- Figure Image -->
+          <img class="w-100" src="{% static 'assets20/img-temp/400x550/img1.jpg' %}" alt="Image description">
+          <!-- End Figure Image-->
+
+          <!-- Figure Info -->
+          <figcaption class="u-block-hover__additional--partially-slide-up g-mx-15">
+            <div class="text-center g-bg-white g-pb-20">
+              <!-- Figure Info -->
+              <div class="u-block-hover__visible g-pt-20 g-pb-15 g-y-20">
+                <h4 class="h5 g-color-black g-mb-5">Katalina Watson</h4>
+                <em class="d-block g-font-style-normal g-font-size-11 text-uppercase g-color-primary">Technical Director</em>
+              </div>
+              <!-- End Info -->
+
+              <!-- Figure Social Icons -->
+              <ul class="list-inline mb-0">
+                <li class="list-inline-item">
+                  <a href="#" class="u-icon-v1 u-icon-size--sm g-color-gray-light-v1 g-color-twitter--hover g-bg-transparent">
+                    <i class="fa fa-twitter"></i>
+                  </a>
+                </li>
+                <li class="list-inline-item">
+                  <a href="#" class="u-icon-v1 u-icon-size--sm g-color-gray-light-v1 g-color-dribbble--hover g-bg-transparent">
+                    <i class="fa fa-dribbble"></i>
+                  </a>
+                </li>
+                <li class="list-inline-item">
+                  <a href="#" class="u-icon-v1 u-icon-size--sm g-color-gray-light-v1 g-color-facebook--hover g-bg-transparent">
+                    <i class="fa fa-facebook"></i>
+                  </a>
+                </li>
+              </ul>
+              <!-- Figure Social Icons -->
+            </div>
+          </figcaption>
+          <!-- End Figure Info-->
+        </figure>
+        <!-- End Team Block -->
+      </div>
+
+      
+    </div>  
+  </div>
+</div>
+<!-- End Tab panes -->
+
+      </div>
+    </section>
+    <!-- End Team Blocks -->
+        </div>
+</section>
+
+{% endblock %}

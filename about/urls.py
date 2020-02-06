@@ -22,5 +22,6 @@ from . import views
 
 urlpatterns = [			
 	url(r'^$', views.aboutpage, name='about'),
+    url(r'^New', views.about, name='about'),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 

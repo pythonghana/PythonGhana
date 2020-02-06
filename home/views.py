@@ -69,6 +69,27 @@ def capecoast(request):
 	template = "capecoast.html"
 	return render(request, template, context)
 
+
+
+
+def wa(request):
+	context = {}
+	template = "wa.html"
+	return render(request, template, context)
+
+
+
+
+def sunyani(request):
+	context = {}
+	template = "sunyani.html"
+	return render(request, template, context)
+
+def members(request):
+	context = {}
+	template = "members.html"
+	return render(request, template, context)
+
 # HTTP Error 400
 def bad_request(request):
     response = render_to_response(

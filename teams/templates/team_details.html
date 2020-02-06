@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+{% load i18n static %}
+{% block meta_title %}{% if page %}{{ page.meta_title }}{% else %}{% trans "Speaker | Ghana Data Science Summit" %}{% endif %}{% endblock %}
+
+
+{% block content %}
+
+
+    <!--Banner Inner-->
+    <section>
+        <div class="lgx-banner lgx-banner-inner">
+            <div class="lgx-page-inner">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="lgx-heading-area">
+                                <div class="lgx-heading lgx-heading-white">
+                                    <h2 class="heading">{{ speaker.speaker_name }}</h2>
+                                </div>
+                                <ul class="breadcrumb">
+                                    <li><a href="/"><i class="fa fa-home" aria-hidden="true"></i>Home</a></li>
+                                    <li><a href="/teams">teams</a></li>
+                                    <li class="active">{{ speaker.speaker_name }}</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div><!--//.ROW-->
+                </div><!-- //.CONTAINER -->
+            </div><!-- //.INNER -->
+        </div>
+    </section> <!--//.Banner Inner-->
+
+
+    <main>
+        <div class="lgx-post-wrapper">
+            <!--News-->
+            <section>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <article>
+                                <header>
+                                    <figure>
+                                        <img src="{{ speaker.profile_image.url }}" alt="{{ speaker.speaker_name }}"/>
+                                    </figure>
+                                    <div class="text-area">
+                                        <div class="speaker-info">
+                                            <h1 class="title"><a href="speaker.html">{{ speaker.speaker_name }}</a></h1>
+                                            <h4 class="subtitle"> {{ speaker.position }}</h4>
+                                            <h5 class="subtitle"> {{ speaker.company }}</h5>
+                                        </div>
+                                        <ul class="list-inline lgx-social">
+                                            {% if speaker.twitter %}
+                                            <li><a href="https://www.twitter.com/{{ speaker.twitter }}"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                            {% else %}
+                                            <p></p>
+                                            {% endif %}
+                                            
+                                            {% if speaker.linkedin %}
+                                            <li><a href="https://www.linkedin.com/{{ speaker.linkedin }}"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                                            {% else %}
+                                            <p></p>
+                                            {% endif %}
+
+                                            {% if speaker.website %}
+                                            <li><a href="{{ speaker.website }}"><i class="fa fa-globe" aria-hidden="true"></i></a></li>
+                                            {% else %}
+                                            <p></p>
+                                            {% endif %}
+                                        </ul>
+                                    </div>
+                                </header>
+                                <section>
+                                    <p>
+                                        {{ speaker.biography }}
+                                    </p>
+                                </section>
+                               
+                            </article>
+                        </div>
+                    </div>
+                </div><!-- //.CONTAINER -->
+            </section>
+            <!--News END-->
+        </div>
+    </main>
+
+
+    {% include 'footerO.html' %}
+
+{% endblock %}

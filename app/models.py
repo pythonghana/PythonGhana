@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# -*- coding: utf-8 -*- 
+# -*- coding: utf-8 -*-
 import uuid
 from django.db import models
 from imagekit.models import ProcessedImageField

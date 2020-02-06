@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="{{ LANGUAGE_CODE }}"{% if LANGUAGE_BIDI %} dir="rtl"{% endif %}>
+{% load pages_tags mezzanine_tags i18n staticfiles events_tags %}
+
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="{% block meta_keywords %}{% endblock %}">
+    <meta name="description" content="{% block meta_description %}{% endblock %}">
+    <title>{% block meta_title %}{% endblock %}{% if settings.SITE_TITLE %} | {{ settings.SITE_TITLE }}{% endif %}</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="{% static 'favicon.png' %}">
+
+    <!-- Web Fonts -->
+    <link rel='stylesheet' type='text/css' href='//fonts.googleapis.com/css?family=Open+Sans:400,300,600&amp;subset=cyrillic,latin'>
+
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="{% url "blog_post_feed" "rss" %}">
+    <link rel="alternate" type="application/atom+xml" title="Atom" href="{% url "blog_post_feed" "atom" %}">
+
+     <link rel="stylesheet" href="{% static 'events/css/calendar.css' %}">
+    {% block extra_css %}{% endblock extra_css %}
+
+
+    <!-- CSS Global Compulsory -->
+    <link rel="stylesheet" href="{% static 'assets/plugins/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+
+    <!-- CSS Header and Footer -->
+
+    <link rel="stylesheet" href="{% static 'assets/css/headers/header-v3.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/footers/footer-v1.css' %}">
+
+    <!-- CSS Implementing Plugins -->
+    <link rel="stylesheet" href="{% static 'assets/plugins/animate.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/plugins/line-icons/line-icons.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/plugins/font-awesome/css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/plugins/brand-buttons/brand-buttons.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/plugins/revolution-slider/rs-plugin/css/settings.css' %}" type="text/css" media="screen">
+    <link rel="stylesheet" href="{% static 'assets/plugins/fancybox/source/jquery.fancybox.css' %}">
+    <!--[if lt IE 9]><link rel="stylesheet" href="{% static 'assets/plugins/revolution-slider/rs-plugin/css/settings-ie8.css' %}" type="text/css" media="screen"><![endif]-->
+
+    <!-- CSS Page Style -->
+    <link rel="stylesheet" href="{% static 'assets/css/pages/shortcode_timeline1.css' %}">
+
+
+    <!-- CSS Theme -->
+    <link rel="stylesheet" href="{% static 'assets/css/theme-colors/blue.css' %}" id="style_color">
+    <link rel="stylesheet" href="{% static 'assets/css/theme-skins/blue.css' %}">
+    <link href="{% static 'pro_css/app/appblog.css' %}" rel="stylesheet">
+
+    <!-- CSS Customization -->
+    <link rel="stylesheet" href="{% static 'assets/css/custom.css' %}">
+
+<!--[if lt IE 9]>
+<script src="{% static "js/html5shiv.js" %}"></script>
+<script src="{% static "js/respond.min.js" %}"></script>
+<![endif]-->
+
+
+{% block extra_head %}{% endblock %}
+</head>
+
+
+
+<body class="header-fixed">
+      <!--=== Header ===-->
+    <div class="header-v3 header-sticky">
+      <!-- Navbar -->
+      <div class="navbar navbar-default mega-menu" role="navigation">
+        <div class="container">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="fa fa-bars"></span>
+            </button>
+
+            <a class="navbar-brand" href="/home">
+              <img id="logo-header"  src="{% static 'assets/img/navbar.png' %}" alt="Logo">
+            </a>
+          </div>
+
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse mega-menu navbar-responsive-collapse">
+            <div class="container">
+               <ul class="nav navbar-nav">
+                                <!-- Home -->
+                                <li>
+                                {% block navbar_dropdown_menu %}{% page_menu "pages/menus/dropdown.html" %}{% endblock%}
+                                </li>
+
+                                <!-- End Home -->
+                                  <!-- Search Block -->
+                                    <li>
+                                      <i class="search fa fa-search search-btn"></i>
+                                      <div class="search-open">
+                                        <div class="input-group animated fadeInDown">
+                                           {% block navbar_search_form %}{% search_form %}{% endblock %}
+                                        </div>
+                                      </div>
+                                    </li>
+                                    <!-- End Search Block -->
+
+              </ul>
+
+            </div><!--/end container-->
+          </div><!--/navbar-collapse-->
+        </div>
+      </div>
+      <!-- End Navbar -->
+    </div>
+    <!--=== End Header ===-->
+
+
+    <!--=== Breadcrumbs v3 ===-->
+    <div class="breadcrumbs-v3 img-v3 text-center">
+      <div class="container">
+       <h2 style="color:#ffffff;"><strong></strong></h2>
+      </div><!--/end container-->
+    </div>
+    <!--=== End Breadcrumbs v3 ===-->
+
+
+		  {% block content %}{% endblock %}
+
+
+
+
+        <!--=== Footer Breadcrumbs ===-->
+      <hr class="devider devider-db">
+        <div class="breadcrumbs">
+            <div class="container">
+               <div class="text-center margin-bottom-10">
+                  <a href="https://wiki.python.org/moin/PythonEventsCalendar" class="btn-u btn-lg  btn-brd rounded-4x btn-u-blue btn-u-lg" type="button"><i class="fa fa-link"></i>  Main Python Events Calendar</a>
+                  <a href="https://www.python.org/events/" class="btn-u btn-lg  btn-brd rounded-4x btn-u-blue btn-u-lg" type="button"><i class="fa fa-link"></i>  Python Events around World</a>
+                </div>
+            </div>
+        </div><!--/breadcrumbs-->
+        <!--=== End Breadcrumbs ===-->
+  <!--=== Footer Version 1 ===-->
+  <div class="footer-v1">
+    <div class="footer">
+      <div class="container ">
+
+      <div class="row">
+       <div class="col-md-3 md-margin-bottom-40">
+            <a href="/"><img id="logo-footer" class="footer-logo" src="{% static 'pro_images/pythonfooter.png' %}" alt=""></a>
+          </div>
+            <!-- Link List -->
+          <div class="col-md-4 md-margin-bottom-40">
+            <div class="headline"><h2>JOIN US ON</h2></div>
+                      <div class="row" align="center">
+                        <a href="http://bit.ly/PyGhTelegram" target="_blank">
+                            <img src="{% static 'social/telegram.png' %}" class="dpg-icon" alt="Python Ghana Telegram"  class="img-responsive hover-effect tooltips" alt="" data-toggle="tooltip" data-placement="right" title="Our Telegram Group" data-original-title="Tooltip on right">
+                        </a>
+                        <a href="https://twitter.com/pyghana" target="_blank">
+                            <img src="{% static 'social/social-twitter.png' %}" class="dpg-icon" alt="Python Ghana Twitter"  class="img-responsive hover-effect tooltips" alt="" data-toggle="tooltip" data-placement="right" title="Our Twitter Page" data-original-title="Tooltip on right">
+                        </a>
+                        <a href="https://github.com/pythonghana" target="_blank">
+                            <img src="{% static 'social/social-github1.png' %}" class="dpg-icon" alt="Python Ghana Github"  class="img-responsive hover-effect tooltips" alt="" data-toggle="tooltip" data-placement="right" title="Our GitHub Repository" data-original-title="Tooltip on right">
+                        </a>
+                        <a href="https://pythonghana.slack.com/" target="_blank">
+                            <img src="{% static 'social/slack-logo.png' %}" class="dpg-icon" alt="Python Ghana Slack"  class="img-responsive hover-effect tooltips" alt="" data-toggle="tooltip" data-placement="right" title="Our Slack Page" data-original-title="Tooltip on right">
+                        </a>
+                        <a href="https://mail.python.org/mm3/mailman3/lists/pythonghana.python.org/" target="_blank">
+                            <img src="{% static 'social/mail.png' %}" class="dpg-icon" alt="Python Ghana Linkedin"  class="img-responsive hover-effect tooltips" alt="" data-toggle="tooltip" data-placement="right" title="Our Mailing List" data-original-title="Tooltip on right">
+                        </a>
+                     </div>
+          </div><!--/col-md-3-->
+          <!-- End Link List --> 
+
+        <!-- Link List -->
+          <div class="col-md-4 md-margin-bottom-40">
+            <div class="headline"><h2>Useful Links</h2></div>
+            <ul class="list-unstyled link-list">
+              <li>{% page_menu "pages/menus/footer.html" %}</li>
+
+            </ul>
+          </div><!--/col-md-3-->
+          <!-- End Link List -->
+      </div>
+      </div>
+    </div><!--/footer-->
+
+     <div class="copyright">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <p>
+                Python/Django web hosting for Python Ghana is generously donated by <a href="https://www.pythonanywhere.com/?affiliate_id=002cb45d" target="/"><img src="{% static 'pro_images/pythonanywhereS.jpg' %}" alt=""></a> <br><br> {% now "Y" %} &copy; All Rights Reserved Python Ghana.
+             </p>
+          </div>
+        </div>
+      </div>
+    </div><!--/copyright-->
+  </div>
+  <!--=== End Footer Version 1 ===-->
+
+    <!-- JS Global Compulsory -->
+    <script type="text/javascript" src="{% static 'assets/plugins/jquery/jquery.min.js' %}"></script>
+     <script type="text/javascript" src="{% static 'jquery/src/jquery.js'%}" />
+    <script type="text/javascript" src="{% static 'assets/plugins/jquery/jquery-migrate.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'assets/plugins/bootstrap/js/bootstrap.min.js' %}"></script>
+    <!-- JS Implementing Plugins -->
+    <script type="text/javascript" src="{% static 'assets/plugins/back-to-top.js' %}"></script>
+    <script type="text/javascript" src="{% static 'assets/plugins/smoothScroll.js' %}"></script>
+    <script src="{% static 'events/js/calendar.js' %}"></script>
+
+
+  <script type="text/javascript" src="{% static 'assets/plugins/jquery.parallax.js' %}"></script>
+  <script type="text/javascript" src="{% static 'assets/plugins/counter/waypoints.min.js' %}"></script>
+
+
+
+    <script type="text/javascript" src="{% static 'assets/plugins/fancybox/source/jquery.fancybox.pack.js' %}"></script>
+    <!-- JS Customization -->
+    <script type="text/javascript" src="{% static 'assets/js/custom.js' %}"></script>
+    <!-- JS Page Level -->
+    <script type="text/javascript" src="{% static 'assets/js/app.js' %}"></script>
+    <script type="text/javascript" src="{% static 'assets/js/plugins/style-switcher.js' %}"></script>
+    <script type="text/javascript" src="{% static 'assets/js/plugins/fancy-box.js' %}"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function() {
+            App.init();
+            FancyBox.initFancybox();
+        });
+    </script>
+
+  <!-- Inline Script for colors and config objects; used by various external scripts; -->
+
+<!-- include summernote css/js-->
+<link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.3/summernote.css" rel="stylesheet">
+<script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.3/summernote.js"></script>
+
+
+  <!-- Vendor Scripts Bundle
+    Includes all of the 3rd party JavaScript libraries above.
+    The bundle was generated using modern frontend development tools that are provided with the package
+    To learn more about the development process, please refer to the documentation.
+    Do not use it simultaneously with the separate bundles above. -->
+
+  <!-- App Scripts Bundle
+    Includes Custom Application JavaScript used for the current theme/module;
+    Do not use it simultaneously with the standalone modules below. -->
+
+
+
+</body>
+
+</html>

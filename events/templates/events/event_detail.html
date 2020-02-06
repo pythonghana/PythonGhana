@@ -68,7 +68,7 @@
                                         <ul>
                                         {% for e in event_days %}
                                             <li>
-                                                {% blocktrans with num_day=forloop.counter %} Day {{ num_day }}{% endblocktrans %}: {{ e|date:"SHORT_DATE_FORMAT" }} - {{ event.end_date|time }}
+                                                {% blocktrans with num_day=forloop.counter %} Day {{ num_day }}{% endblocktrans %}: {{ e|date:"SHORT_DATE_FORMAT" }} - {{ event.start_date|time }} to {{ event.end_date|time }}
                                                 {% for c in event.cancellations.all %}
                                                     {% if c.date == e.date %}
                                                         {{ _("(CANCELLED)") }}
@@ -100,7 +100,7 @@
 
 
                                 {% if event.location.all %}
-                                <p>{% blocktrans count counter=event.location.all.count %}<strong>Location:</strong>{% plural %}<strong>Locations:</strong>{% endblocktrans %}<br>
+                                <p>{% blocktrans count counter=event.location.all.count %}<strong>Location:</strong>{% plural %}<strong>Location:</strong>{% endblocktrans %}<br>
                                 {% for l in event.location.all %}
                                     {% if l.address_line_1 %}{{ l.address_line_1 }}<br>{% endif %}
                                     {% if l.address_line_2 %}{{ l.address_line_2 }}<br>{% endif %}
@@ -143,7 +143,7 @@
                                         <p></p>
                                 {% endif %}
                                 <br>
-                                
+
                                 </ul>
                                 <br><br>
                             <a class="btn-u btn-u-red"  id="cal-day-prev" class="cal-day" href="{{ request.path }}?cal_prev={{ prev }}">

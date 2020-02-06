@@ -7,6 +7,7 @@ from django.views.i18n import set_language
 
 from mezzanine.core.views import direct_to_template
 from mezzanine.conf import settings
+from django.conf.urls.static import static
 
 # Uncomment to use blog as home page. See also urlpatterns section below.
 # from mezzanine.blog import views as blog_views
@@ -49,27 +50,31 @@ urlpatterns += [
     url(r'^gallery/', include('app.urls')),
     url(r'^constitution/', include('constitution.urls')),
    #url(r'projects/', include('projects.urls')),
+   url(r'^team', include('teams.urls')),
 
   #INIATIATIVES
     url(r'^resources', direct_to_template, {"template": "resources.html"}, name="resources"),
+    url(r'^forms', direct_to_template, {"template": "members.html"}, name="members"),
     url(r'^pykidsghana', direct_to_template, {"template": "pykidsghana.html"}, name="pykidsghana"),
     url(r'^pyscholarsghana', direct_to_template, {"template": "pyscholarsghana.html"}, name="pyscholarsghana"),
     url(r'^pyclubghana', direct_to_template, {"template": "pyclubghana.html"}, name="pyclubghana"),
-    url(r'^pydataghana', direct_to_template, {"template": "pydataghana.html"}, name="pydataghana"),
+    url(r'^pydata', direct_to_template, {"template": "pydataghana.html"}, name="pydataghana"),
     url(r'^pyconghana', direct_to_template, {"template": "pyconghana.html"}, name="pyconghana"),
- 
+
 
 
 
    #USERGROUPS
     url(r'^accra/', direct_to_template, {"template": "accra.html"}, name="accra"),
-     url(r'^capecoast/', direct_to_template, {"template": "capecoast.html"}, name="capecoast"),
-      url(r'^ho/', direct_to_template, {"template": "ho.html"}, name="ho"),
-       url(r'^kumasi/', direct_to_template, {"template": "kumasi.html"}, name="kumasi"),
+    url(r'^capecoast/', direct_to_template, {"template": "capecoast.html"}, name="capecoast"),
+    url(r'^ho/', direct_to_template, {"template": "ho.html"}, name="ho"),
+    url(r'^kumasi/', direct_to_template, {"template": "kumasi.html"}, name="kumasi"),
+    url(r'^wa/', direct_to_template, {"template": "wa.html"}, name="wa"),
+    url(r'^sunyani/', direct_to_template, {"template": "sunyani.html"}, name="sunyani"),
+
 
 
     url("^", include("mezzanine.urls")),
-
 
 ]
 
@@ -77,3 +82,5 @@ urlpatterns += [
 # pages can use JS, CSS and images.
 handler404 = "mezzanine.core.views.page_not_found"
 handler500 = "mezzanine.core.views.server_error"
+if settings.DEBUG:
+     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

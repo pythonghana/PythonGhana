@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# -*- coding: utf-8 -*-  
+# -*- coding: utf-8 -*-
 import uuid
 import zipfile
 import pyghana.settings
@@ -38,14 +38,14 @@ class AlbumModelAdmin(admin.ModelAdmin):
                     img.alt = filename
                     filename = '{0}{1}.jpg'.format(album.slug, str(uuid.uuid4())[-13:])
                     img.image.save(filename, contentfile)
-                
+
                     filepath = '{0}/albums/{1}'.format(pyghana.settings.MEDIA_ROOT, filename)
                     with Image.open(filepath) as i:
                         img.width, img.height = i.size
 
                     img.thumb.save('thumb-{0}'.format(filename), contentfile)
                     img.save()
-                zip.close() 
+                zip.close()
             super(AlbumModelAdmin, self).save_model(request, obj, form, change)
 
 # In case image should be removed from album.

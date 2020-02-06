@@ -17,13 +17,12 @@
 <div class="container content">
     <div class="shadow-wrapper">
                         <blockquote class="tag-box tag-box-v1 box-shadow shadow-effect-2">
-                            <p><em>The Gallery consists of Photos from different Python Related Events from around Ghana</em></p>
+                            <p><em>The Gallery consists of photos from different Python Related Events or those Python Ghana was part of</em></p>
                         </blockquote>
-                    </div>
+                    </div><br>
     <div class="row">
         {% for album in albums %}
-
-                        <div style="width:250px; float: left;" class="col-md-4">
+                        <div class="col-md-3">
                             <div class="thumbnails thumbnail-style">
                                 <a class="fancybox" data-rel="fancybox-button" title="{{ album.title }}" href="{% url 'album' album.slug %}">
                                     <img class="img-responsive" src="{{ album.thumb.url }}" alt="{{ album.title }}">
@@ -34,12 +33,10 @@
                                 </div>
                             </div>
                         </div>
-
         {% endfor %}
-
     </div>
 </div>
-
+<br>
 <div class="pagination center">
     <span class="step-links">
         {% if albums.has_previous %}

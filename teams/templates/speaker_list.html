@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+{% load i18n static %}
+{% block meta_title %}{% if page %}{{ page.meta_title }}{% else %}{% trans "teams | Ghana Data Science Summit" %}{% endif %}{% endblock %}
+
+
+{% block content %}
+
+
+
+    <!--Banner Inner-->
+    <section>
+        <div class="lgx-banner lgx-banner-inner">
+            <div class="lgx-page-inner">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="lgx-heading-area">
+                                <div class="lgx-heading lgx-heading-white">
+                                    <h2 class="heading">Who’s Speaking</h2>
+                                </div>
+                                <ul class="breadcrumb">
+                                    <li><a href="index.html"><i class="fa fa-home" aria-hidden="true"></i>Home</a></li>
+                                    <li class="active">teams</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div><!--//.ROW-->
+                </div><!-- //.CONTAINER -->
+            </div><!-- //.INNER -->
+        </div>
+    </section> <!--//.Banner Inner-->
+
+
+    <main>
+        <div class="lgx-page-wrapper">
+            <section>
+                <div class="container">
+                
+                    
+                    <div class="row">
+                        <div class="col-xs-12">
+                            
+                            {% for speaker in teams %}
+                            {% if speaker.is_visible %}
+                            <div class="lgx-col4 lgx-single-speaker2">
+                                <figure>
+                                    <a class="profile-img" href="{% url 'speaker_detail' speaker.slug %}"><img src="{{ speaker.profile_image.url }}" alt="{{ speaker.speaker_name }}"/></a>
+                                    <figcaption>
+                                        <div class="social-group">
+                                            {% if speaker.twitter %}
+                                            <a class="sp-tw" href="https://www.twitter.com/{{ speaker.twitter }}" target="/"><i class="fa fa-twitter"></i></a>
+                                            {% else %}
+                                            <p></p>
+                                            {% endif %}
+
+                                            {% if speaker.linkedin %}
+                                            <a class="sp-in" href="https://www.linkedin.com/{{ speaker.linkedin }}" target="/"><i class="fa fa-linkedin"></i></a>
+                                            {% else %}
+                                            <p></p>
+                                            {% endif %}
+
+                                            </div>
+                                        <div class="speaker-info">
+                                            <h3 class="title"><a href="{% url 'speaker_detail' speaker.slug %}">{{ speaker.speaker_name }}</a></h3>
+                                            <h4 class="subtitle">{{ speaker.position }}</h4>
+                                            <h5 class="subtitle"> {{ speaker.company }}</h5>
+                                        </div>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                            {% else %}
+                            <h3 class="subheading">teams would be annouced soon!</h3>
+                            {% endif %}
+                            {% endfor %}
+                            
+                        </div>
+                    </div>
+                   
+
+                </div><!-- //.CONTAINER -->
+
+            </section>
+        </div>
+    </main>
+
+
+    {% include 'footerO.html' %}
+
+{% endblock %}
