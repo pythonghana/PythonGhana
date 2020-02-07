@@ -7,6 +7,7 @@ from imagekit.processors import ResizeToFit
 
 class Album(models.Model):
     title = models.CharField(max_length=70)
+    event_date = models.DateTimeField(auto_now_add=True)
     description = models.TextField(max_length=1024)
     twitter_url = models.URLField(default='', help_text='Link to Twitter Account', blank=True,)
     facebook_url = models.URLField(default='', help_text='Link to Facebook Account', blank=True,)
