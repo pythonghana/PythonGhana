@@ -5,5 +5,5 @@ from django.shortcuts import render
 
 def cocpage(request):
 	context = {} 
-	template = "coc.html" 
+	template = "cocN.html" 
 	return render(request, template, context)

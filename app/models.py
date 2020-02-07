@@ -13,7 +13,7 @@ class Album(models.Model):
     flickr_url = models.URLField(default='', help_text='Link to Flick Photo Ablum', blank=True,)
     album_link = models.URLField(help_text='Link to Photo Ablum', blank=False,)
     googlephotos_url = models.URLField(default='', help_text='Link to Google Photo Ablum', blank=True,)
-    thumb = ProcessedImageField(upload_to='albums', processors=[ResizeToFit(300)], format='jpg', options={'quality': 90})
+    thumb = ProcessedImageField(upload_to='albums', processors=[ResizeToFit(600)], format='jpeg', options={'quality': 90})
     tags = models.CharField(max_length=250)
     is_visible = models.BooleanField(default=True)
     created = models.DateTimeField(auto_now_add=True)
@@ -27,8 +27,8 @@ class Album(models.Model):
         return self.title
 
 class AlbumImage(models.Model):
-    image = ProcessedImageField(upload_to='albums', processors=[ResizeToFit(1280)], format='jpg', options={'quality': 70})
-    thumb = ProcessedImageField(upload_to='albums', processors=[ResizeToFit(300)], format='jpg', options={'quality': 80})
+    image = ProcessedImageField(upload_to='albums', processors=[ResizeToFit(1280)], format='jpeg', options={'quality': 90})
+    thumb = ProcessedImageField(upload_to='albums', processors=[ResizeToFit(600)], format='jpeg', options={'quality': 100})
     album = models.ForeignKey('album')
     alt = models.CharField(max_length=255, default=uuid.uuid4)
     created = models.DateTimeField(auto_now_add=True)

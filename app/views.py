@@ -9,7 +9,7 @@ from app.models import Album, AlbumImage
 
 def gallery(request):
     list = Album.objects.filter(is_visible=True).order_by('-created')
-    paginator = Paginator(list, 10)
+    paginator = Paginator(list, 3)
 
     page = request.GET.get('page')
     try:
@@ -19,7 +19,7 @@ def gallery(request):
     except EmptyPage:
         albums = paginator.page(paginator.num_pages) # If page is out of range (e.g.  9999), deliver last page of results.
 
-    return render(request, 'gallery.html', { 'albums': list })
+    return render(request, 'galleryN.html', { 'albums': list })
 
 class AlbumDetail(DetailView):
      model = Album

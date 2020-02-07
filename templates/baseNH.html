@@ -49,141 +49,15 @@
 
   <main>
 
-    <!-- Header -->
-    <header id="js-header" class="u-header u-header--static">
-      <div class="u-header__section u-header__section--light g-bg-white g-transition-0_3 g-py-10">
-        <nav class="js-mega-menu navbar navbar-expand-lg hs-menu-initialized hs-menu-horizontal">
-          <div class="container">
-            <!-- Responsive Toggle Button -->
-            <button class="navbar-toggler navbar-toggler-right btn g-line-height-1 g-brd-none g-pa-0 g-pos-abs g-top-minus-3 g-right-0" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navBar" data-toggle="collapse" data-target="#navBar">
-              <span class="hamburger hamburger--slider">
-            <span class="hamburger-box">
-              <span class="hamburger-inner"></span>
-              </span>
-              </span>
-            </button>
-            <!-- End Responsive Toggle Button -->
-
-            <!-- Logo -->
-            <a href="/" class="navbar-brand d-flex">
-                <img class="shrink-logo" src="{% static 'assets20/img/navbar.png' %}" alt="Logo">
-            </a>
-            <!-- End Logo -->
-
-            <!-- Navigation -->
-            <div class="collapse navbar-collapse align-items-center flex-sm-row g-pt-10 g-pt-5--lg g-mr-40--lg" id="navBar">
-              <ul class="navbar-nav text-uppercase g-pos-rel g-font-weight-600 ml-auto">
-                <!-- Home -->
-                <li class="nav-item  g-mx-10--lg g-mx-15--xl">
-                  <a href="/home" class="nav-link g-py-7 g-px-0">Home</a>
-                </li>
-                <!-- End Home -->
-
-                <!-- Blog -->
-                <li class="nav-item  g-mx-10--lg g-mx-15--xl">
-                  <a href="https://pythonghana.blogspot.com/" class="nav-link g-py-7 g-px-0">Blog</a>
-                </li>
-                <!-- End Blog -->
-
-                <!-- Events -->
-                <li class="nav-item  g-mx-10--lg g-mx-15--xl">
-                  <a href="/events" class="nav-link g-py-7 g-px-0">Events</a>
-                </li>
-                <!-- End Events -->
-
-                 <!-- Code of Conduct -->
-                 <li class="nav-item  g-mx-10--lg g-mx-15--xl">
-                  <a href="/coc" class="nav-link g-py-7 g-px-0">COC</a>
-                </li>
-                <!-- End Intro -->
-
-                 <!-- Gallery -->
-                 <li class="nav-item  g-mx-10--lg g-mx-15--xl">
-                  <a href="/gallery" class="nav-link g-py-7 g-px-0">Gallery</a>
-                </li>
-                <!-- End Gallery -->
-
-                 <!-- Resources -->
-                 <li class="nav-item  g-mx-10--lg g-mx-15--xl">
-                  <a href="/resources" class="nav-link g-py-7 g-px-0">Resources</a>
-                </li>
-                <!-- End Resources -->
-
-                <!-- About -->
-                <li class="nav-item  g-mx-10--lg g-mx-15--xl">
-                  <a href="/about" class="nav-link g-py-7 g-px-0">About</a>
-                </li>
-                <!-- End About -->
-
-              </ul>
-            </div>
-            <!-- End Navigation -->
-          </div>
-        </nav>
-      </div>
-    </header>
-    <!-- End Header -->
-
+    {% include 'navbarN.html' %}
 
 
 
     {% block content %}
     {% endblock %}
 
+    {% include 'footer.html' %}
 
- <!--=== Footer Version 1 ===-->
- <div class="footer-v1">
-  <div class="footer">
-    <div class="container ">
-    <div class="row">
-     <div class="col-md-3 md-margin-bottom-40">
-          <a href="/home"><img id="logo-footer" class="footer-logo" src="{% static 'pro_images/pythonfooter.png' %}" alt=""></a>
-        </div>
-          <!-- Link List -->
-        <div class="col-md-4 md-margin-bottom-40">
-          <div class="headline"><h2>JOIN US ON</h2></div>
-                    <div class="row" align="center">
-                      <a href="http://bit.ly/PyGhTelegram" target="_blank">
-                          <img src="{% static 'social/telegram.png' %}" class="dpg-icon" alt="Python Ghana Telegram"  class="img-responsive hover-effect tooltips" alt="" data-toggle="tooltip" data-placement="right" title="Our Telegram Group" data-original-title="Tooltip on right">
-                      </a>
-                      <a href="https://twitter.com/pyghana" target="_blank">
-                          <img src="{% static 'social/social-twitter.png' %}" class="dpg-icon" alt="Python Ghana Twitter"  class="img-responsive hover-effect tooltips" alt="" data-toggle="tooltip" data-placement="right" title="Our Twitter Page" data-original-title="Tooltip on right">
-                      </a>
-                      <a href="https://github.com/pythonghana" target="_blank">
-                          <img src="{% static 'social/social-github1.png' %}" class="dpg-icon" alt="Python Ghana Github"  class="img-responsive hover-effect tooltips" alt="" data-toggle="tooltip" data-placement="right" title="Our GitHub Repository" data-original-title="Tooltip on right">
-                      </a>
-                      <a href="https://pythonghana.slack.com/" target="_blank">
-                          <img src="{% static 'social/slack-logo.png' %}" class="dpg-icon" alt="Python Ghana Slack"  class="img-responsive hover-effect tooltips" alt="" data-toggle="tooltip" data-placement="right" title="Our Slack Page" data-original-title="Tooltip on right">
-                      </a>
-                      <a href="https://mail.python.org/mm3/mailman3/lists/pythonghana.python.org/" target="_blank">
-                          <img src="{% static 'social/mail.png' %}" class="dpg-icon" alt="Python Ghana Linkedin"  class="img-responsive hover-effect tooltips" alt="" data-toggle="tooltip" data-placement="right" title="Our Mailing List" data-original-title="Tooltip on right">
-                      </a>
-                   </div>
-        </div><!--/col-md-3-->
-        <!-- End Link List -->
-      <!-- Link List -->
-        <div class="col-md-4 md-margin-bottom-40">
-          <div class="headline"><h2>Useful Links</h2></div>
-          <ul class="list-unstyled link-list">
-            <li>{% page_menu "pages/menus/footer.html" %}</li>
-          </ul>
-        </div><!--/col-md-3-->
-        <!-- End Link List -->
-    </div>
-    </div>
-  </div><!--/footer-->
- <div class="copyright">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-6">
-          <p>
-              Python/Django web hosting for Python Ghana is generously donated by <a href="https://www.pythonanywhere.com/?affiliate_id=002cb45d" target="/"><img src="{% static 'pro_images/pythonanywhereS.jpg' %}" alt=""></a> <br><br> {% now "Y" %} &copy; All Rights Reserved Python Ghana. 
-           </p>
-        </div>
-      </div>
-    </div>
-  </div><!--/copyright-->
-</div>
     
     <a class="js-go-to u-go-to-v1" href="#" data-type="fixed" data-position='{
      "bottom": 15,

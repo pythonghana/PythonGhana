@@ -1,0 +1,55 @@
+{% extends "layoutdetail.html" %}
+{% load staticfiles %}
+{% load i18n mezzanine_tags blog_tags staticfiles keyword_tags disqus_tags %}
+{% block meta_title %}{% if page %}{{ page.meta_title }}{% else %}{% trans "Gallery" %}{% endif %}{% endblock %}
+
+
+{% block content %}
+
+            <!-- 3 Column -->
+            <div class="row">
+  
+                <div class="col-md-9">
+                  <div id="shortcode2">
+                    <div class="shortcode-html">
+                      <div class="row">
+                        <div class="col-md-4 g-mb-30">
+                          <a class="js-fancybox" href="javascript:;" data-fancybox="lightbox-gallery--col3" data-src="../../assets/img-temp/400x270/img8.jpg" data-caption="Lightbox Gallery">
+                            <img class="img-fluid" src="{% static 'assets20/img/comm/slide2.jpg' %}" alt="Image Description">
+                          </a>
+                        </div>
+                        <div class="col-md-4 g-mb-30">
+                          <a class="js-fancybox" href="javascript:;" data-fancybox="lightbox-gallery--col3" data-src="../../assets/img-temp/400x270/img2.jpg" data-caption="Lightbox Gallery">
+                            <img class="img-fluid" src="{% static 'assets20/img/comm/slide2.jpg' %}" alt="Image Description">
+                          </a>
+                        </div>
+                        <div class="col-md-4 g-mb-30">
+                          <a class="js-fancybox" href="javascript:;" data-fancybox="lightbox-gallery--col3" data-src="../../assets/img-temp/400x270/img3.jpg" data-caption="Lightbox Gallery">
+                            <img class="img-fluid" src="{% static 'assets20/img/comm/slide2.jpg' %}" alt="Image Description">
+                          </a>
+                        </div>
+                        <div class="col-md-4 g-mb-30">
+                          <a class="js-fancybox" href="javascript:;" data-fancybox="lightbox-gallery--col3" data-src="../../assets/img-temp/400x270/img7.jpg" data-caption="Lightbox Gallery">
+                            <img class="img-fluid" src="{% static 'assets20/img/comm/slide2.jpg' %}" alt="Image Description">
+                          </a>
+                        </div>
+                        <div class="col-md-4 g-mb-30">
+                          <a class="js-fancybox" href="javascript:;" data-fancybox="lightbox-gallery--col3" data-src="../../assets/img-temp/400x270/img5.jpg" data-caption="Lightbox Gallery">
+                            <img class="img-fluid" src="{% static 'assets20/img/comm/slide2.jpg' %}" alt="Image Description">
+                          </a>
+                        </div>
+                        <div class="col-md-4 g-mb-30">
+                          <a class="js-fancybox" href="javascript:;" data-fancybox="lightbox-gallery--col3" data-src="../../assets/img-temp/400x270/img6.jpg" data-caption="Lightbox Gallery">
+                            <img class="img-fluid" src="{% static 'assets20/img/comm/slide2.jpg' %}" alt="Image Description">
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+  
+                </div>
+              </div>
+              <!-- End 3 Column -->
+
+
+{% endblock %}
+

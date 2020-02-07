@@ -16,12 +16,15 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800">
   <!-- CSS Global Compulsory -->
   <link rel="stylesheet" href="{% static 'assets20/vendor/bootstrap/bootstrap.min.css' %}">
+    <!-- CSS Implementing Plugins -->
+    <link  rel="stylesheet" href="{% static 'assets20/vendor/icon-hs/style.css' %}">
+    <link  rel="stylesheet" href="{% static 'assets20/vendor/fancybox/jquery.fancybox.min.css' %}">
+
   <!-- CSS Global Icons -->
   <link rel="stylesheet" href="{% static 'assets20/vendor/icon-awesome/css/font-awesome.min.css' %}">
   <link rel="stylesheet" href="{% static 'assets20/vendor/icon-line/css/simple-line-icons.css' %}">
   <link rel="stylesheet" href="{% static 'assets20/vendor/icon-etlinefont/style.css' %}">
   <link rel="stylesheet" href="{% static 'assets20/vendor/icon-line-pro/style.css' %}">
-  <link rel="stylesheet" href="{% static 'assets20/vendor/icon-hs/style.css' %}">
   <link rel="stylesheet" href="{% static 'assets20/vendor/animate.css' %}">
   <link rel="stylesheet" href="{% static 'assets20/vendor/dzsparallaxer/dzsparallaxer.css' %}">
   <link rel="stylesheet" href="{% static 'assets20/vendor/dzsparallaxer/dzsscroller/scroller.css' %}">
@@ -51,6 +54,34 @@
 
 
 
+    <!-- Promo Block -->
+    <section class="dzsparallaxer auto-init height-is-based-on-content use-loading mode-scroll loaded dzsprx-readyall " data-options='{direction: "fromtop", animation_duration: 25, direction: "reverse"}'>
+      <!-- Parallax Image -->
+      <div class="divimage dzsparallaxer--target w-100 u-bg-overlay g-bg-black-opacity-0_3--after" style="height: 140%; background-image: url({% static 'assets20/img/breadcrumbs/img1.jpg' %});"></div>
+      <!-- End Parallax Image -->
+
+      <!-- Promo Block Content -->
+      <div class="container g-color-white text-center g-py-120">
+        <h3 class="h1 g-font-weight-600 text-uppercase mb-2"></h3>
+      </div>
+      <!-- Promo Block Content -->
+    </section>
+    <!-- End Promo Block -->
+
+<div class="shortcode-html">
+  <section class="g-brd-top g-brd-bottom g-brd-gray-light-v4 g-py-50">
+    <div class="container">
+      <div class="d-sm-flex text-center">
+        <div class="align-self-center">
+          <h3 class="h2 g-font-weight-300 g-mb-20"><b>Our Gallery</b></h3>
+        </div>
+
+      </div>
+    </div>
+  </section>
+</div>
+   
+  
     {% block content %}
     {% endblock %}
 
@@ -97,6 +128,20 @@
   <script src="{% static 'assets20/js/custom.js' %}"></script>
 
   <!-- JS Plugins Init. -->
+  <!-- JS Implementing Plugins -->
+  <script  src="{% static 'assets20/vendor/fancybox/jquery.fancybox.min.js' %}"></script>
+
+  <!-- JS Unify -->
+  <script  src="{% static 'assets20/js/components/hs.popup.js' %}"></script>
+
+  <!-- JS Plugins Init. -->
+  <script >
+    $(document).on('ready', function () {
+      // initialization of popups
+      $.HSCore.components.HSPopup.init('.js-fancybox');
+    });
+  </script>
+
   <script>
     $(document).on('ready', function () {
         // initialization of carousel

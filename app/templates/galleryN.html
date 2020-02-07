@@ -1,0 +1,74 @@
+{% extends "newlayout.html" %}
+{% load staticfiles %}
+{% load i18n mezzanine_tags blog_tags staticfiles keyword_tags disqus_tags %}
+{% block meta_title %}{% if page %}{{ page.meta_title }}{% else %}{% trans "Gallery" %}{% endif %}{% endblock %}
+
+{% block content %}
+
+
+     
+
+      <section class="g-py-50">
+        <div class="container">
+      <br>
+      <div class="u-heading-v6-2 text-center g-mb-60">
+        <h5 class="h5 u-heading-v6__title g-brd-black g-color-black g-font-weight-600 mb-0">The Gallery consists of photos from different Python Related Events or those Python Ghana was part of</h5>
+      </div>
+            <div class="row">
+              {% for album in albums %}
+              <div class="col-md-4 g-mb-30--md">
+                <article class="u-block-hover g-rounded-6">
+                  <a href="{% url 'album' album.slug %}">
+                    <figure class="u-bg-overlay g-bg-black-opacity-0_4--after">
+                      <img class="img-fluid u-block-hover__main--zoom-v2" src="{{ album.thumb.url }}" alt="Image Description">
+                    </figure>
+                  </a>
+                </article>
+                <div class="u-block-hover u-shadow-v1-5 g-line-height-2 g-pa-40 g-mb-30" role="alert">
+                  <h3 class="h4 g-font-weight-300 g-mb-20">{{ album.title }}</h3>
+                  <p class="mb-0">{{ album.description|truncatechars:80 }}</p>
+                </div>
+              </div>
+              {% endfor %}
+            </div>
+
+
+
+            <!-- Pagination #13 -->
+<nav class="text-center" aria-label="Page Navigation">
+  <ul class="list-inline">
+    {% if albums.has_previous %}
+
+    <li class="list-inline-item float-sm-left">
+      <a class="u-pagination-v1__item g-brd-around g-bg-gray-dark-v3 g-color-white g-bg-gray-dark-v2--hover g-rounded-50 g-pa-12-21" href="?page={{ albums.previous_page_number }}" aria-label="Previous">
+        <span aria-hidden="true">
+          <i class="fa fa-angle-left g-mr-5"></i>
+          Previous
+        </span>
+        <span class="sr-only">Previous</span>
+      </a>
+    </li>
+
+    {% endif %}
+
+
+
+    {% if albums.has_next %}
+    <li class="list-inline-item float-sm-right">
+      <a class="u-pagination-v1__item g-brd-around g-bg-gray-dark-v3 g-color-white g-bg-gray-dark-v2--hover g-rounded-50 g-pa-12-21" href="?page={{ albums.next_page_number }}" aria-label="Next">
+        <span aria-hidden="true">
+          Next
+          <i class="fa fa-angle-right g-ml-5"></i>
+        </span>
+        <span class="sr-only">Next</span>
+      </a>
+    </li>
+    {% endif %}
+  </ul>
+</nav>
+<!-- End Pagination #13 -->
+      </div>
+      </section>
+
+
+{% endblock %}

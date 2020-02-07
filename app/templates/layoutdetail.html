@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="{{ LANGUAGE_CODE }}"{% if LANGUAGE_BIDI %} dir="rtl"{% endif %}>
+{% load i18n pages_tags  mezzanine_tags blog_tags staticfiles keyword_tags disqus_tags events_tags %}
+<head>
+  <!-- Title -->
+  <title>{% block meta_title %}{% endblock %}{% if settings.SITE_TITLE %} | {{ settings.SITE_TITLE }}{% endif %}</title>
+   
+    <!-- Required Meta Tags Always Come First -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800">
+    <!-- CSS Global Compulsory -->
+    <link rel="stylesheet" href="{% static 'assets20/vendor/bootstrap/bootstrap.min.css' %}">
+    <!-- CSS Global Icons -->
+    <link rel="stylesheet" href="{% static 'assets20/vendor/icon-awesome/css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets20/vendor/icon-line/css/simple-line-icons.css' %}">
+    <link rel="stylesheet" href="{% static 'assets20/vendor/icon-etlinefont/style.css' %}">
+    <link rel="stylesheet" href="{% static 'assets20/vendor/icon-line-pro/style.css' %}">
+    <link rel="stylesheet" href="{% static 'assets20/vendor/icon-hs/style.css' %}">
+    <link rel="stylesheet" href="{% static 'assets20/vendor/dzsparallaxer/dzsparallaxer.css' %}">
+    <link rel="stylesheet" href="{% static 'assets20/vendor/dzsparallaxer/dzsscroller/scroller.css' %}">
+    <link rel="stylesheet" href="{% static 'assets20/vendor/dzsparallaxer/advancedscroller/plugin.css' %}">
+    <link rel="stylesheet" href="{% static 'assets20/vendor/animate.css' %}">
+    <link rel="stylesheet" href="{% static 'assets20/vendor/jquery-ui/themes/base/jquery-ui.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets20/vendor/hs-megamenu/src/hs.megamenu.css' %}">
+    <link rel="stylesheet" href="{% static 'assets20/vendor/hamburgers/hamburgers.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets20/vendor/fancybox/jquery.fancybox.min.css' %}">
+  
+    <!-- Show / Copy Code -->
+    <link rel="stylesheet" href="{% static 'assets20/vendor/malihu-scrollbar/jquery.mCustomScrollbar.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets20/vendor/prism/themes/prism.css' %}">
+    <link rel="stylesheet" href="{% static 'assets20/vendor/custombox/custombox.min.css' %}">
+  
+  
+    <!-- CSS Unify -->
+    <link rel="stylesheet" href="{% static 'assets20/css/unify-core.css' %}">
+    <link rel="stylesheet" href="{% static 'assets20/css/unify-components.css' %}">
+    <link rel="stylesheet" href="{% static 'assets20/css/unify-globals.css' %}">
+
+
+    <!-- Master Slider -->
+    <link rel="stylesheet" href="{% static 'assets20/vendor/master-slider/source/assets/css/masterslider.main.css' %}">
+
+    <!-- CSS Header and Footer -->
+    <link rel="stylesheet" href="{% static 'assets/css/headers/header-v3.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/css/footers/footer-v1.css' %}">
+  
+    <!-- CSS Customization -->
+    <link rel="stylesheet" href="{% static 'assets20/css/custom.css' %}">
+  </head>
+
+  
+
+  <body>
+
+    <main>
+  
+      {% include 'navbarN.html' %}
+  
+  
+    <!-- Promo Block -->
+    <section class="dzsparallaxer auto-init height-is-based-on-content use-loading mode-scroll loaded dzsprx-readyall " data-options='{direction: "fromtop", animation_duration: 25, direction: "reverse"}'>
+        <!-- Parallax Image -->
+        <div class="divimage dzsparallaxer--target w-100 u-bg-overlay g-bg-black-opacity-0_3--after" style="height: 140%; background-image: url({% static 'assets20/img/breadcrumbs/img1.jpg' %});"></div>
+        <!-- End Parallax Image -->
+  
+        <!-- Promo Block Content -->
+        <div class="container g-color-white text-center g-py-120">
+          <h3 class="h1 g-font-weight-600 text-uppercase mb-2"></h3>
+        </div>
+        <!-- Promo Block Content -->
+      </section>
+      <!-- End Promo Block -->
+     
+  
+      {% block content %}
+      {% endblock %}
+  
+  
+      {% include 'footer.html' %}
+
+
+  
+  <div id="modalMarkup" class="text-left modal-demo g-width-95x g-height-95x g-bg-white g-color-black g-pa-20" style="display: none;"></div>
+
+
+  <!-- JS Global Compulsory -->
+  <script src="{% static 'assets20/vendor/jquery/jquery.min.js' %}"></script>
+  <script src="{% static 'assets20/vendor/jquery-migrate/jquery-migrate.min.js' %}"></script>
+  <script src="{% static 'assets20/vendor/popper.js/popper.min.js' %}"></script>
+  <script src="{% static 'assets20/vendor/bootstrap/bootstrap.min.js' %}"></script>
+
+
+  <script src="{% static 'assets20/vendor/jquery.easing/js/jquery.easing.min.js' %}"></script>
+
+  <!-- JS Implementing Plugins -->
+  <script src="{% static 'assets20/vendor/hs-megamenu/src/hs.megamenu.js' %}"></script>
+  <script src="{% static 'assets20/vendor/dzsparallaxer/dzsparallaxer.js' %}"></script>
+  <script src="{% static 'assets20/vendor/dzsparallaxer/dzsscroller/scroller.js' %}"></script>
+  <script src="{% static 'assets20/vendor/dzsparallaxer/advancedscroller/plugin.js' %}"></script>
+  <script src="{% static 'assets20/vendor/masonry/dist/masonry.pkgd.min.js' %}"></script>
+  <script src="{% static 'assets20/vendor/imagesloaded/imagesloaded.pkgd.min.js' %}"></script>
+  <script src="{% static 'assets20/vendor/fancybox/jquery.fancybox.min.js' %}"></script>
+
+  <script src="{% static 'assets20/vendor/slick-carousel/slick/slick.js' %}"></script>
+
+  <!-- jQuery UI Core -->
+  <script src="{% static 'assets20/vendor/jquery-ui/jquery-ui.core.min.js' %}"></script>
+
+
+  <!-- jQuery UI Helpers -->
+  <script src="{% static 'assets20/vendor/jquery-ui/ui/widgets/menu.js' %}"></script>
+  <script src="{% static 'assets20/vendor/jquery-ui/ui/widgets/mouse.js' %}"></script>
+
+  <!-- jQuery UI Widgets -->
+  <script src="{% static 'assets20/vendor/jquery-ui/ui/widgets/autocomplete.js' %}"></script>
+
+  <!-- JS Unify -->
+  <script src="{% static 'assets20/js/hs.core.js' %}"></script>
+
+  <script src="{% static 'assets20/js/components/hs.header.js' %}"></script>
+  <script src="{% static 'assets20/js/helpers/hs.hamburgers.js' %}"></script>
+  <script src="{% static 'assets20/js/components/hs.header-side.js' %}"></script>
+
+  <script src="{% static 'assets20/js/components/hs.popup.js' %}"></script>
+
+  <script src="{% static 'assets20/js/components/hs.autocomplete-local-search.js' %}"></script>
+  <script src="{% static 'assets20/vendor/cookiejs/jquery.cookie.js' %}"></script>
+  <script src="{% static 'assets20/js/helpers/hs.shortcode-filter.js' %}"></script>
+
+  <script src="{% static 'assets20/js/components/hs.go-to.js' %}"></script>
+
+
+  <!-- JS Master Slider -->
+  <script src="{% static 'assets20/vendor/master-slider/source/assets/js/masterslider.min.js' %}"></script>
+
+
+
+  <!-- JS Custom -->
+  <script src="{% static 'assets20/js/custom.js' %}"></script>
+
+  <!-- JS Plugins Init. -->
+  <script>
+    $(document).on('ready', function () {
+      // initialization of go to
+      $.HSCore.components.HSGoTo.init('.js-go-to');
+
+      // initialization of masonry
+      $('.masonry-grid').imagesLoaded().then(function () {
+        $('.masonry-grid').masonry({
+          columnWidth: '.masonry-grid-sizer',
+          itemSelector: '.masonry-grid-item',
+          percentPosition: true
+        });
+      });
+
+      // initialization of popups
+      $.HSCore.components.HSPopup.init('.js-fancybox', {
+        transitionEffect: false
+      });
+    });
+
+    $(window).on('load', function () {
+      // initialization of header
+      $.HSCore.components.HSHeader.init($('#js-header'));
+      $.HSCore.helpers.HSHamburgers.init('.hamburger');
+      $.HSCore.components.HSHeaderSide.init($('#sideNav'));
+
+      // initialization of autocomplet
+      $.HSCore.components.HSLocalSearchAutocomplete.init('#u-sidebar-navigation__search-autocomplete');
+
+      // initialization of HSMegaMenu component
+      $('.js-mega-menu').HSMegaMenu({
+        event: 'hover',
+        pageContainer: $('.container'),
+        breakpoint: 991
+      });
+    });
+  </script>
+
+
+  <!-- JS Plugins Init. -->
+  <script>
+    $(document).on('ready', function () {
+      // initialization of carousel
+      $.HSCore.components.HSCarousel.init('.js-carousel');
+    });
+
+    $(window).on('load', function() {
+      // initialization of header
+      $.HSCore.components.HSHeader.init($('#js-header'));
+      $.HSCore.helpers.HSHamburgers.init('.hamburger');
+
+      // initialization of HSMegaMenu component
+      $('.js-mega-menu').HSMegaMenu({
+        event: 'hover',
+        pageContainer: $('.container'),
+        breakpoint: 991
+      });
+
+      // initialization of masonry
+      $('.masonry-grid').imagesLoaded().then(function () {
+        $('.masonry-grid').masonry({
+          columnWidth: '.masonry-grid-sizer',
+          itemSelector: '.masonry-grid-item',
+          percentPosition: true
+        });
+      });
+    });
+
+    var slider = new MasterSlider();
+
+    slider.control('arrows', {
+      autohide: true,
+      overVideo: true
+    });
+    slider.control('thumblist', {
+      autohide: false,
+      overVideo: true,
+      dir: 'v',
+      speed: 17,
+      inset: false,
+      arrows: false,
+      hover: false,
+      customClass: '',
+      align: 'right',
+      type: 'thumbs',
+      margin: 5,
+      width: 100,
+      height: 80,
+      space: 5,
+      fillMode: 'fill'
+    });
+    slider.control('scrollbar', {
+      autohide: false,
+      overVideo: true,
+      dir: 'h',
+      inset: true,
+      align: 'top',
+      color: '#3D3D3D',
+      margin: 10,
+      width: 4
+    });
+    slider.setup("masterslider", {
+      width: 1000,
+      height: 500,
+      minHeight: 0,
+      space: 0,
+      start: 1,
+      grabCursor: true,
+      swipe: true,
+      mouse: true,
+      keyboard: false,
+      layout: "boxed",
+      wheel: false,
+      autoplay: true,
+      instantStartLayers: false,
+      loop: false,
+      shuffle: false,
+      preload: 2,
+      heightLimit: true,
+      autoHeight: true,
+      smoothHeight: true,
+      endPause: false,
+      overPause: true,
+      fillMode: "fill",
+      centerControls: false,
+      startOnAppear: false,
+      layersMode: "center",
+      autofillTarget: "",
+      hideLayers: false,
+      fullscreenMargin: 0,
+      speed: 20,
+      dir: "h",
+      parallaxMode: 'swipe',
+      view: "scale"
+    });
+  </script>
+</body>
+
+</html>

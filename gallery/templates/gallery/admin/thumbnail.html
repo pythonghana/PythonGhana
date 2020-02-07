@@ -1,5 +1,0 @@
-{% if thumbnail %}
-    <a href="{{ model.get_absolute_url|default:original_image.url }}">
-        <img style="height: 30%" src="{{ thumbnail.url }}">
-    </a>
-{% endif %}
