@@ -21,6 +21,9 @@ class Team(models.Model):
     updated = models.DateTimeField(auto_now=True)
     is_current_lead = models.BooleanField(default=False)
     is_past_lead = models.BooleanField(default=False)
+    is_advisory_board = models.BooleanField(default=False)
+    job_description = models.CharField(max_length=100, null=True, blank=True, help_text="Please enter current position and organization working in", default=" ")
+    summarize_biography = models.TextField(blank=True, help_text="Please enter bio of the advisory board member", default=" ")
     slug = AutoSlugField(
         populate_from='team_name',
         slugify_function=slugify

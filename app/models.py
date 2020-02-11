@@ -5,9 +5,13 @@ from django.db import models
 from imagekit.models import ProcessedImageField
 from imagekit.processors import ResizeToFit
 
+import datetime
+from datetime import date
+
+
 class Album(models.Model):
     title = models.CharField(max_length=70)
-    event_date = models.DateTimeField(auto_now_add=True)
+    event_date = models.DateField(default=date.today, blank=True, null=True)
     description = models.TextField(max_length=1024)
     twitter_url = models.URLField(default='', help_text='Link to Twitter Account', blank=True,)
     facebook_url = models.URLField(default='', help_text='Link to Facebook Account', blank=True,)

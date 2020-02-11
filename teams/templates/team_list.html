@@ -53,18 +53,35 @@
                 <h3 class="h5 g-color-black mb-20"><strong>About Python Ghana</strong></h3>
                 <div class="g-width-30 g-brd-bottom g-brd-gray-dark-v5 g-my-15"></div>
 
-                <h5>The Python Ghana Community (PyGhana) is a body that embraces all friends of the Python programming language in Ghana. We are a community of master programmers, intermediate and even absolute beginners, but one thing we all have in common is the love of Python.
-                  It encompasses all friends of the Python programming language in the Ghana.
+                <h5>The Python Software Community in Ghana (Python Ghana) is a registered non-profit organisation, 
+                  run solely by kind-hearted volunteers that sacrifice towards the common vision of moving Africa 
+                  to the forefront in the world of technology. It is an organisation of technology enthusiasts who 
+                  seeks to promote and advance the use of technology, educating people on the potential benefit of 
+                  leveraging on this resource effectively and adequately to better their lives.<br><br>
+                  With the fourth industrial revolution on the horizon, it’s imperative to be active contributors in 
+                  the rapidly changing environment in incorporating STEM in our everyday lives, and teaching/inspiring 
+                  everyone, specifically the backbone of our future (young leaders) about the prospects of getting 
+                  involved on time, especially in Africa that has so many constraints inhibiting the growth of technology.
+                  <br><br>
+                  Since inception in 2017, they have impacted over 600+ ladies with the Django Girls initiative, hosted 
+                  several meetups, workshops, bootcamps across the country, and crossed several major milestones so much 
+                  that they were given the opportunity to host the first ever Pan-African international Python conference 
+                  (PyCon Africa) twice in a row (last year (2019), and later this year(2020)).
+                  <br><br>
+                  They are a diverse group comprising of various initiatives such as - Pyladies Ghana which is an all-female 
+                  mentorship initiative that seeks to encourage ladies get more involved in technology, bridging the diversity 
+                  gap in the tech ecosystem, PyData Ghana – a data science focused group, and the new PyScholar and PyClub 
+                  initiative aimed at students at the Senior high level and Tertiary level, introducing and assisting them on 
+                  their technological journey.
+                  <br><br>
+                  The community is a safe haven that embraces master programmers, intermediate, absolute beginners and even just 
+                  the curious minded in an environment where knowledge is shared, and family is built.
+
                   
                   The community is open to everyone at all levels.<br><br>
-                  <p >With the aim to make a difference in our society we kicked off different initiatives 
-                    to address and have impact in different areas in the society such as PyLadies Ghana to 
-                    empower more ladies and introduce them to Tech using the Python Programming language,
-                    PyData Ghana for educating individuals in Data science and Artificial intelligence,
-                    PyScholars for the Senior high level and PyClubs where students meet and learn at the Tertiary level. </p>
                     
                   <p>So whether you are resident in Ghana or outside the country, an absolute beginner or a maestro, programmer in Python or other languages but have some interest in Python, our community will embrace you.
-                  We have an active Slack team, where we engage ourselves regularly. You can check out our Github page for blog we have or are working on.</p></h5>
+                  We have an active <a href="">Telegram Group</a>, where we engage ourselves regularly. You can check out our Github page for projects we have or are working on.</p></h5>
                   
                   
                   <div class="overflow-h"><br><br>
@@ -261,9 +278,79 @@
 <!-- End Tab panes -->
 
       </div>
-    </section>
+    </section><br>
     <!-- End Team Blocks -->
+    
+   
+     <!-- Team Blocks -->
+     <section class="container g-pb-70">
+      <div class="row justify-content-center g-mb-60">
+        <div class="col-lg-7">
+          <!-- Heading -->
+          <div class="text-center">
+            <h2 class="h3 g-color-black text-uppercase mb-2">Our Advisory Board</h2>
+            <div class="d-inline-block g-width-35 g-height-2 g-bg-primary mb-2"></div>
+           </div>
+          <!-- End Heading -->
         </div>
-</section>
+      </div>
+
+  <!-- Team Block -->
+<div class="row">
+  {% for team in teams %}
+  {% if team.is_advisory_board %}
+  <div class="col-lg-3 col-sm-6 g-mb-30">
+    <!-- Figure -->
+    <figure class="text-center">
+      <!-- Figure Image -->
+      <img class="w-100 g-mb-20" src="{{ team.profile_image.url }}" alt="Image Description">
+      <!-- End Figure Image -->
+
+      <!-- Figure Info -->
+      <div class="g-mb-10">
+        <h4 class="h5 g-color-black g-mb-5">{{ team.team_name }}</h4>
+        <em class="d-block g-font-style-normal g-font-size-11 text-uppercase g-color-primary"> {{ team.job_description }}</em>
+      </div>
+      <p>{{ team.summarize_biography }}</p>
+      <!-- End Info -->
+
+      <!-- Figure Social Icons -->
+      <ul class="list-unstyled mb-0">
+        {% if team.twitter %}
+        <li class="list-inline-item mx-0">
+          <a class="u-icon-v1 u-icon-size--sm g-font-size-default g-color-gray-dark-v1 g-color-primary--hover" href="https://twitter.com/{{ team.twitter }}">
+            <i class="fa fa-twitter"></i>
+          </a>
+        </li>
+        {% else %}
+        <p></p>
+      {% endif %}
+      {% if team.linkedin %}
+        <li class="list-inline-item mx-0">
+          <a class="u-icon-v1 u-icon-size--sm g-font-size-default g-color-gray-dark-v1 g-color-primary--hover" href="https://www.linkedin.com/{{ team.linkedin }}">
+            <i class="fa fa-linkedin"></i>
+          </a>
+        </li>
+        {% else %}
+        <p></p>
+      {% endif %}
+      </ul>
+      <!-- End Figure Social Icons -->
+    </figure>
+    <!-- End Figure -->
+  </div>
+  {% else %}
+  <p></p>
+  {% endif %}
+  {% endfor %}
+</div>
+<!-- End Team Block -->
+     
+     </section>
+  
+
+
+    
+      <br><br>
 
 {% endblock %}
