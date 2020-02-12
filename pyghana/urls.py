@@ -44,7 +44,7 @@ urlpatterns += [
     #url('^faq/', include('faq.urls')),
   #  url(r'^tinymce/', include('tinymce.urls')),
     url(r'^events/', include('events.urls', namespace='calendar')),
-   # url(r'^home', direct_to_template, {"template": "home1.html"}, name="home"),
+   # url(r'^homeO', direct_to_template, {"template": "home1.html"}, name="home"),
     url(r'^home', direct_to_template, {"template": "newHome.html"}, name="newhome"),
 # url(r'^about/', include('about.urls')),
     url(r'^about/', include('teams.urls')),
