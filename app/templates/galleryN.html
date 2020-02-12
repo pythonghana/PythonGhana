@@ -27,13 +27,13 @@
                 <div class="u-block-hover u-shadow-v1-5 g-line-height-2 g-pa-40 g-mb-30" role="alert">
                   <h3 class="h4 g-font-weight-300 g-mb-20">{{ album.title }}</h3>
                   <p class="mb-0">{{ album.description|truncatechars:80 }}</p>
+                  <a href="{% url 'album' album.slug %}" class="btn btn-sm u-btn-primary u-btn-skew u-btn-hover-v2-1 g-font-weight-600 g-letter-spacing-0_5 text-uppercase g-brd-2 g-rounded-50 g-px-20 g-mx-5 g-mr-10 g-mb-15">
+                    <span class="u-btn-skew__inner">
+                      View Album
+                      <i class="fa fa-check-circle g-ml-3"></i>
+                    </span>
+                  </a>
                 </div>
-                <a href="#" class="btn btn-sm u-btn-deeporange u-btn-skew u-btn-hover-v2-1 g-font-weight-600 g-letter-spacing-0_5 text-uppercase g-brd-2 g-rounded-50 g-px-20 g-mx-5 g-mr-10 g-mb-15">
-                  <span class="u-btn-skew__inner">
-                    Skew Rounded
-                    <i class="fa fa-check-circle g-ml-3"></i>
-                  </span>
-                </a>
               </div>
               {% endfor %}
             </div>
