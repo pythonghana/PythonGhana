@@ -51,11 +51,11 @@ urlpatterns += [
     url(r'^coc/', include('coc.urls')),
     url(r'^gallery/', include('app.urls')),
     url(r'^constitution/', include('constitution.urls')),
-    url(r'^res/', include('resources.urls')),
+    url(r'^resources/', include('resources.urls')),
    #url(r'projects/', include('projects.urls')),
 
   #INIATIATIVES
-    url(r'^resources', direct_to_template, {"template": "resources.html"}, name="resources"),
+    #url(r'^resources', direct_to_template, {"template": "resources.html"}, name="resources"),
     url(r'^forms', direct_to_template, {"template": "members.html"}, name="members"),
     url(r'^pykidsghana', direct_to_template, {"template": "pykidsghana.html"}, name="pykidsghana"),
     url(r'^pyscholarsghana', direct_to_template, {"template": "pyscholarsghana.html"}, name="pyscholarsghana"),
