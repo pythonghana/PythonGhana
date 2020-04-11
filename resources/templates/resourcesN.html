@@ -50,6 +50,10 @@
           <div class="media-body">
             <h3 class="h5 g-color-black mb-20">Books</h3>
             <div class="g-width-30 g-brd-bottom g-brd-gray-dark-v5 g-my-15"></div>
+            <span class="u-label u-label--sm g-bg-green rounded g-px-10"><small><b>Beginner</b></small></span>
+            <span class="u-label u-label--sm g-bg-yellow g-color-black rounded g-px-10"><small><b>Intermediate</b></small></span>
+            <span class="u-label u-label--sm g-bg-red rounded g-px-10"><small><b>Expert</b></small></span>
+          
            <br><br>
 
             <div class="shortcode-html">
@@ -137,19 +141,19 @@
                     <h4 class="h5 g-mb-7">
                       <a class="g-color-black g-color-primary--hover g-text-underline--none--hover" href="{{ book.book_link }}" target="/">{{ book.book_title }}</a>
                     </h4>
-                    <p class="d-inline-block g-color-gray-dark-v5 g-font-size-13 g-mb-10">
+                    <p class="d-inline-block g-color-gray-dark-v5 g-mb-10">
                     {% if book.beginner_level%}
-                      <span class="u-label u-label--sm g-bg-green rounded g-px-10"><small><b>Beginner</b></small></span>
+                      <span class="u-label u-label--sm g-bg-green rounded g-px-10"><small><b> </b></small></span>
                       {% else %}
                       <p></p>
                     {% endif %}
                     {% if book.intermediate_level %}
-                      <span class="u-label u-label--sm g-bg-yellow g-color-black rounded g-px-10"><small><b>Intermediate</b></small></span>
+                      <span class="u-label u-label--sm g-bg-yellow g-color-black rounded g-px-10"><small><b> </b></small></span>
                       {% else %}
                       <p></p>
                     {% endif %}
                     {% if book.expert_level %}
-                      <span class="u-label u-label--sm g-bg-red rounded g-px-10"><small><b>Expert</b></small></span>
+                      <span class="u-label u-label--sm g-bg-red rounded g-px-10"><small><b> </b></small></span>
                     {% else %}
                       <p></p>
                     {% endif %}
@@ -225,17 +229,17 @@
                 
                   <p class="d-inline-block g-color-gray-dark-v5 g-font-size-13 g-mb-10">
                     {% if article.beginner_level%}
-                      <span class="u-label u-label--sm g-bg-green rounded g-px-10"><small><b>Beginner</b></small></span>
+                      <span class="u-label u-label--sm g-bg-green rounded g-px-10"><small><b> </b></small></span>
                       {% else %}
                       <p></p>
                     {% endif %}
                     {% if article.intermediate_level %}
-                      <span class="u-label u-label--sm g-bg-yellow g-color-black rounded g-px-10"><small><b>Intermediate</b></small></span>
+                      <span class="u-label u-label--sm g-bg-yellow g-color-black rounded g-px-10"><small><b> </b></small></span>
                       {% else %}
                       <p></p>
                     {% endif %}
                     {% if article.expert_level %}
-                      <span class="u-label u-label--sm g-bg-red rounded g-px-10"><small><b>Expert</b></small></span>
+                      <span class="u-label u-label--sm g-bg-red rounded g-px-10"><small><b> </b></small></span>
                     {% else %}
                       <p></p>
                     {% endif %}
