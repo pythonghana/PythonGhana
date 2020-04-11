@@ -4,7 +4,12 @@ import os
 
 from django import VERSION as DJANGO_VERSION
 from django.utils.translation import ugettext_lazy as _
-from .secrets import *
+
+try:
+   from .secrets import *
+except ImportError:
+    raise Exception("A secrets.py file is required to run this project")
+
 
 ######################
 # MEZZANINE SETTINGS #
@@ -277,6 +282,7 @@ INSTALLED_APPS = (
     'djangobower',
     "events",
     'teams',
+    "resources",
 )
 
 # List of middleware classes to use. Order is important; in the request phase,

@@ -51,6 +51,7 @@ urlpatterns += [
     url(r'^coc/', include('coc.urls')),
     url(r'^gallery/', include('app.urls')),
     url(r'^constitution/', include('constitution.urls')),
+    url(r'^res/', include('resources.urls')),
    #url(r'projects/', include('projects.urls')),
 
   #INIATIATIVES
