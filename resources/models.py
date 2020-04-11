@@ -14,8 +14,9 @@ from django.utils.encoding import python_2_unicode_compatible
 class Book(models.Model):
     book_title = models.CharField(max_length=200)
     book_image = models.ImageField(upload_to='resources/books/',default="team.png")
-    book_description = models.TextField(blank=True, help_text="Please enter book description", default=" ")
-    book_link = models.CharField(max_length=100, null=True, blank=False, help_text="Please enter link", default=" ")
+    book_description = models.TextField(blank=True, help_text="Please enter book description", default="")
+    book_link = models.CharField(max_length=100, null=True, blank=False, help_text="Please enter link", default="")
+    read_book_link = models.CharField(max_length=100, null=True, blank=True, help_text="Please enter link", default="")
     beginner_level = models.BooleanField(default=False)
     intermediate_level = models.BooleanField(default=False)
     expert_level = models.BooleanField(default=False)
