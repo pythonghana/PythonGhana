@@ -3,7 +3,7 @@ from django.utils import timezone
 from django.views.generic import ListView
 from django.template import RequestContext
 from django.views.generic.detail import DetailView
-from .models import Book, Video, Article
+from .models import Book, Video, Article, Link
 from .forms import BookForm
 from hitcount.views import HitCountDetailView
 
@@ -17,6 +17,7 @@ class Resources(ListView):
         context = super(Resources, self).get_context_data(**kwargs)
         context['videos'] = Video.objects.all()
         context['articles'] = Article.objects.all()
+        context['links'] = Link.objects.all()
         context['books'] = self.queryset
         return context
 

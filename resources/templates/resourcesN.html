@@ -312,17 +312,17 @@
                     <li class="list-inline-item ml-auto">
                       <p class="d-inline-block g-color-gray-dark-v5 g-font-size-13 g-mb-10">
                         {% if video.beginner_level%}
-                          <span class="u-label u-label--sm g-bg-green rounded g-px-10"><small><b>Beginner</b></small></span>
+                          <span class="u-label u-label--sm g-bg-green rounded g-px-10"><small><b> </b></small></span>
                           {% else %}
                           <p></p>
                         {% endif %}
                         {% if video.intermediate_level %}
-                          <span class="u-label u-label--sm g-bg-yellow g-color-black rounded g-px-10"><small><b>Intermediate</b></small></span>
+                          <span class="u-label u-label--sm g-bg-yellow g-color-black rounded g-px-10"><small><b> </b></small></span>
                           {% else %}
                           <p></p>
                         {% endif %}
                         {% if video.expert_level %}
-                          <span class="u-label u-label--sm g-bg-red rounded g-px-10"><small><b>Expert</b></small></span>
+                          <span class="u-label u-label--sm g-bg-red rounded g-px-10"><small><b> </b></small></span>
                         {% else %}
                           <p></p>
                         {% endif %}
@@ -375,7 +375,7 @@
               <div class="container content">
                   <div class="row content-boxes-v2">
                       <div class="col-md-4 md-margin-bottom-30">
-                        <a href="http://www.python.org/" target="/" class="btn btn-xl u-btn-outline-primary u-btn-hover-v1-3 g-letter-spacing-0_5 text-uppercase g-rounded-50 g-px-30 g-mr-10 g-mb-15">
+                        <a href="http://www.python.org/" target="/" class="btn btn-xl u-btn-primary u-btn-hover-v1-3 g-letter-spacing-0_5 text-uppercase g-rounded-50 g-px-30 g-mr-10 g-mb-15">
                           <span class="pull-left text-left">
                             Python.ORG
                             <span class="d-block g-font-size-11">The Python Home Page</span>
@@ -383,15 +383,15 @@
                         </a>
                       </div>
                       <div class="col-md-4 md-margin-bottom-30">
-                        <a href="https://pypi.org/" target="/" class="btn btn-xl u-btn-outline-yellow u-btn-hover-v1-3 g-letter-spacing-0_5 text-uppercase g-rounded-50 g-px-30 g-mr-10 g-mb-15">
-                          <span class="pull-left text-left">Python Package Index
+                        <a href="https://pypi.org/" target="/" class="btn btn-xl u-btn-yellow u-btn-hover-v1-3 g-letter-spacing-0_5 text-uppercase g-rounded-50 g-px-30 g-mr-10 g-mb-15 ">
+                          <span class="pull-left text-left g-color-black">Python Package Index
                           </span>
-                          <span class="d-block g-font-size-11">The Python Package Index</span>
+                          <span class="d-block g-font-size-11 g-color-black">The Python Package Index</span>
                         </a>
                         
                       </div>
                       <div class="col-md-4">
-                        <a href="http://www.python.org/psf" target="/" class="btn btn-xl u-btn-outline-primary u-btn-hover-v1-3 g-letter-spacing-0_5 text-uppercase g-rounded-50 g-px-30 g-mr-10 g-mb-15">
+                        <a href="http://www.python.org/psf" target="/" class="btn btn-xl u-btn-primary u-btn-hover-v1-3 g-letter-spacing-0_5 text-uppercase g-rounded-50 g-px-30 g-mr-10 g-mb-15">
                           <span class="pull-left text-left">
                             The PSF
                             <span class="d-block g-font-size-11">The Python Software Foundation</span>
@@ -402,89 +402,30 @@
                   </div><br>
                   
                   <div class="row content-boxes-v2">
-                     
-                      <div class="col-md-3 md-margin-bottom-30">
-                        <a href="http://blog.python.org/" target="/" class="btn btn-md u-btn-outline-primary u-btn-skew u-btn-hover-v1-3 g-font-weight-600 g-letter-spacing-0_5 text-uppercase g-mr-10 g-mb-15">
-                          <span class="u-btn-skew__inner">
-                            Python Blog
-                          </span>
-                        </a>
-
+                    {% for link in links %}
+                    {% if link.is_active %}
+                      <div class="col-md-4 md-margin-bottom-30">
+                        <!-- lonk -->
+                        <div class="alert fade show u-shadow-v1-3 g-pa-20" role="alert">
+                        
+                          <div class="media">
+                            <div class="media-body">
+                              <p class="h5"><strong>{{ link.link_title }}</strong></p>
+                              <br>
+                              <a href="{{ link.link }}" target="/" class="btn u-btn-outline-primary btn-xs rounded-0">
+                                <i class="fa fa-link g-mr-2"></i>
+                                <b>Go to link</b>
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- End link -->
                       </div>
-                      <div class="col-md-3">
-                        <a href="https://www.python.org/blogs/" target="/" class="btn btn-md u-btn-outline-yellow u-btn-skew u-btn-hover-v1-3 g-font-weight-600 g-letter-spacing-0_5 text-uppercase g-mr-10 g-mb-15">
-                          <span class="u-btn-skew__inner">
-                            Python News
-                          </span>
-                        </a>
-                          
-                      </div>
-                      
-                      <div class="col-md-3 md-margin-bottom-30">
-                        <a href="https://www.python.org/events/" target="/" class="btn btn-md u-btn-outline-yellow u-btn-skew u-btn-hover-v1-3 g-font-weight-600 g-letter-spacing-0_5 text-uppercase g-mr-10 g-mb-15">
-                          <span class="u-btn-skew__inner">
-                            Python Events
-                          </span>
-                        </a>
-                      </div>
-                      <div class="col-md-3">
-                        <a href="http://pyfound.blogspot.com/" target="/" class="btn btn-md u-btn-outline-primary u-btn-skew u-btn-hover-v1-3 g-font-weight-600 g-letter-spacing-0_5 text-uppercase g-mr-10 g-mb-15">
-                          <span class="u-btn-skew__inner">ThePSF News
-                          </span>
-                        </a>
-                      </div>
-                      <div class="col-md-3">
-                        <a href="https://pycon.blogspot.com/" target="/" class="btn btn-md u-btn-outline-primary u-btn-skew u-btn-hover-v1-3 g-font-weight-600 g-letter-spacing-0_5 text-uppercase g-mr-10 g-mb-15">
-                          <span class="u-btn-skew__inner">PyCon News
-                          </span>
-                        </a>
-                      </div>
-                      <div class="col-md-3">
-                          <a href="https://www.python.org/doc/essays/" target="/" class="btn btn-md u-btn-outline-yellow u-btn-skew u-btn-hover-v1-3 g-font-weight-600 g-letter-spacing-0_5 text-uppercase g-mr-10 g-mb-15">
-                            <span class="u-btn-skew__inner">Python Essays
-                            </span>
-                          </a>
-                      </div>
-                      <div class="col-md-3">
-                          <a href="http://pyvideo.org/" target="/" class="btn btn-md u-btn-outline-yellow u-btn-skew u-btn-hover-v1-3 g-font-weight-600 g-letter-spacing-0_5 text-uppercase g-mr-10 g-mb-15">
-                            <span class="u-btn-skew__inner">Python Video
-                            </span>
-                          </a>
-                      </div>
-                      <div class="col-md-3 md-margin-bottom-30">
-                        <a href="https://www.python.org/community/" target="/" class="btn btn-md u-btn-outline-primary u-btn-skew u-btn-hover-v1-3 g-font-weight-600 g-letter-spacing-0_5 text-uppercase g-mr-10 g-mb-15">
-                          <span class="u-btn-skew__inner">
-                            Python Community
-                          </span>
-                        </a>
-                    </div>
-                      <div class="col-md-3">
-                        <a href="https://www.pycon.org/" target="/" class="btn btn-md u-btn-outline-primary u-btn-skew u-btn-hover-v1-3 g-font-weight-600 g-letter-spacing-0_5 text-uppercase g-mr-10 g-mb-15">
-                          <span class="u-btn-skew__inner">Python Conferences
-                          </span>
-                        </a>
-                    </div>
-                      <div class="col-md-3">
-                        <a href="https://www.python.org/about/success/" target="/" class="btn btn-md u-btn-outline-yellow u-btn-skew u-btn-hover-v1-3 g-font-weight-600 g-letter-spacing-0_5 text-uppercase g-mr-10 g-mb-15">
-                          <span class="u-btn-skew__inner">
-                            Python Success Stories
-                          </span>
-                        </a>
-                          
-                      </div>
-                      <div class="col-md-3 md-margin-bottom-30">
-                        <a href="https://www.python.org/about/quotes/" target="/" class="btn btn-md u-btn-outline-yellow u-btn-skew u-btn-hover-v1-3 g-font-weight-600 g-letter-spacing-0_5 text-uppercase g-mr-10 g-mb-15">
-                          <span class="u-btn-skew__inner">
-                            Quotes about Python
-                          </span>
-                        </a>
-                      </div>
-                      <div class="col-md-3">
-                        <a href="https://www.python.org/downloads/" target="/" class="btn btn-md u-btn-outline-primary u-btn-skew u-btn-hover-v1-3 g-font-weight-600 g-letter-spacing-0_5 text-uppercase g-mr-10 g-mb-15">
-                          <span class="u-btn-skew__inner">Python Downloads
-                          </span>
-                        </a>
-                    </div>
+                      {% else %}
+                    <p></p>
+                    {% endif %}
+                    {% endfor %}
+            
                     </div>
                   </div>
               </div>

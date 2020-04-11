@@ -91,3 +91,23 @@ class Article(models.Model):
             self.slug = slugify(self.article_title)
         return super(Article, self).save(*args, **kwargs)
 
+
+
+class Link(models.Model):
+    link_title = models.CharField(max_length=200)
+    link = models.CharField(max_length=100, null=True, blank=False, help_text="Please enter link", default=" ")
+    created_date = models.DateTimeField(default=timezone.now)
+    updated = models.DateTimeField(auto_now=True)
+    is_active = models.BooleanField(default=False)
+    slug = AutoSlugField(
+        populate_from='link_title',
+        slugify_function=slugify
+    )
+
+    def __str__(self):
+        return self.link_title
+
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = slugify(self.link_title)
+        return super(Link, self).save(*args, **kwargs)

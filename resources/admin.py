@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Book, Video, Article
+from .models import Book, Video, Article, Link
 # Register your models here.
 
 
@@ -18,6 +18,11 @@ class ArticleAdmin(admin.ModelAdmin):
     list_filter = ("article_title","created_date")
 
 
+class LinkAdmin(admin.ModelAdmin):
+    list_display = ("link_title","created_date")
+    list_filter = ("link_title","created_date")
+
 admin.site.register(Book, BookAdmin)
 admin.site.register(Video, VideoAdmin)
+admin.site.register(Link, LinkAdmin)
 admin.site.register(Article, ArticleAdmin)
